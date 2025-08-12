@@ -71,9 +71,9 @@ A responsive HTML website for a comprehensive 12-week spreadsheet learning cours
 
 ## Remaining Tasks - TODO
 
-### 🔄 Phase 5: Content Enhancement
-- [ ] **Learning Progression badges**: Change remaining blue badge colors to purple theme
-- [ ] **Footer update**: Change "© 2025" to "© 2025 Spicebox"
+### ✅ Phase 5: Content Enhancement (Completed)
+- [x] **Learning Progression badges**: Change remaining blue badge colors to purple theme
+- [x] **Footer update**: Change "© 2025" to "© 2025 Spicebox"
 
 ### 📸 Phase 6: Visual Assets (Future Implementation)
 - [ ] **Image Integration**: Replace all screenshot/reference links with actual images

@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spreadsheet Learning Course - Glossary</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            background: linear-gradient(135deg, #8e44ad 0%, #d2b4de 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.5em;
+        }
+        .header p {
+            margin: 0;
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        .introduction {
+            background-color: #f3e5f5;
+            border-left: 4px solid #8e44ad;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+        .introduction h2 {
+            color: #7b1fa2;
+            margin-top: 0;
+        }
+        .letter-section {
+            margin: 40px 0;
+            padding: 25px;
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .letter-section h2 {
+            color: #8e44ad;
+            border-bottom: 2px solid #d2b4de;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            font-size: 2.5em;
+            text-align: center;
+        }
+        .term {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-left: 4px solid #8e44ad;
+            border-radius: 0 8px 8px 0;
+        }
+        .term-name {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #7b1fa2;
+            margin-bottom: 8px;
+        }
+        .term-definition {
+            color: #495057;
+            margin-bottom: 10px;
+        }
+        .term-context {
+            font-size: 0.9em;
+            color: #6c757d;
+            font-style: italic;
+        }
+        .term-links {
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+        .term-links a {
+            color: #8e44ad;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+        .term-links a:hover {
+            text-decoration: underline;
+        }
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #8e44ad;
+            color: white;
+            padding: 12px;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 18px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: background-color 0.3s ease;
+        }
+        .back-to-top:hover {
+            background-color: #7b1fa2;
+            text-decoration: none;
+            color: white;
+        }
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            margin: 40px 0;
+            padding: 20px;
+            background-color: #e9ecef;
+            border-radius: 8px;
+        }
+        .nav-button {
+            padding: 12px 24px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+        .nav-button:hover {
+            background-color: #0056b3;
+            text-decoration: none;
+            color: white;
+        }
+        .alphabet-nav {
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+        }
+        .alphabet-nav a {
+            display: inline-block;
+            padding: 5px 8px;
+            margin: 2px;
+            color: #8e44ad;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        .alphabet-nav a:hover {
+            background-color: #d2b4de;
+            color: white;
+        }
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            .search-box input {
+                width: 90%;
+            }
+            .navigation {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div style="margin-bottom: 20px;">
+        <a href="index.html" style="display: inline-flex; align-items: center; color: #007bff; text-decoration: none; font-weight: 500;">
+            ← Back to Course Home
+        </a>
+    </div>
+    <div class="header" id="top">
+        <h1>Spreadsheet Glossary</h1>
+        <p>Essential Terms for Excel & Google Sheets Mastery</p>
+    </div>
+    <div class="introduction">
+        <h2>How to Use This Glossary</h2>
+        <p>This comprehensive glossary contains all essential spreadsheet terminology from the course, organized alphabetically. Use the letter navigation below to quickly jump to terms starting with specific letters, or use Ctrl+F (Cmd+F on Mac) to search within the page.</p>
+        <p><strong>Navigation Tips:</strong></p>
+        <ul>
+            <li>Click letter links to jump to terms starting with that letter</li>
+            <li>Terms include context from lessons and links to related concepts</li>
+            <li>Use browser search (Ctrl+F) to find specific terms quickly</li>
+        </ul>
+    </div>
+    <div class="alphabet-nav">
+        <strong>Quick Navigation:</strong>
+        <a href="#letter-a">A</a> <a href="#letter-c">C</a> <a href="#letter-d">D</a>
+        <a href="#letter-f">F</a> <a href="#letter-g">G</a> <a href="#letter-h">H</a>
+        <a href="#letter-m">M</a> <a href="#letter-n">N</a> <a href="#letter-o">O</a> <a href="#letter-p">P</a>
+        <a href="#letter-r">R</a> <a href="#letter-s">S</a> <a href="#letter-t">T</a>
+        <a href="#letter-w">W</a>
+    </div>
+    <div class="letter-section" id="letter-a">
+        <h2>A</h2>
+        <div class="term" id="absolute-reference">
+            <div class="term-name">Absolute Reference</div>
+            <div class="term-definition">A cell reference that never changes when copied, indicated by dollar signs ($A$1).</div>
+            <div class="term-context">Use for constants like tax rates, lookup tables, or any value that should remain fixed when formulas are copied.</div>
+            <div class="term-links">
+                <a href="week_5_lesson.html">Related: Relative Reference</a>
+            </div>
+        </div>
+        <div class="term" id="active-cell">
+            <div class="term-name">Active Cell</div>
+            <div class="term-definition">The currently selected cell in a spreadsheet, highlighted with a colored border. Only one cell can be active at a time.</div>
+            <div class="term-context">When you click on a cell or navigate with arrow keys, it becomes the active cell where you can enter data.</div>
+            <div class="term-links">
+                <a href="week_1_lesson.html">Related: Cell</a>
+            </div>
+        </div>
+        <div class="term" id="arguments">
+            <div class="term-name">Arguments</div>
+            <div class="term-definition">The data that functions need to work with, enclosed in parentheses and separated by commas.</div>
+            <div class="term-context">For example, in =SUM(A1:A5), the range A1:A5 is the argument telling SUM which cells to add.</div>
+            <div class="term-links">
+                <a href="week_4_lesson.html">Related: Function</a>
+            </div>
+        </div>
+        <div class="term" id="ascending-sort">
+            <div class="term-name">Ascending Sort</div>
+            <div class="term-definition">Sorting data from smallest to largest, A to Z, or oldest to newest, depending on the data type.</div>
+            <div class="term-context">Most common sort order for organizing data in logical, progressive order.</div>
+            <div class="term-links">
+                <a href="week_6_lesson.html">Related: Descending Sort</a>
+            </div>
+        </div>
+        <div class="term" id="auto-fill">
+            <div class="term-name">Auto-Fill</div>
+            <div class="term-definition">A feature that automatically continues patterns or copies data when you drag the fill handle to adjacent cells.</div>
+            <div class="term-context">Can extend number sequences (1, 2, 3...), dates (Jan, Feb, Mar...), or copy formulas with adjusted references.</div>
+            <div class="term-links">
+                <a href="week_1_lesson.html">Related: Fill Handle</a>
+            </div>
+        </div>
+        <div class="term" id="autofilter">
+            <div class="term-name">AutoFilter</div>
+            <div class="term-definition">Basic filtering feature that adds dropdown arrows to column headers for quick data filtering.</div>
+            <div class="term-context">Enables users to show/hide rows based on column values without complex setup.</div>
+            <div class="term-links">
+                <a href="week_6_lesson.html">Related: Filtering</a>
+            </div>
+        </div>
+        <div class="term" id="average-function">
+            <div class="term-name">AVERAGE Function</div>
+            <div class="term-definition">A statistical function that calculates the arithmetic mean of a group of numbers.</div>
+            <div class="term-context">Syntax: =AVERAGE(range). Automatically ignores text values and empty cells in the calculation.</div>
+            <div class="term-links">
+                <a href="week_4_lesson.html">Related: SUM Function</a>
+            </div>
+        </div>
+    </div>
+    <div class="letter-section" id="letter-c">
+        <h2>C</h2>
+        <div class="term" id="cell">
+            <div class="term-name">Cell</div>
+            <div class="term-definition">An individual rectangle in the spreadsheet grid where data is entered. The intersection of a row and column.</div>
+            <div class="term-context">Cells are the fundamental building blocks of spreadsheets, holding text, numbers, formulas, or dates.</div>
+            <div class="term-links">
+                <a href="week_1_lesson.html">Related: Cell Address</a>
+            </div>
+        </div>
+        <div class="term" id="cell-address">
+            <div class="term-name">Cell Address</div>
+            <div class="term-definition">A unique identifier for each cell, combining its column letter and row number (e.g., A1, B5, Z100).</div>
+            <div class="term-context">Cell addresses are used in formulas to reference data in other cells.</div>
+            <div class="term-links">
+                <a href="week_1_lesson.html">Related: Name Box</a>
+            </div>
+        </div>
+        <div class="term" id="cell-borders">
+            <div class="term-name">Cell Borders</div>
+            <div class="term-definition">Lines that can be added around or inside cells to improve visual organization and readability.</div>
+            <div class="term-context">Common border styles include all borders, outline borders, and specific edge borders (top, bottom, left, right).</div>
+            <div class="term-links">
+                <a href="week_2_lesson.html">Related: Fill Color</a>
+            </div>
+        </div>
+        <div class="term" id="cell-reference">
+            <div class="term-name">Cell Reference</div>
+            <div class="term-definition">An address used in formulas to point to other cells, enabling dynamic calculations that update when referenced data changes.</div>
+            <div class="term-context">Can be relative (A1), absolute ($A$1), or mixed ($A1 or A$1) depending on copying behavior needed.</div>
+            <div class="term-links">
+                <a href="week_3_lesson.html">Related: Formula</a>
+            </div>
+        </div>
+        <div class="term" id="count-function">
+            <div class="term-name">COUNT Function</div>
+            <div class="term-definition">A statistical function that counts how many cells in a range contain numbers.</div>
+            <div class="term-context">Only counts numeric values; use COUNTA to count all non-empty cells including text.</div>
+            <div class="term-links">
+                <a href="week_4_lesson.html">Related: COUNTA Function</a>
+            </div>
+        </div>
+        <div class="term" id="currency-formatting">
+            <div class="term-name">Currency Formatting</div>
+            <div class="term-definition">Number formatting that displays monetary values with currency symbols (like $) and appropriate decimal places.</div>
+            <div class="term-context">Automatically aligns numbers to the right and can handle negative values in various formats.</div>
+            <div class="term-links">
+                <a href="week_2_lesson.html">Related: Number Formatting</a>
+            </div>
+        </div>
+    </div>
+    <div class="letter-section" id="letter-d">
+        <h2>D</h2>
+        <div class="term" id="data-types">
+            <div class="term-name">Data Types</div>
+            <div class="term-definition">Categories of information that can be entered in spreadsheet cells: text, numbers, and dates.</div>
+            <div class="term-context">Understanding data types is crucial because they determine how data behaves in calculations and formatting.</div>
+            <div class="term-links">
+                <a href="week_2_lesson.html">Related: Text, Numbers, Dates</a>
+            </div>
+        </div>
+        <div class="term" id="data-validation">
+            <div class="term-name">Data Validation</div>
+            <div class="term-definition">Rules that control what type of data can be entered into specific cells, preventing errors and ensuring data quality.</div>
+            <div class="term-context">Can create dropdown lists, restrict number ranges, validate dates, or control text length.</div>
+            <div class="term-links">
+                <a href="week_6_lesson.html">Related: Dropdown List</a>
+            </div>
+        </div>
+        <div class="term" id="date-formatting">
+            <div class="term-name">Date Formatting</div>
+            <div class="term-definition">Various ways to display dates, such as 1/15/2024, January 15, 2024, or Jan-15-24.</div>
+            <div class="term-context">Excel recognizes dates automatically and can convert between different display formats while maintaining the underlying date value.</div>
+            <div class="term-links">
+                <a href="week_4_lesson.html">Related: Date Functions</a>
+            </div>
+        </div>
+        <div class="term" id="date-functions">
+            <div class="term-name">Date Functions</div>
+            <div class="term-definition">Functions that work with dates and times, such as TODAY(), NOW(), YEAR(), MONTH(), and DAY().</div>
+            <div class="term-context">Essential for date calculations, age calculations, and time-based analysis.</div>
+            <div class="term-links">
+                <a href="week_4_lesson.html">Related: TODAY Function</a>
+            </div>
+        </div>
+        <div class="term" id="descending-sort">
+            <div class="term-name">Descending Sort</div>
+            <div class="term-definition">Sorting data from largest to smallest, Z to A, or newest to oldest, depending on the data type.</div>
+            <div class="term-context">Useful for finding top performers, highest values, or most recent entries.</div>
+            <div class="term-links">
+                <a href="week_6_lesson.html">Related: Ascending Sort</a>
+            </div>
+        </div>
+        <div class="term" id="dollar-sign">
+            <div class="term-name">Dollar Sign ($)</div>
+            <div class="term-definition">Symbol used to "lock" parts of cell references, preventing them from changing when formulas are copied.</div>
+            <div class="term-context">$A locks the column, $1 locks the row, $A$1 locks both. Press F4 in Excel to cycle through reference types.</div>
+            <div class="term-links">
+                <a href="week_5_lesson.html">Related: Absolute Reference</a>
+            </div>
+        </div>
+        <div class="term" id="dropdown-list">
+            <div class="term-name">Dropdown List</div>
+            <div class="term-definition">A data validation feature that allows users to select from a predefined list of options.</div>
+            <div class="term-context">Ensures consistent data entry and reduces typos by limiting input to valid choices.</div>
+            <div class="term-links">
+                <a href="week_6_lesson.html">Related: Data Validation</a>
+            </div>
+        </div>
+    </div>
+    <div class="letter-section" id="letter-f">
+        <h2>F</h2>
+        <div class="term" id="fill-color">
+            <div class="term-name">Fill Color</div>
+            <div class="term-definition">The background color of cells, used to highlight important data or organize information visually.</div>
+            <div class="term-context">Commonly used for headers (light blue/gray), important data (light yellow), and alternating rows (very light gray).</div>
+            <div class="term-links">
+                <a href="week_2_lesson.html">Related: Cell Borders</a>
+            </div>
+        </div>
+        <div class="term" id="fill-handle">
+            <div class="term-name">Fill Handle</div>
+            <div class="term-definition">A small square in the bottom-right corner of the active cell used to copy formulas or extend patterns.</div>
+            <div class="term-context">Click and drag the fill handle to auto-fill data series or copy formulas to adjacent cells.</div>
+            <div class="term-links">
+                <a href="week_1_lesson.html">Related: Auto-Fill</a>
+            </div>
+        </div>
+        <div class="term" id="filtering">
+            <div class="term-name">Filtering</div>
+            <div class="term-definition">Displaying only rows that meet specific criteria while temporarily hiding the rest.</div>
+            <div class="term-context">Unlike sorting, filtering doesn't rearrange data—it controls visibility to focus on relevant information.</div>
+            <div class="term-links">
+                <a href="week_6_lesson.html">Related: Sorting</a>
+            </div>
+        </div>
+        <div class="term" id="format-painter">
+            <div class="term-name">Format Painter</div>
+            <div class="term-definition">A tool that copies all formatting from one cell and applies it to other cells quickly.</div>
+            <div class="term-context">Represented by a paintbrush icon; double-click to apply formatting to multiple selections.</div>
+            <div class="term-links">
+                <a href="week_2_lesson.html">Related: Cell Formatting</a>
+            </div>
+        </div>
+        <div class="term" id="formula">
+            <div class="term-name">Formula</div>
+            <div class="term-definition">Any calculation instruction that starts with an equals sign (=), including both simple math and complex functions.</div>
+            <div class="term-context">Examples include =A1+B1 (simple formula) and =SUM(A1:A10) (function-based formula).</div>
+            <div class="term-links">
+                <a href="week_4_lesson.html">Related: Function</a>
+            </div>
+        </div>
+        <div class="term" id="formula-bar">
+            <div class="term-name">Formula Bar</div>
+            <div class="term-definition">The area that shows the actual content of the active cell, including formulas, while the cell displays the calculated result.</div>
+            <div class="term-context">Essential for editing formulas and seeing the underlying calculation behind a cell's displayed value.</div>
+            <div class="term-links">
+                <a href="week_3_lesson.html">Related: Formula</a>
+            </div>
+        </div>
+        <div class="term" id="freeze-panes">
+            <div class="term-name">Freeze Panes</div>
+            <div class="term-definition">A feature that keeps selected rows or columns visible while scrolling through large datasets.</div>
+            <div class="term-context">Useful for keeping headers visible when working with extensive data tables.</div>
+            <div class="term-links">
+                <a href="week_6_lesson.html">Related: Headers</a>
+            </div>
+        </div>
+        <div class="term" id="function">
+            <div class="term-name">Function</div>
+            <div class="term-definition">A pre-built formula with a specific name that performs a particular calculation or operation.</div>
+            <div class="term-context">Functions have names (like SUM, AVERAGE) and require arguments in parentheses to specify what data to work with.</div>
+            <div class="term-links">
+                <a href="week_3_lesson.html">Related: Formula</a>
+            </div>
+        </div>
+    </div>
+    <div class="letter-section" id="letter-g">
+        <h2>G</h2>
+        <div class="term" id="grid-system">
+            <div class="term-name">Grid System</div>
+            <div class="term-definition">The structure of rows and columns that forms the foundation of a spreadsheet layout.</div>
+            <div class="term-context">Understanding the grid system is essential for navigation and data organization.</div>
+            <div class="term-links">
+                <a href="week_1_lesson.html">Related: Rows and Columns</a>
+            </div>
+        </div>
+    </div>
+    <div class="letter-section" id="letter-h">
+        <h2>H</h2>
+        <div class="term" id="headers">
+            <div class="term-name">Headers</div>
+            <div class="term-definition">Descriptive labels in row 1 that identify what data each column contains.</div>
+            <div class="term-context">Essential for proper data organization and required for effective sorting and filtering operations.</div>
+            <div class="term-links">
+                <a href="week_6_lesson.html">Related: Data Organization</a>
+            </div>
+        </div>
+    </div>
+    <div class="letter-section" id="letter-m">
+        <h2>M</h2>
+        <div class="term" id="max-function">
+            <div class="term-name">MAX Function</div>
+            <div class="term-definition">A function that finds and returns the largest value in a range of cells.</div>
+            <div class="term-context">Syntax: =MAX(range). Useful for finding highest scores, maximum values, or latest dates.</div>
+            <div class="term-links">
+                <a href="week_4_lesson.html">Related: MIN Function</a>
+            </div>
+        </div>
+        <div class="term" id="min-function">
+            <div class="term-name">MIN Function</div>
+            <div class="term-definition">A function that finds and returns the smallest value in a range of cells.</div>
+            <div class="term-context">Syntax: =MIN(range). Useful for finding lowest scores, minimum values, or earliest dates.</div>
+            <div class="term-links">
+                <a href="week_4_lesson.html">Related: MAX Function</a>
+            </div>
+        </div>
+        <div class="term" id="mixed-reference">
+            <div class="term-name">Mixed Reference</div>
+            <div class="term-definition">A cell reference where either the column or row is fixed ($A1 or A$1), but not both.</div>
+            <div class="term-context">$A1 keeps column A fixed while row changes; A$1 keeps row 1 fixed while column changes. Useful for table calculations.</div>
+            <div class="term-links">
+                <a href="week_5_lesson.html">Related: Absolute Reference</a>
+            </div>
+        </div>
+        <div class="term" id="multi-level-sort">
+            <div class="term-name">Multi-Level Sort</div>
+            <div class="term-definition">Sorting by multiple criteria simultaneously, such as department first, then by salary within each department.</div>
+            <div class="term-context">Allows for complex data organization with primary and secondary sort criteria.</div>
+            <div class="term-links">
+                <a href="week_6_lesson.html">Related: Sorting</a>
+            </div>
+        </div>
+    </div>
+    <div class="letter-section" id="letter-n">
+        <h2>N</h2>
+        <div class="term" id="name-box">
+            <div class="term-name">Name Box</div>
+            <div class="term-definition">A box that displays the address of the active cell. Located in the upper-left corner in Excel, and on the left side of the formula bar in Google Sheets.</div>
+            <div class="term-context">Also used to navigate directly to specific cells by typing their address or named range.</div>
+            <div class="term-links">
+                <a href="week_5_lesson.html">Related: Named Range</a>
+            </div>
+        </div>
+        <div class="term" id="named-range">
+            <div class="term-name">Named Range</div>
+            <div class="term-definition">A meaningful name assigned to a cell or range of cells, making formulas easier to read and maintain.</div>
+            <div class="term-context">Instead of =B10*$C$1, you can write =SalesTotal*TaxRate. Makes formulas self-documenting and easier to audit.</div>
+            <div class="term-links">
+                <a href="week_5_lesson.html">Related: Cell Reference</a>
+            </div>
+        </div>
+        <div class="term" id="numbers">
+            <div class="term-name">Numbers</div>
+            <div class="term-definition">Numeric data including integers, decimals, and percentages that automatically align to the right in cells.</div>
+            <div class="term-context">Used for calculations, measurements, and quantitative analysis. Can be formatted as currency, percentages, or with specific decimal places.</div>
+            <div class="term-links">
+                <a href="week_2_lesson.html">Related: Data Types</a>
+            </div>
+        </div>
+    </div>
+    <div class="letter-section" id="letter-o">
+        <h2>O</h2>
+        <div class="term" id="operators">
+            <div class="term-name">Operators</div>
+            <div class="term-definition">Mathematical symbols used in formulas: + (addition), - (subtraction), * (multiplication), / (division), ^ (exponentiation).</div>
+            <div class="term-context">Follow order of operations (PEMDAS): Parentheses, Exponents, Multiplication/Division, Addition/Subtraction.</div>
+            <div class="term-links">
+                <a href="week_3_lesson.html">Related: Order of Operations</a>
+            </div>
+        </div>
+        <div class="term" id="order-of-operations">
+            <div class="term-name">Order of Operations</div>
+            <div class="term-definition">Mathematical rules that determine the sequence in which operations are performed in formulas (PEMDAS/BODMAS).</div>
+            <div class="term-context">Excel follows standard math rules: Parentheses first, then Exponents, then Multiplication/Division (left to right), then Addition/Subtraction (left to right).</div>
+            <div class="term-links">
+                <a href="week_3_lesson.html">Related: Operators</a>
+            </div>
+        </div>
+    </div>
+    <div class="letter-section" id="letter-p">
+        <h2>P</h2>
+        <div class="term" id="percentage-formatting">
+            <div class="term-name">Percentage Formatting</div>
+            <div class="term-definition">Number formatting that displays decimal values as percentages (0.25 becomes 25%).</div>
+            <div class="term-context">Excel automatically multiplies the decimal by 100 and adds the % symbol.</div>
+            <div class="term-links">
+                <a href="week_2_lesson.html">Related: Currency Formatting</a>
+            </div>
+        </div>
+    </div>
+    <div class="letter-section" id="letter-r">
+        <h2>R</h2>
+        <div class="term" id="range">
+            <div class="term-name">Range</div>
+            <div class="term-definition">A group of cells, specified using start and end addresses separated by a colon (A1:A10, B2:D5).</div>
+            <div class="term-context">Used in functions like SUM, AVERAGE, and COUNT to work with multiple cells at once.</div>
+            <div class="term-links">
+                <a href="week_5_lesson.html">Related: Range Notation</a>
+            </div>
+        </div>
+        <div class="term" id="range-notation">
+            <div class="term-name">Range Notation</div>
+            <div class="term-definition">The syntax for specifying multiple cells using a colon (:) between start and end addresses.</div>
+            <div class="term-context">Examples: A1:A10 (column), A1:E1 (row), A1:C5 (rectangle), A:A (entire column), 1:1 (entire row).</div>
+            <div class="term-links">
+                <a href="week_5_lesson.html">Related: Range</a>
+            </div>
+        </div>
+        <div class="term" id="relative-reference">
+            <div class="term-name">Relative Reference</div>
+            <div class="term-definition">A cell reference that changes when copied to other cells (A1 becomes B1 when copied right, A2 when copied down).</div>
+            <div class="term-context">Default reference type; enables formulas to adjust automatically when applied to different rows or columns.</div>
+            <div class="term-links">
+                <a href="week_5_lesson.html">Related: Absolute Reference</a>
+            </div>
+        </div>
+        <div class="term" id="round-function">
+            <div class="term-name">ROUND Function</div>
+            <div class="term-definition">A function that rounds numbers to a specified number of decimal places.</div>
+            <div class="term-context">Syntax: =ROUND(number, digits). Use positive digits for decimal places, negative for tens/hundreds.</div>
+            <div class="term-links">
+                <a href="week_2_lesson.html">Related: Number Formatting</a>
+            </div>
+        </div>
+    </div>
+    <div class="letter-section" id="letter-s">
+        <h2>S</h2>
+        <div class="term" id="sheet-tabs">
+            <div class="term-name">Sheet Tabs</div>
+            <div class="term-definition">Tabs at the bottom of the spreadsheet window used to navigate between different worksheets in a workbook.</div>
+            <div class="term-context">Allow organization of related data across multiple sheets within a single file.</div>
+            <div class="term-links">
+                <a href="week_1_lesson.html">Related: Worksheet</a>
+            </div>
+        </div>
+        <div class="term" id="sorting">
+            <div class="term-name">Sorting</div>
+            <div class="term-definition">Rearranging data in a specific order (alphabetical, numerical, or chronological) while keeping related information in each row together.</div>
+            <div class="term-context">Essential for data analysis, finding patterns, and organizing information for better understanding.</div>
+            <div class="term-links">
+                <a href="week_6_lesson.html">Related: Filtering</a>
+            </div>
+        </div>
+        <div class="term" id="sum-function">
+            <div class="term-name">SUM Function</div>
+            <div class="term-definition">The most commonly used function that adds up all numbers in a specified range or list of cells.</div>
+            <div class="term-context">Syntax: =SUM(range). Can accept multiple ranges: =SUM(A1:A5,C1:C5). AutoSum button (Σ) automatically creates SUM formulas.</div>
+            <div class="term-links">
+                <a href="week_4_lesson.html">Related: AVERAGE Function</a>
+            </div>
+        </div>
+    </div>
+    <div class="letter-section" id="letter-t">
+        <h2>T</h2>
+        <div class="term" id="text">
+            <div class="term-name">Text</div>
+            <div class="term-definition">Non-numeric data including words, descriptions, and labels that automatically align to the left in cells.</div>
+            <div class="term-context">Used for headers, names, descriptions, and any information that won't be used in calculations.</div>
+            <div class="term-links">
+                <a href="week_2_lesson.html">Related: Data Types</a>
+            </div>
+        </div>
+        <div class="term" id="text-functions">
+            <div class="term-name">Text Functions</div>
+            <div class="term-definition">Functions that manipulate text data, including CONCATENATE, LEFT, RIGHT, MID, and LEN.</div>
+            <div class="term-context">Used for combining text, extracting parts of text strings, and analyzing text length.</div>
+            <div class="term-links">
+                <a href="week_4_lesson.html">Related: CONCATENATE Function</a>
+            </div>
+        </div>
+        <div class="term" id="3d-reference">
+            <div class="term-name">3D Reference</div>
+            <div class="term-definition">A reference that spans across multiple worksheets, allowing calculations across sheets.</div>
+            <div class="term-context">Syntax: Sheet1:Sheet3!A1 references cell A1 across sheets 1, 2, and 3. Useful for consolidating data from multiple sheets.</div>
+            <div class="term-links">
+                <a href="week_5_lesson.html">Related: Worksheet Reference</a>
+            </div>
+        </div>
+        <div class="term" id="today-function">
+            <div class="term-name">TODAY Function</div>
+            <div class="term-definition">A date function that returns the current date, updating automatically each day.</div>
+            <div class="term-context">Syntax: =TODAY() (no arguments needed). Useful for calculating ages, days elapsed, or date-based conditions.</div>
+            <div class="term-links">
+                <a href="week_4_lesson.html">Related: Date Functions</a>
+            </div>
+        </div>
+    </div>
+    <div class="letter-section" id="letter-w">
+        <h2>W</h2>
+        <div class="term" id="workbook">
+            <div class="term-name">Workbook</div>
+            <div class="term-definition">The entire spreadsheet file containing one or more worksheets. Called "Spreadsheet" in Google Sheets.</div>
+            <div class="term-context">Like a complete notebook that can contain multiple pages (worksheets) of related data.</div>
+            <div class="term-links">
+                <a href="week_1_lesson.html">Related: Worksheet</a>
+            </div>
+        </div>
+        <div class="term" id="worksheet">
+            <div class="term-name">Worksheet</div>
+            <div class="term-definition">A single page or tab within a workbook containing the grid of cells where data is entered and manipulated.</div>
+            <div class="term-context">Each worksheet can contain different types of data and calculations while remaining part of the same file.</div>
+            <div class="term-links">
+                <a href="week_1_lesson.html">Related: Workbook</a>
+            </div>
+        </div>
+    </div>
+    <div class="navigation">
+        <a href="index.html" class="nav-button">← Back to Course Home</a>
+        <a href="week_1_lesson.html" class="nav-button">Start with Week 1 →</a>
+    </div>
+    <a href="#top" class="back-to-top">↑</a>
+</div>
+<script>
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+</script>
+</body>
+</html>
