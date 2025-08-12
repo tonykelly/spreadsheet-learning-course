@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 5: Cell References & Ranges - Complete Lesson</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #20c997 0%, #0d6efd 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.5em;
+        }
+        
+        .header p {
+            margin: 0;
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .learning-objectives {
+            background-color: #d1ecf1;
+            border-left: 4px solid #0dcaf0;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+        
+        .learning-objectives h2 {
+            color: #0c5460;
+            margin-top: 0;
+        }
+        
+        .topic-section {
+            margin: 40px 0;
+            padding: 25px;
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .topic-section h2 {
+            color: #495057;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .topic-section h3 {
+            color: #6c757d;
+            margin-top: 25px;
+        }
+        
+        .screenshot-container {
+            background-color: #f8f9fa;
+            border: 2px dashed #6c757d;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .screenshot-container h4 {
+            color: #495057;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        
+        .screenshot-link {
+            display: block;
+            color: #007bff;
+            text-decoration: none;
+            padding: 10px;
+            background-color: #e3f2fd;
+            border-radius: 5px;
+            margin: 10px 0;
+            border-left: 4px solid #2196f3;
+        }
+        
+        .screenshot-link:hover {
+            background-color: #bbdefb;
+            text-decoration: none;
+        }
+        
+        .step-by-step {
+            background-color: #d1ecf1;
+            border-left: 4px solid #0dcaf0;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .step-by-step h4 {
+            color: #0c5460;
+            margin-top: 0;
+        }
+        
+        .step-by-step ol {
+            margin: 15px 0;
+        }
+        
+        .step-by-step li {
+            margin: 8px 0;
+        }
+        
+        .reference-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .reference-table th {
+            background-color: #20c997;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .reference-table td {
+            border: 1px solid #dee2e6;
+            padding: 12px;
+        }
+        
+        .reference-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .reference-example {
+            background-color: #e8f5e8;
+            border: 1px solid #28a745;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 1.1em;
+        }
+        
+        .reference-type {
+            background-color: #e3f2fd;
+            border: 2px solid #2196f3;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-weight: bold;
+        }
+        
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .info-box {
+            background-color: #d1ecf1;
+            border: 1px solid #bee5eb;
+            color: #0c5460;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .practice-exercise {
+            background-color: #e8f4f8;
+            border: 2px solid #17a2b8;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+        
+        .practice-exercise h3 {
+            color: #0c5460;
+            margin-top: 0;
+        }
+        
+        .differences-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 14px;
+        }
+        
+        .differences-table th {
+            background-color: #343a40;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        .differences-table td {
+            border: 1px solid #dee2e6;
+            padding: 10px;
+            vertical-align: top;
+        }
+        
+        .differences-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .youtube-section {
+            background-color: #fff5f5;
+            border: 2px solid #dc3545;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+        
+        .youtube-section h3 {
+            color: #721c24;
+            margin-top: 0;
+        }
+        
+        .youtube-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .youtube-link {
+            display: block;
+            color: #dc3545;
+            text-decoration: none;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .youtube-link:hover {
+            background-color: #e9ecef;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-decoration: none;
+        }
+        
+        .youtube-link strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .next-section {
+            background: linear-gradient(135deg, #6f42c1 0%, #198754 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .next-section h3 {
+            margin-top: 0;
+            color: white;
+        }
+        
+        .checklist {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .checklist ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .checklist li {
+            margin: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .checklist li:before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+        }
+        
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            margin: 40px 0;
+            padding: 20px;
+            background-color: #e9ecef;
+            border-radius: 8px;
+        }
+        
+        .nav-button {
+            padding: 12px 24px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+        
+        .nav-button:hover {
+            background-color: #0056b3;
+            text-decoration: none;
+            color: white;
+        }
+        
+        .visual-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .visual-cell {
+            background-color: #f8f9fa;
+            border: 2px solid #dee2e6;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+        }
+        
+        .relative-ref {
+            background-color: #d4edda;
+            border-color: #28a745;
+        }
+        
+        .absolute-ref {
+            background-color: #f8d7da;
+            border-color: #dc3545;
+        }
+        
+        .mixed-ref {
+            background-color: #fff3cd;
+            border-color: #ffc107;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>Week 5: Cell References & Ranges</h1>
+        <p>Mastering References for Dynamic Spreadsheets</p>
+    </div>
+
+    <div class="learning-objectives">
+        <h2>Learning Objectives:</h2>
+        <p>By the end of this lesson, you will be able to:</p>
+        <ul>
+            <li>Master different types of cell references (relative, absolute, mixed)</li>
+            <li>Work effectively with cell ranges and understand range notation</li>
+            <li>Use named ranges to improve formula readability and maintainability</li>
+            <li>Create 3D references across multiple worksheets</li>
+            <li>Troubleshoot and fix reference errors in complex spreadsheets</li>
+        </ul>
+    </div>
+
+    <div class="topic-section">
+        <h2>Topic 1: Types of Cell References</h2>
+        
+        <h3>Understanding Reference Behavior</h3>
+        <p>Cell references are the foundation of dynamic spreadsheets. Understanding how they behave when copied is crucial for building efficient, maintainable formulas.</p>
+
+        <div class="screenshot-container">
+            <h4>Visual Reference Screenshots:</h4>
+            <a href="https://edu.gcfglobal.org/en/excelformulas/relative-and-absolute-cell-references/1/" target="_blank" class="screenshot-link">
+                📸 Excel Cell References Tutorial - Shows how cell references work and change when copied
+            </a>
+            <a href="https://www.ablebits.com/office-addins-blog/relative-absolute-reference-excel/" target="_blank" class="screenshot-link">
+                📸 Relative vs Absolute References - Comprehensive guide with visual examples
+            </a>
+        </div>
+
+        <h3>The Three Types of Cell References</h3>
+
+        <table class="reference-table">
+            <thead>
+                <tr>
+                    <th>Reference Type</th>
+                    <th>Format</th>
+                    <th>Behavior When Copied</th>
+                    <th>When to Use</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Relative</strong></td>
+                    <td>A1</td>
+                    <td>Changes both column and row</td>
+                    <td>Most common; for cells that should adjust</td>
+                </tr>
+                <tr>
+                    <td><strong>Absolute</strong></td>
+                    <td>$A$1</td>
+                    <td>Never changes</td>
+                    <td>Constants, lookup tables, fixed values</td>
+                </tr>
+                <tr>
+                    <td><strong>Mixed (Column Fixed)</strong></td>
+                    <td>$A1</td>
+                    <td>Column stays same, row changes</td>
+                    <td>Column headers, vertical calculations</td>
+                </tr>
+                <tr>
+                    <td><strong>Mixed (Row Fixed)</strong></td>
+                    <td>A$1</td>
+                    <td>Row stays same, column changes</td>
+                    <td>Row headers, horizontal calculations</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="info-box">
+            <h4>Key Points About the $ Symbol:</h4>
+            <ul>
+                <li>The <strong>$</strong> symbol "locks" part of a reference</li>
+                <li><strong>$A</strong> locks the column (A will never change)</li>
+                <li><strong>$1</strong> locks the row (1 will never change)</li>
+                <li><strong>$A$1</strong> locks both column and row</li>
+                <li>Press <strong>F4</strong> to cycle through reference types (Excel)</li>
+            </ul>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Understanding Relative References</h4>
+            <ol>
+                <li><strong>Set up a multiplication table:</strong>
+                    <ul>
+                        <li>B1: 2, C1: 3, D1: 4, E1: 5</li>
+                        <li>A2: 10, A3: 20, A4: 30</li>
+                    </ul>
+                </li>
+                <li><strong>Create the first formula:</strong>
+                    <ul>
+                        <li>B2: Type =A2*B1 (10 * 2 = 20)</li>
+                    </ul>
+                </li>
+                <li><strong>Copy the formula across:</strong>
+                    <ul>
+                        <li>Select B2, copy across to E2</li>
+                        <li>C2 becomes =A2*C1 (10 * 3 = 30)</li>
+                        <li>D2 becomes =A2*D1 (10 * 4 = 40)</li>
+                    </ul>
+                </li>
+                <li><strong>Copy the formula down:</strong>
+                    <ul>
+                        <li>Select B2:E2, copy down to row 4</li>
+                        <li>B3 becomes =A3*B1 (20 * 2 = 40)</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="visual-grid">
+            <div class="visual-cell relative-ref">Original: =A2*B1</div>
+            <div class="visual-cell relative-ref">Copy Right: =A2*C1</div>
+            <div class="visual-cell relative-ref">Copy Down: =A3*B1</div>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Creating Absolute References</h4>
+            <ol>
+                <li><strong>Set up a tax calculation:</strong>
+                    <ul>
+                        <li>A1: "Tax Rate", B1: 0.08 (8% tax)</li>
+                        <li>A3: "Price", B3: "Tax Amount", C3: "Total"</li>
+                        <li>A4: 100, A5: 200, A6: 150</li>
+                    </ul>
+                </li>
+                <li><strong>Create formula with absolute reference:</strong>
+                    <ul>
+                        <li>B4: =A4*$B$1 (uses absolute reference to B1)</li>
+                    </ul>
+                </li>
+                <li><strong>Copy the formula down:</strong>
+                    <ul>
+                        <li>Copy B4 to B5:B6</li>
+                        <li>B5 becomes =A5*$B$1 (still references B1)</li>
+                        <li>B6 becomes =A6*$B$1 (still references B1)</li>
+                    </ul>
+                </li>
+                <li><strong>Complete the calculation:</strong>
+                    <ul>
+                        <li>C4: =A4+B4 (Price + Tax)</li>
+                        <li>Copy down to C5:C6</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="visual-grid">
+            <div class="visual-cell absolute-ref">Original: =A4*$B$1</div>
+            <div class="visual-cell absolute-ref">Copy Down: =A5*$B$1</div>
+            <div class="visual-cell absolute-ref">B1 Never Changes!</div>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Working with Mixed References</h4>
+            <ol>
+                <li><strong>Set up a commission calculator:</strong>
+                    <ul>
+                        <li>B1: "5%", C1: "7%", D1: "10%" (commission rates)</li>
+                        <li>A2: "John", A3: "Sarah", A4: "Mike" (salespeople)</li>
+                        <li>B2: 1000, C2: 1500, D2: 2000 (sales amounts)</li>
+                    </ul>
+                </li>
+                <li><strong>Create mixed reference formula:</strong>
+                    <ul>
+                        <li>B3: =B$1*$A3 (mixed references)</li>
+                        <li>This locks row 1 (rates) and column A (names)</li>
+                    </ul>
+                </li>
+                <li><strong>Copy across and down:</strong>
+                    <ul>
+                        <li>Copy B3 across to D3, then down to D4</li>
+                        <li>C3 becomes =C$1*$A3</li>
+                        <li>B4 becomes =B$1*$A4</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="visual-grid">
+            <div class="visual-cell mixed-ref">Original: =B$1*$A3</div>
+            <div class="visual-cell mixed-ref">Copy Right: =C$1*$A3</div>
+            <div class="visual-cell mixed-ref">Copy Down: =B$1*$A4</div>
+        </div>
+
+        <div class="practice-exercise">
+            <h3>Practice Exercise: Reference Types</h3>
+            <p><strong>Scenario:</strong> Create a pricing matrix for different products and discount levels</p>
+            
+            <ol>
+                <li><strong>Set up the structure:</strong>
+                    <ul>
+                        <li>A1: Leave blank, B1: "10%", C1: "15%", D1: "20%" (discount rates)</li>
+                        <li>A2: "Laptop $1000", A3: "Phone $500", A4: "Tablet $300" (products)</li>
+                    </ul>
+                </li>
+                <li><strong>Enter base prices:</strong>
+                    <ul>
+                        <li>B2: 1000, B3: 500, B4: 300</li>
+                    </ul>
+                </li>
+                <li><strong>Create discounted price formula:</strong>
+                    <ul>
+                        <li>C2: =$B2*(1-C$1) (mixed references)</li>
+                        <li>Copy this formula to C2:D4</li>
+                    </ul>
+                </li>
+                <li><strong>Verify the results make sense</strong></li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="topic-section">
+        <h2>Topic 2: Working with Cell Ranges</h2>
+        
+        <h3>Understanding Range Notation</h3>
+        <p>Ranges allow you to work with multiple cells at once, making your formulas more efficient and your data management more effective.</p>
+
+        <div class="info-box">
+            <h4>Range Notation Examples:</h4>
+            <ul>
+                <li><strong>A1:A10</strong> → Cells A1 through A10 (vertical range)</li>
+                <li><strong>A1:E1</strong> → Cells A1 through E1 (horizontal range)</li>
+                <li><strong>A1:C5</strong> → Rectangular area from A1 to C5</li>
+                <li><strong>A:A</strong> → Entire column A</li>
+                <li><strong>1:1</strong> → Entire row 1</li>
+                <li><strong>A1:A5,C1:C5</strong> → Multiple non-adjacent ranges</li>
+            </ul>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Selecting Ranges</h4>
+            <ol>
+                <li><strong>Contiguous ranges:</strong>
+                    <ul>
+                        <li>Click and drag from start to end cell</li>
+                        <li>Or click start cell, hold Shift, click end cell</li>
+                        <li>Or type the range directly in formulas</li>
+                    </ul>
+                </li>
+                <li><strong>Non-contiguous ranges:</strong>
+                    <ul>
+                        <li>Select first range</li>
+                        <li>Hold Ctrl (Windows) or Cmd (Mac)</li>
+                        <li>Select additional ranges while holding the key</li>
+                    </ul>
+                </li>
+                <li><strong>Entire rows/columns:</strong>
+                    <ul>
+                        <li>Click row number for entire row</li>
+                        <li>Click column letter for entire column</li>
+                        <li>Ctrl+Click for multiple rows/columns</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <h3>Range References in Formulas</h3>
+        <div class="reference-example">
+            =SUM(A1:A10)         → Adds cells A1 through A10<br>
+            =AVERAGE(B2:E2)      → Averages cells B2 through E2<br>
+            =COUNT(A:A)          → Counts numbers in entire column A<br>
+            =MAX(A1:A5,C1:C5)    → Finds maximum in two ranges
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Advanced Range Selection</h4>
+            <ol>
+                <li><strong>Current region (Ctrl+A):</strong>
+                    <ul>
+                        <li>Click any cell in a data table</li>
+                        <li>Press Ctrl+A to select the entire table</li>
+                        <li>Useful for selecting all data at once</li>
+                    </ul>
+                </li>
+                <li><strong>Go to Special (Ctrl+G):</strong>
+                    <ul>
+                        <li>Press Ctrl+G to open Go To dialog</li>
+                        <li>Click "Special" for advanced selection options</li>
+                        <li>Select blanks, constants, formulas, etc.</li>
+                    </ul>
+                </li>
+                <li><strong>Select to end (Ctrl+Shift+Arrow):</strong>
+                    <ul>
+                        <li>Click starting cell</li>
+                        <li>Ctrl+Shift+→ selects to last used column</li>
+                        <li>Ctrl+Shift+↓ selects to last used row</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <h3>3D References Across Sheets</h3>
+        <p>3D references allow you to reference cells across multiple worksheets, powerful for consolidating data.</p>
+
+        <div class="reference-type">
+            3D Reference Syntax: Sheet1:Sheet3!A1 (references A1 across sheets 1, 2, and 3)
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Creating 3D References</h4>
+            <ol>
+                <li><strong>Set up multiple sheets:</strong>
+                    <ul>
+                        <li>Create three sheets: "Q1", "Q2", "Q3"</li>
+                        <li>In each sheet, put sales data in A1: 1000, 1500, 1200</li>
+                    </ul>
+                </li>
+                <li><strong>Create a summary sheet:</strong>
+                    <ul>
+                        <li>Add a "Summary" sheet</li>
+                        <li>A1: =SUM(Q1:Q3!A1) → Adds A1 from all three sheets</li>
+                    </ul>
+                </li>
+                <li><strong>Build the formula step by step:</strong>
+                    <ul>
+                        <li>Type =SUM(</li>
+                        <li>Click on Q1 sheet tab, click A1</li>
+                        <li>Type : (colon)</li>
+                        <li>Click on Q3 sheet tab, click A1</li>
+                        <li>Type ) and press Enter</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="practice-exercise">
+            <h3>Practice Exercise: Range Operations</h3>
+            <p><strong>Scenario:</strong> Create a multi-department budget summary</p>
+            
+            <ol>
+                <li><strong>Set up department sheets:</strong>
+                    <ul>
+                        <li>Create sheets: "Sales", "Marketing", "IT"</li>
+                        <li>In each sheet, enter budget data in B1:B5 (different amounts)</li>
+                    </ul>
+                </li>
+                <li><strong>Create summary sheet:</strong>
+                    <ul>
+                        <li>Add "Summary" sheet</li>
+                        <li>A1: "Department Total", B1: =SUM(Sales:IT!B1:B5)</li>
+                        <li>A2: "Average per Dept", B2: =AVERAGE(Sales:IT!B1:B5)</li>
+                    </ul>
+                </li>
+                <li><strong>Test the 3D references:</strong>
+                    <ul>
+                        <li>Change values in any department sheet</li>
+                        <li>Verify summary updates automatically</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="topic-section">
+        <h2>Topic 3: Named Ranges</h2>
+        
+        <h3>Making Formulas Readable</h3>
+        <p>Named ranges replace cell addresses with meaningful names, making formulas easier to read, understand, and maintain.</p>
+
+        <div class="info-box">
+            <h4>Benefits of Named Ranges:</h4>
+            <ul>
+                <li><strong>Readability:</strong> =SalesTotal*TaxRate vs =B10*$C$1</li>
+                <li><strong>Maintainability:</strong> Change range definition in one place</li>
+                <li><strong>Navigation:</strong> Use Name Box to jump to ranges quickly</li>
+                <li><strong>Documentation:</strong> Self-documenting formulas</li>
+            </ul>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Creating Named Ranges</h4>
+            <ol>
+                <li><strong>Method 1 - Name Box:</strong>
+                    <ul>
+                        <li>Select cell or range (e.g., B1 containing tax rate)</li>
+                        <li>Click in Name Box (shows cell address)</li>
+                        <li>Type "TaxRate" and press Enter</li>
+                    </ul>
+                </li>
+                <li><strong>Method 2 - Ribbon (Excel):</strong>
+                    <ul>
+                        <li>Select range</li>
+                        <li>Go to Formulas tab → Define Name</li>
+                        <li>Enter name and adjust range if needed</li>
+                        <li>Click OK</li>
+                    </ul>
+                </li>
+                <li><strong>Method 3 - Right-click menu:</strong>
+                    <ul>
+                        <li>Select range</li>
+                        <li>Right-click → Define Name</li>
+                        <li>Enter name and click OK</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="warning-box">
+            <h4>Named Range Rules:</h4>
+            <ul>
+                <li><strong>Start with letter or underscore:</strong> SalesData, _Total (not 2021Sales)</li>
+                <li><strong>No spaces:</strong> Use SalesData or Sales_Data (not Sales Data)</li>
+                <li><strong>No special characters:</strong> Avoid +, -, *, /, etc.</li>
+                <li><strong>Case insensitive:</strong> SalesData = salesdata = SALESDATA</li>
+                <li><strong>Avoid cell addresses:</strong> Don't use A1, B2, etc. as names</li>
+            </ul>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Using Named Ranges in Formulas</h4>
+            <ol>
+                <li><strong>Set up a sales calculation:</strong>
+                    <ul>
+                        <li>B1: 1000 (name this "SalesAmount")</li>
+                        <li>B2: 0.08 (name this "TaxRate")</li>
+                        <li>B3: 0.10 (name this "Commission")</li>
+                    </ul>
+                </li>
+                <li><strong>Create formulas with named ranges:</strong>
+                    <ul>
+                        <li>B5: =SalesAmount*TaxRate (instead of =B1*B2)</li>
+                        <li>B6: =SalesAmount*Commission (instead of =B1*B3)</li>
+                        <li>B7: =SalesAmount+B5+B6 (total with tax and commission)</li>
+                    </ul>
+                </li>
+                <li><strong>Benefits become clear:</strong>
+                    <ul>
+                        <li>Formulas are self-explaining</li>
+                        <li>Easy to audit and verify</li>
+                        <li>Less prone to errors</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <h3>Managing Named Ranges</h3>
+        <div class="step-by-step">
+            <h4>Step-by-Step: Name Manager (Excel)</h4>
+            <ol>
+                <li><strong>Open Name Manager:</strong>
+                    <ul>
+                        <li>Go to Formulas tab → Name Manager</li>
+                        <li>View all named ranges in your workbook</li>
+                    </ul>
+                </li>
+                <li><strong>Edit existing names:</strong>
+                    <ul>
+                        <li>Select name and click Edit</li>
+                        <li>Change name, reference, or scope</li>
+                    </ul>
+                </li>
+                <li><strong>Delete names:</strong>
+                    <ul>
+                        <li>Select name and click Delete</li>
+                        <li>Confirm deletion</li>
+                    </ul>
+                </li>
+                <li><strong>Navigate to ranges:</strong>
+                    <ul>
+                        <li>Use Name Box dropdown to jump to any named range</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="practice-exercise">
+            <h3>Practice Exercise: Named Ranges</h3>
+            <p><strong>Scenario:</strong> Create a loan calculator with named ranges</p>
+            
+            <ol>
+                <li><strong>Set up loan parameters:</strong>
+                    <ul>
+                        <li>A1: "Loan Amount", B1: 200000 (name: LoanAmount)</li>
+                        <li>A2: "Annual Rate", B2: 0.045 (name: AnnualRate)</li>
+                        <li>A3: "Years", B3: 30 (name: LoanYears)</li>
+                    </ul>
+                </li>
+                <li><strong>Create calculations with named ranges:</strong>
+                    <ul>
+                        <li>A5: "Monthly Rate", B5: =AnnualRate/12 (name: MonthlyRate)</li>
+                        <li>A6: "Total Payments", B6: =LoanYears*12 (name: TotalPayments)</li>
+                        <li>A7: "Monthly Payment", B7: =PMT(MonthlyRate,TotalPayments,-LoanAmount)</li>
+                    </ul>
+                </li>
+                <li><strong>Test the calculator:</strong>
+                    <ul>
+                        <li>Change LoanAmount to 300000</li>
+                        <li>Verify all calculations update automatically</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="topic-section">
+        <h2>Topic 4: Reference Troubleshooting</h2>
+        
+        <h3>Common Reference Problems</h3>
+        <p>Understanding and fixing reference errors is crucial for maintaining reliable spreadsheets.</p>
+
+        <div class="warning-box">
+            <h4>Common Reference Errors:</h4>
+            <ul>
+                <li><strong>#REF!</strong> - Reference to deleted or invalid cells</li>
+                <li><strong>#NAME?</strong> - Unknown named range or function</li>
+                <li><strong>Circular Reference</strong> - Formula refers to its own cell</li>
+                <li><strong>Volatile Functions</strong> - Functions that recalculate frequently</li>
+            </ul>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Fixing #REF! Errors</h4>
+            <ol>
+                <li><strong>Create the error:</strong>
+                    <ul>
+                        <li>A1: 10, B1: 20, C1: =A1+B1</li>
+                        <li>Delete column A</li>
+                        <li>C1 now shows #REF! because A1 no longer exists</li>
+                    </ul>
+                </li>
+                <li><strong>Fix the error:</strong>
+                    <ul>
+                        <li>Edit the formula to reference valid cells</li>
+                        <li>Or use Undo (Ctrl+Z) to restore deleted column</li>
+                    </ul>
+                </li>
+                <li><strong>Prevention:</strong>
+                    <ul>
+                        <li>Use named ranges for important references</li>
+                        <li>Be careful when deleting rows/columns</li>
+                        <li>Use Insert/Delete commands instead of cut/paste when possible</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <h3>Circular Reference Detection</h3>
+        <div class="step-by-step">
+            <h4>Step-by-Step: Identifying Circular References</h4>
+            <ol>
+                <li><strong>Create a circular reference:</strong>
+                    <ul>
+                        <li>A1: =B1+10</li>
+                        <li>B1: =A1+5</li>
+                        <li>Excel shows circular reference warning</li>
+                    </ul>
+                </li>
+                <li><strong>Find circular references:</strong>
+                    <ul>
+                        <li>Go to Formulas tab → Error Checking → Circular References</li>
+                        <li>Excel shows list of cells with circular references</li>
+                    </ul>
+                </li>
+                <li><strong>Fix the circular reference:</strong>
+                    <ul>
+                        <li>Trace the logic and break the circle</li>
+                        <li>Usually involves changing one formula to reference different cells</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="info-box">
+            <h4>Formula Auditing Tools (Excel):</h4>
+            <ul>
+                <li><strong>Trace Precedents:</strong> Shows which cells feed into the selected cell</li>
+                <li><strong>Trace Dependents:</strong> Shows which cells depend on the selected cell</li>
+                <li><strong>Show Formulas:</strong> Displays formulas instead of results (Ctrl+`)</li>
+                <li><strong>Error Checking:</strong> Finds and helps fix formula errors</li>
+            </ul>
+        </div>
+
+        <div class="practice-exercise">
+            <h3>Practice Exercise: Reference Troubleshooting</h3>
+            <p><strong>Scenario:</strong> Fix a broken budget spreadsheet</p>
+            
+            <ol>
+                <li><strong>Create a spreadsheet with intentional errors:</strong>
+                    <ul>
+                        <li>A1: "Income", B1: 5000</li>
+                        <li>A2: "Expenses", B2: 3000</li>
+                        <li>A3: "Savings", B3: =B1-B2</li>
+                        <li>A4: "Tax Rate", B4: 0.20</li>
+                        <li>A5: "Tax Amount", B5: =B1*TaxRate (this will cause #NAME? error)</li>
+                    </ul>
+                </li>
+                <li><strong>Fix the errors:</strong>
+                    <ul>
+                        <li>Create named range "TaxRate" for B4</li>
+                        <li>Verify B5 now calculates correctly</li>
+                    </ul>
+                </li>
+                <li><strong>Test formula auditing:</strong>
+                    <ul>
+                        <li>Use Trace Precedents on B5 to see dependencies</li>
+                        <li>Use Show Formulas to view all formulas at once</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="practice-exercise">
+        <h3>Comprehensive Practice Exercise: Dynamic Financial Dashboard</h3>
+        
+        <p><strong>Project Overview:</strong> Create a financial dashboard that demonstrates all Week 5 concepts including different reference types, named ranges, and 3D references.</p>
+
+        <div class="step-by-step">
+            <h4>Step 1: Set Up Multiple Sheets</h4>
+            <ol>
+                <li><strong>Create sheets:</strong> "Q1", "Q2", "Q3", "Q4", "Dashboard"</li>
+                <li><strong>In each quarter sheet (Q1-Q4), enter:</strong>
+                    <ul>
+                        <li>A1: "Revenue", B1: Different amounts (50000, 55000, 48000, 62000)</li>
+                        <li>A2: "Expenses", B2: Different amounts (30000, 33000, 29000, 35000)</li>
+                        <li>A3: "Profit", B3: =B1-B2</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step 2: Create Named Ranges</h4>
+            <ol>
+                <li><strong>In Dashboard sheet, set up constants:</strong>
+                    <ul>
+                        <li>F1: "Tax Rate", G1: 0.25 (name: TaxRate)</li>
+                        <li>F2: "Target Revenue", G2: 200000 (name: TargetRevenue)</li>
+                        <li>F3: "Bonus Rate", G3: 0.05 (name: BonusRate)</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step 3: Build Summary with 3D References</h4>
+            <ol>
+                <li><strong>Create annual summary:</strong>
+                    <ul>
+                        <li>A1: "Annual Revenue", B1: =SUM(Q1:Q4!B1)</li>
+                        <li>A2: "Annual Expenses", B2: =SUM(Q1:Q4!B2)</li>
+                        <li>A3: "Annual Profit", B3: =B1-B2</li>
+                        <li>A4: "Profit After Tax", B4: =B3*(1-TaxRate)</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step 4: Create Analysis Section</h4>
+            <ol>
+                <li><strong>Performance analysis with mixed references:</strong>
+                    <ul>
+                        <li>A6: "Quarter", B6: "Revenue", C6: "vs Target", D6: "Bonus"</li>
+                        <li>A7: "Q1", B7: =Q1!B1</li>
+                        <li>C7: =B7/TargetRevenue*4 (quarterly target is annual/4)</li>
+                        <li>D7: =IF(C7>1,B7*BonusRate,0)</li>
+                        <li>Copy formulas to rows 8-10 for Q2-Q4</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step 5: Add Dynamic Elements</h4>
+            <ol>
+                <li><strong>Create a growth calculator:</strong>
+                    <ul>
+                        <li>A12: "Growth Rate Input", B12: 0.10 (name: GrowthRate)</li>
+                        <li>A13: "Projected Next Year", B13: =B1*(1+GrowthRate)</li>
+                    </ul>
+                </li>
+                <li><strong>Create scenario analysis:</strong>
+                    <ul>
+                        <li>Set up a table showing different tax rates and their impact</li>
+                        <li>Use absolute and mixed references appropriately</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="checklist">
+            <h4>Verification Checklist</h4>
+            <p>After completing this exercise, you should have demonstrated:</p>
+            <ul>
+                <li><strong>Relative References:</strong> Formulas that adjust when copied</li>
+                <li><strong>Absolute References:</strong> Fixed references to constants</li>
+                <li><strong>Mixed References:</strong> Partially fixed references for tables</li>
+                <li><strong>3D References:</strong> Summing across multiple sheets</li>
+                <li><strong>Named Ranges:</strong> Meaningful names for important values</li>
+                <li><strong>Range Operations:</strong> Working with cell ranges effectively</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <h4>Testing Your Dashboard:</h4>
+            <ol>
+                <li>Change values in quarter sheets - verify dashboard updates</li>
+                <li>Modify named ranges - confirm formulas still work</li>
+                <li>Copy formulas to new locations - check reference behavior</li>
+                <li>Use Name Box to navigate between named ranges</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="topic-section">
+        <h2>Key Differences Between Excel and Google Sheets</h2>
+        
+        <table class="differences-table">
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>Microsoft Excel</th>
+                    <th>Google Sheets</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Named Ranges UI</strong></td>
+                    <td>Dedicated Name Manager interface with full editing capabilities</td>
+                    <td>More basic named range management in sidebar</td>
+                </tr>
+                <tr>
+                    <td><strong>3D References</strong></td>
+                    <td>Supports references across multiple sheets and workbooks</td>
+                    <td>Limited 3D reference support, primarily within same file</td>
+                </tr>
+                <tr>
+                    <td><strong>F4 Key Function</strong></td>
+                    <td>Toggles between relative, absolute, and mixed references</td>
+                    <td>Limited F4 functionality in browser environment</td>
+                </tr>
+                <tr>
+                    <td><strong>Formula Auditing</strong></td>
+                    <td>Advanced tools: trace precedents/dependents, show formulas</td>
+                    <td>Basic error detection, fewer auditing tools</td>
+                </tr>
+                <tr>
+                    <td><strong>External References</strong></td>
+                    <td>Can reference other workbooks and external data sources</td>
+                    <td>Cannot directly reference other spreadsheet files</td>
+                </tr>
+                <tr>
+                    <td><strong>Range Selection</strong></td>
+                    <td>More keyboard shortcuts and selection methods</td>
+                    <td>Fewer range selection shortcuts in browser</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="youtube-section">
+        <h3>Additional Resources</h3>
+        
+        <h4>Official Documentation:</h4>
+        <ul>
+            <li><strong>Excel:</strong> <a href="https://support.microsoft.com/en-us/office/switch-between-relative-absolute-and-mixed-references-dfec08cd-ae65-4f56-839e-5f0d8d0baca9" target="_blank">Switch between relative, absolute, and mixed references</a></li>
+            <li><strong>Google Sheets:</strong> <a href="https://support.google.com/docs/answer/63175?hl=en&co=GENIE.Platform%3DDesktop" target="_blank">Use cell references and named ranges</a></li>
+        </ul>
+
+        <h4>YouTube Video Tutorials:</h4>
+        
+        <div class="youtube-links">
+            <a href="https://www.youtube.com/c/ExcelIsFun" target="_blank" class="youtube-link">
+                <strong>ExcelIsFun - Advanced References</strong>
+                Comprehensive tutorials on all types of references and ranges
+            </a>
+            
+            <a href="https://www.youtube.com/c/ExcelCampus" target="_blank" class="youtube-link">
+                <strong>Excel Campus - Reference Mastery</strong>
+                Jon Acampora's detailed guides on reference best practices
+            </a>
+            
+            <a href="https://www.youtube.com/c/LeilaGharani" target="_blank" class="youtube-link">
+                <strong>Leila Gharani - Named Ranges</strong>
+                Professional techniques for managing complex references
+            </a>
+            
+            <a href="https://www.youtube.com/c/benlcollins" target="_blank" class="youtube-link">
+                <strong>Ben Collins - Google Sheets References</strong>
+                Advanced Google Sheets reference techniques
+            </a>
+        </div>
+    </div>
+
+    <div class="next-section">
+        <h3>What's Next?</h3>
+        <p>In Week 6, we'll build on your reference mastery by learning:</p>
+        <ul>
+            <li><strong>Sorting & Filtering:</strong> Organizing and analyzing data efficiently</li>
+            <li><strong>Data Validation:</strong> Creating dropdown lists and input controls</li>
+            <li><strong>Advanced Filtering:</strong> Complex criteria and custom filters</li>
+            <li><strong>Data Organization:</strong> Best practices for structured data</li>
+            <li><strong>Filter Views:</strong> Saving and sharing different data perspectives</li>
+        </ul>
+        <p><strong>Homework for this week:</strong> Complete the Dynamic Financial Dashboard exercise and practice converting existing formulas to use named ranges for better readability.</p>
+    </div>
+
+    <div class="navigation">
+        <a href="#" class="nav-button">← Previous: Essential Functions</a>
+        <a href="#" class="nav-button">Next: Sorting & Filtering →</a>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 4: Essential Functions - Complete Lesson</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #fd7e14 0%, #dc3545 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.5em;
+        }
+        
+        .header p {
+            margin: 0;
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .learning-objectives {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+        
+        .learning-objectives h2 {
+            color: #856404;
+            margin-top: 0;
+        }
+        
+        .topic-section {
+            margin: 40px 0;
+            padding: 25px;
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .topic-section h2 {
+            color: #495057;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .topic-section h3 {
+            color: #6c757d;
+            margin-top: 25px;
+        }
+        
+        .screenshot-container {
+            background-color: #f8f9fa;
+            border: 2px dashed #6c757d;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .screenshot-container h4 {
+            color: #495057;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        
+        .screenshot-link {
+            display: block;
+            color: #007bff;
+            text-decoration: none;
+            padding: 10px;
+            background-color: #e3f2fd;
+            border-radius: 5px;
+            margin: 10px 0;
+            border-left: 4px solid #2196f3;
+        }
+        
+        .screenshot-link:hover {
+            background-color: #bbdefb;
+            text-decoration: none;
+        }
+        
+        .step-by-step {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .step-by-step h4 {
+            color: #856404;
+            margin-top: 0;
+        }
+        
+        .step-by-step ol {
+            margin: 15px 0;
+        }
+        
+        .step-by-step li {
+            margin: 8px 0;
+        }
+        
+        .function-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .function-table th {
+            background-color: #fd7e14;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .function-table td {
+            border: 1px solid #dee2e6;
+            padding: 12px;
+        }
+        
+        .function-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .function-example {
+            background-color: #e8f5e8;
+            border: 1px solid #28a745;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 1.1em;
+        }
+        
+        .function-syntax {
+            background-color: #e3f2fd;
+            border: 2px solid #2196f3;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+        
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .info-box {
+            background-color: #d1ecf1;
+            border: 1px solid #bee5eb;
+            color: #0c5460;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .practice-exercise {
+            background-color: #e8f4f8;
+            border: 2px solid #17a2b8;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+        
+        .practice-exercise h3 {
+            color: #0c5460;
+            margin-top: 0;
+        }
+        
+        .differences-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 14px;
+        }
+        
+        .differences-table th {
+            background-color: #343a40;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        .differences-table td {
+            border: 1px solid #dee2e6;
+            padding: 10px;
+            vertical-align: top;
+        }
+        
+        .differences-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .youtube-section {
+            background-color: #fff5f5;
+            border: 2px solid #dc3545;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+        
+        .youtube-section h3 {
+            color: #721c24;
+            margin-top: 0;
+        }
+        
+        .youtube-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .youtube-link {
+            display: block;
+            color: #dc3545;
+            text-decoration: none;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .youtube-link:hover {
+            background-color: #e9ecef;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-decoration: none;
+        }
+        
+        .youtube-link strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .next-section {
+            background: linear-gradient(135deg, #20c997 0%, #6f42c1 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .next-section h3 {
+            margin-top: 0;
+            color: white;
+        }
+        
+        .checklist {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .checklist ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .checklist li {
+            margin: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .checklist li:before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+        }
+        
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            margin: 40px 0;
+            padding: 20px;
+            background-color: #e9ecef;
+            border-radius: 8px;
+        }
+        
+        .nav-button {
+            padding: 12px 24px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+        
+        .nav-button:hover {
+            background-color: #0056b3;
+            text-decoration: none;
+            color: white;
+        }
+        
+        .nav-button.disabled {
+            background-color: #6c757d;
+            cursor: not-allowed;
+        }
+        
+        .function-category {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .function-category h4 {
+            color: #495057;
+            margin-top: 0;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>Week 4: Essential Functions</h1>
+        <p>Detailed Lesson for Complete Beginners</p>
+    </div>
+
+    <div class="learning-objectives">
+        <h2>Learning Objectives:</h2>
+        <p>By the end of this lesson, you will be able to:</p>
+        <ul>
+            <li>Use common built-in functions effectively</li>
+            <li>Understand function syntax and arguments</li>
+            <li>Combine multiple functions for more complex calculations</li>
+            <li>Apply mathematical, statistical, text, and date functions</li>
+            <li>Create nested functions for advanced problem-solving</li>
+        </ul>
+    </div>
+
+    <div class="topic-section">
+        <h2>Topic 1: Function Basics</h2>
+        
+        <h3>What is a Function?</h3>
+        <p>A function is a pre-built formula that performs a specific calculation. Think of functions as specialized tools - each one designed for a particular job. Instead of writing complex formulas from scratch, you can use functions to do the work for you.</p>
+
+        <div class="screenshot-container">
+            <h4>Visual Reference Screenshots:</h4>
+            <a href="https://support.microsoft.com/en-us/office/excel-functions-by-category-5f91f4e9-7b42-46d2-9bd1-63f26a86c0eb" target="_blank" class="screenshot-link">
+                📸 Excel Function Library - Shows the complete function library organization
+            </a>
+            <a href="https://www.ablebits.com/office-addins-blog/basic-excel-formulas-functions/" target="_blank" class="screenshot-link">
+                📸 Function Syntax Examples - Demonstrates function structure and arguments
+            </a>
+        </div>
+
+        <h3>Function vs. Formula: What's the Difference?</h3>
+        <div class="info-box">
+            <ul>
+                <li><strong>Formula:</strong> Any calculation that starts with = (like =A1+B1)</li>
+                <li><strong>Function:</strong> A pre-built formula with a specific name (like =SUM(A1:A5))</li>
+            </ul>
+        </div>
+
+        <h3>Function Syntax Structure</h3>
+        <p>Every function follows this pattern:</p>
+        <div class="function-syntax">=FUNCTION_NAME(argument1, argument2, argument3)</div>
+
+        <p>Let's break this down:</p>
+        <ol>
+            <li><strong>= (Equals sign):</strong> All functions start with =</li>
+            <li><strong>FUNCTION_NAME:</strong> The name of the function (like SUM, AVERAGE)</li>
+            <li><strong>Parentheses ():</strong> Contains the function's arguments</li>
+            <li><strong>Arguments:</strong> The data the function needs to work with</li>
+            <li><strong>Commas:</strong> Separate multiple arguments</li>
+        </ol>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Understanding Function Structure</h4>
+            <p>Let's examine the SUM function: <strong>=SUM(A1:A5)</strong></p>
+            <ol>
+                <li><strong>=</strong> → Tells Excel this is a calculation</li>
+                <li><strong>SUM</strong> → The function name (adds numbers)</li>
+                <li><strong>(</strong> → Opening parenthesis</li>
+                <li><strong>A1:A5</strong> → The argument (range of cells to add)</li>
+                <li><strong>)</strong> → Closing parenthesis</li>
+            </ol>
+        </div>
+
+        <h3>Types of Arguments</h3>
+        <p>Functions can accept different types of arguments:</p>
+        <ul>
+            <li><strong>Numbers:</strong> =ROUND(3.14159, 2)</li>
+            <li><strong>Cell references:</strong> =SUM(A1)</li>
+            <li><strong>Cell ranges:</strong> =AVERAGE(A1:A10)</li>
+            <li><strong>Text:</strong> =CONCATENATE("Hello", "World")</li>
+            <li><strong>Other functions:</strong> =SUM(AVERAGE(A1:A5), B1)</li>
+        </ul>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Using Function Autocomplete</h4>
+            <ol>
+                <li><strong>Click on any empty cell</strong></li>
+                <li><strong>Type:</strong> =SU</li>
+                <li><strong>Notice:</strong> Excel shows a dropdown list of functions starting with "SU"</li>
+                <li><strong>Use arrow keys</strong> to select SUM</li>
+                <li><strong>Press Tab</strong> to accept the function</li>
+                <li><strong>Excel shows:</strong> =SUM(</li>
+                <li><strong>Notice the tooltip</strong> showing SUM(number1, [number2], ...)</li>
+            </ol>
+        </div>
+
+        <div class="practice-exercise">
+            <h3>Practice Exercise: Function Basics</h3>
+            <ol>
+                <li><strong>Set up data:</strong> A1: 10, A2: 20, A3: 30</li>
+                <li><strong>Try these functions:</strong>
+                    <ul>
+                        <li>B1: =SUM(A1:A3) → Should show 60</li>
+                        <li>B2: =AVERAGE(A1:A3) → Should show 20</li>
+                        <li>B3: =COUNT(A1:A3) → Should show 3</li>
+                    </ul>
+                </li>
+                <li><strong>Experiment with autocomplete:</strong>
+                    <ul>
+                        <li>Type =AV and use autocomplete to select AVERAGE</li>
+                        <li>Type =CO and explore the different COUNT functions available</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="topic-section">
+        <h2>Topic 2: Math Functions</h2>
+        
+        <h3>Essential Math Functions</h3>
+        <p>These functions handle basic mathematical operations on numbers:</p>
+
+        <table class="function-table">
+            <thead>
+                <tr>
+                    <th>Function</th>
+                    <th>Purpose</th>
+                    <th>Example</th>
+                    <th>Result</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>SUM</td>
+                    <td>Adds numbers</td>
+                    <td>=SUM(1,2,3)</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td>AVERAGE</td>
+                    <td>Calculates mean</td>
+                    <td>=AVERAGE(2,4,6)</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>MIN</td>
+                    <td>Finds smallest</td>
+                    <td>=MIN(5,2,8)</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>MAX</td>
+                    <td>Finds largest</td>
+                    <td>=MAX(5,2,8)</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>ROUND</td>
+                    <td>Rounds numbers</td>
+                    <td>=ROUND(3.456,2)</td>
+                    <td>3.46</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="screenshot-container">
+            <h4>Visual Reference Screenshots:</h4>
+            <a href="https://support.microsoft.com/en-us/office/sum-function-043e1c7d-7726-4e80-8f32-07b23e057f89" target="_blank" class="screenshot-link">
+                📸 SUM Function Examples - Shows various ways to use SUM
+            </a>
+            <a href="https://www.spreadsheetpro.net/excel-sum-count-average-functions/" target="_blank" class="screenshot-link">
+                📸 Statistical Functions Overview - Demonstrates SUM, COUNT, and AVERAGE together
+            </a>
+        </div>
+
+        <div class="function-category">
+            <h4>The SUM Function</h4>
+            <p><strong>Purpose:</strong> Adds up numbers in cells or ranges</p>
+            <div class="function-syntax">Syntax: =SUM(number1, [number2], ...)</div>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Using SUM Function</h4>
+            <ol>
+                <li><strong>Create sample data:</strong> A1: 100, A2: 250, A3: 175, A4: 300</li>
+                <li><strong>Basic SUM:</strong> B1: =SUM(A1:A4) → Result: 825</li>
+                <li><strong>SUM with individual cells:</strong> B2: =SUM(A1,A3) → Result: 275</li>
+                <li><strong>SUM with mixed arguments:</strong> B3: =SUM(A1:A2,A4,50) → Result: 700</li>
+            </ol>
+            
+            <div class="info-box">
+                <h4>SUM Pro Tips:</h4>
+                <ul>
+                    <li><strong>Quick SUM:</strong> Select cells and look at status bar for instant sum</li>
+                    <li><strong>AutoSum button:</strong> Click Σ (sigma) on toolbar for automatic SUM</li>
+                    <li><strong>Multiple ranges:</strong> =SUM(A1:A5,C1:C5) adds two separate ranges</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="function-category">
+            <h4>The AVERAGE Function</h4>
+            <p><strong>Purpose:</strong> Calculates the arithmetic mean of numbers</p>
+            <div class="function-syntax">Syntax: =AVERAGE(number1, [number2], ...)</div>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Using AVERAGE Function</h4>
+            <ol>
+                <li><strong>Using the same data (A1:A4 = 100,250,175,300):</strong>
+                    <ul>
+                        <li>C1: =AVERAGE(A1:A4) → Result: 206.25</li>
+                        <li>C2: =SUM(A1:A4)/COUNT(A1:A4) → Same result: 206.25</li>
+                    </ul>
+                </li>
+                <li><strong>AVERAGE ignores text:</strong>
+                    <ul>
+                        <li>A5: Type "N/A"</li>
+                        <li>C3: =AVERAGE(A1:A5) → Still 206.25 (ignores text in A5)</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="function-category">
+            <h4>MIN and MAX Functions</h4>
+            <p><strong>Purpose:</strong> Find the smallest (MIN) or largest (MAX) values</p>
+            <div class="function-syntax">Syntax: =MIN(number1, [number2], ...) or =MAX(number1, [number2], ...)</div>
+        </div>
+
+        <div class="function-category">
+            <h4>The ROUND Function</h4>
+            <p><strong>Purpose:</strong> Rounds numbers to specified decimal places</p>
+            <div class="function-syntax">Syntax: =ROUND(number, num_digits)</div>
+            
+            <p><strong>Arguments:</strong></p>
+            <ul>
+                <li><strong>number:</strong> The number to round</li>
+                <li><strong>num_digits:</strong> How many decimal places (positive = decimals, negative = tens/hundreds)</li>
+            </ul>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Using ROUND Function</h4>
+            <ol>
+                <li><strong>Basic rounding:</strong>
+                    <ul>
+                        <li>F1: =ROUND(3.14159, 2) → Result: 3.14</li>
+                        <li>F2: =ROUND(3.14159, 0) → Result: 3</li>
+                        <li>F3: =ROUND(3.14159, 4) → Result: 3.1416</li>
+                    </ul>
+                </li>
+                <li><strong>Rounding to tens/hundreds:</strong>
+                    <ul>
+                        <li>F4: =ROUND(1234, -1) → Result: 1230 (nearest 10)</li>
+                        <li>F5: =ROUND(1234, -2) → Result: 1200 (nearest 100)</li>
+                    </ul>
+                </li>
+                <li><strong>Combining with other functions:</strong>
+                    <ul>
+                        <li>F6: =ROUND(AVERAGE(A1:A4), 2) → Result: 206.25</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="warning-box">
+            <h4>Related Rounding Functions:</h4>
+            <ul>
+                <li><strong>ROUNDUP:</strong> Always rounds up → =ROUNDUP(3.1, 0) = 4</li>
+                <li><strong>ROUNDDOWN:</strong> Always rounds down → =ROUNDDOWN(3.9, 0) = 3</li>
+            </ul>
+        </div>
+
+        <div class="practice-exercise">
+            <h3>Practice Exercise: Math Functions</h3>
+            <p><strong>Scenario:</strong> Analyze monthly sales data</p>
+            
+            <ol>
+                <li><strong>Enter sales data:</strong>
+                    <ul>
+                        <li>A1: "January", B1: 15000</li>
+                        <li>A2: "February", B2: 18500</li>
+                        <li>A3: "March", B3: 16750</li>
+                        <li>A4: "April", B4: 21000</li>
+                        <li>A5: "May", B5: 19250</li>
+                    </ul>
+                </li>
+                <li><strong>Create analysis:</strong>
+                    <ul>
+                        <li>C1: "Total Sales", C2: =SUM(B1:B5)</li>
+                        <li>C3: "Average Sales", C4: =ROUND(AVERAGE(B1:B5),0)</li>
+                        <li>C5: "Best Month", C6: =MAX(B1:B5)</li>
+                        <li>C7: "Worst Month", C8: =MIN(B1:B5)</li>
+                    </ul>
+                </li>
+            </ol>
+            
+            <div class="checklist">
+                <h4>Expected Results:</h4>
+                <ul>
+                    <li>Total: 90,500</li>
+                    <li>Average: 18,100</li>
+                    <li>Best: 21,000</li>
+                    <li>Worst: 15,000</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic-section">
+        <h2>Topic 3: Statistical Functions</h2>
+        
+        <h3>Essential Statistical Functions</h3>
+        <p>These functions help you analyze and count data:</p>
+
+        <table class="function-table">
+            <thead>
+                <tr>
+                    <th>Function</th>
+                    <th>Purpose</th>
+                    <th>Example</th>
+                    <th>Result</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>COUNT</td>
+                    <td>Counts numbers</td>
+                    <td>=COUNT(A1:A5)</td>
+                    <td>3 (if 3 cells have numbers)</td>
+                </tr>
+                <tr>
+                    <td>COUNTA</td>
+                    <td>Counts non-empty cells</td>
+                    <td>=COUNTA(A1:A5)</td>
+                    <td>4 (if 4 cells aren't empty)</td>
+                </tr>
+                <tr>
+                    <td>COUNTIF</td>
+                    <td>Counts with criteria</td>
+                    <td>=COUNTIF(A1:A5,">10")</td>
+                    <td>2 (if 2 values > 10)</td>
+                </tr>
+                <tr>
+                    <td>COUNTBLANK</td>
+                    <td>Counts empty cells</td>
+                    <td>=COUNTBLANK(A1:A5)</td>
+                    <td>1 (if 1 cell is empty)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="screenshot-container">
+            <h4>Visual Reference Screenshots:</h4>
+            <a href="https://www.free-training-tutorial.com/statistical-functions.html" target="_blank" class="screenshot-link">
+                📸 COUNT Functions Tutorial - Shows different COUNT function variations
+            </a>
+            <a href="https://business.tutsplus.com/tutorials/how-to-start-using-countif-sumif-and-averageif-in-excel--cms-28086" target="_blank" class="screenshot-link">
+                📸 COUNTIF Examples - Demonstrates conditional counting
+            </a>
+        </div>
+
+        <div class="function-category">
+            <h4>The COUNT Function</h4>
+            <p><strong>Purpose:</strong> Counts how many cells in a range contain numbers</p>
+            <div class="function-syntax">Syntax: =COUNT(value1, [value2], ...)</div>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Understanding COUNT vs COUNTA</h4>
+            <ol>
+                <li><strong>Set up test data:</strong>
+                    <ul>
+                        <li>A1: 10, A2: "Hello", A3: 25, A4: (leave empty), A5: TRUE</li>
+                    </ul>
+                </li>
+                <li><strong>Compare COUNT and COUNTA:</strong>
+                    <ul>
+                        <li>B1: =COUNT(A1:A5) → Result: 2 (only counts numbers in A1 and A3)</li>
+                        <li>B2: =COUNTA(A1:A5) → Result: 4 (counts all non-empty cells)</li>
+                        <li>B3: =COUNTBLANK(A1:A5) → Result: 1 (counts empty A4)</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="function-category">
+            <h4>The COUNTIF Function</h4>
+            <p><strong>Purpose:</strong> Counts cells that meet a specific condition</p>
+            <div class="function-syntax">Syntax: =COUNTIF(range, criteria)</div>
+            
+            <p><strong>Arguments:</strong></p>
+            <ul>
+                <li><strong>range:</strong> The cells to examine</li>
+                <li><strong>criteria:</strong> The condition to test for</li>
+            </ul>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Using COUNTIF</h4>
+            <ol>
+                <li><strong>Create grade data:</strong> Column A: Student grades (85, 92, 78, 95, 88, 73, 91)</li>
+                <li><strong>Count with different criteria:</strong>
+                    <ul>
+                        <li>B1: =COUNTIF(A:A,">90") → Counts grades above 90</li>
+                        <li>B2: =COUNTIF(A:A,">=80") → Counts grades 80 and above</li>
+                        <li>B3: =COUNTIF(A:A,85) → Counts exactly 85</li>
+                        <li>B4: =COUNTIF(A:A,"<80") → Counts grades below 80</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="info-box">
+            <h4>COUNTIF Criteria Examples:</h4>
+            <ul>
+                <li><strong>Numbers:</strong> =COUNTIF(A1:A10,100) → Exactly 100</li>
+                <li><strong>Comparisons:</strong> =COUNTIF(A1:A10,">50") → Greater than 50</li>
+                <li><strong>Text:</strong> =COUNTIF(A1:A10,"Apple") → Exactly "Apple"</li>
+                <li><strong>Wildcards:</strong> =COUNTIF(A1:A10,"A*") → Starts with "A"</li>
+                <li><strong>Cell reference:</strong> =COUNTIF(A1:A10,B1) → Equals value in B1</li>
+            </ul>
+        </div>
+
+        <div class="practice-exercise">
+            <h3>Practice Exercise: Statistical Functions</h3>
+            <p><strong>Scenario:</strong> Analyze survey responses</p>
+            
+            <ol>
+                <li><strong>Create survey data:</strong>
+                    <ul>
+                        <li>A column: Ages (25, 34, 28, 45, 31, 29, 38, 42, 26, 35)</li>
+                        <li>B column: Satisfaction (5, 4, 5, 3, 4, 5, 4, 2, 5, 4)</li>
+                    </ul>
+                </li>
+                <li><strong>Analyze the data:</strong>
+                    <ul>
+                        <li>C1: "Total Responses", C2: =COUNTA(A:A)-1 (subtract 1 for header)</li>
+                        <li>C3: "Ages 30+", C4: =COUNTIF(A:A,">=30")</li>
+                        <li>C5: "High Satisfaction (5)", C6: =COUNTIF(B:B,5)</li>
+                        <li>C7: "Low Satisfaction (1-2)", C8: =COUNTIF(B:B,"<=2")</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="topic-section">
+        <h2>Topic 4: Text Functions Introduction</h2>
+        
+        <h3>Essential Text Functions</h3>
+        <p>These functions help you manipulate and work with text data:</p>
+
+        <table class="function-table">
+            <thead>
+                <tr>
+                    <th>Function</th>
+                    <th>Purpose</th>
+                    <th>Example</th>
+                    <th>Result</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>CONCATENATE</td>
+                    <td>Joins text</td>
+                    <td>=CONCATENATE("Hello"," ","World")</td>
+                    <td>"Hello World"</td>
+                </tr>
+                <tr>
+                    <td>LEFT</td>
+                    <td>Gets left characters</td>
+                    <td>=LEFT("Excel",3)</td>
+                    <td>"Exc"</td>
+                </tr>
+                <tr>
+                    <td>RIGHT</td>
+                    <td>Gets right characters</td>
+                    <td>=RIGHT("Excel",2)</td>
+                    <td>"el"</td>
+                </tr>
+                <tr>
+                    <td>MID</td>
+                    <td>Gets middle characters</td>
+                    <td>=MID("Excel",2,3)</td>
+                    <td>"xce"</td>
+                </tr>
+                <tr>
+                    <td>LEN</td>
+                    <td>Counts characters</td>
+                    <td>=LEN("Hello")</td>
+                    <td>5</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="screenshot-container">
+            <h4>Visual Reference Screenshots:</h4>
+            <a href="https://www.ablebits.com/office-addins-blog/basic-excel-formulas-functions/" target="_blank" class="screenshot-link">
+                📸 Excel Text Functions - Shows text manipulation examples
+            </a>
+            <a href="https://support.microsoft.com/en-us/office/concatenate-function-8f8ae884-2ca8-4f7a-b093-75d702bea31d" target="_blank" class="screenshot-link">
+                📸 CONCATENATE Alternatives - Demonstrates text joining methods
+            </a>
+        </div>
+
+        <div class="function-category">
+            <h4>The CONCATENATE Function (and the & Operator)</h4>
+            <p><strong>Purpose:</strong> Joins multiple text strings into one</p>
+            <div class="function-syntax">Syntax: =CONCATENATE(text1, [text2], ...)</div>
+            <p><strong>Alternative:</strong> Use & operator for simpler syntax</p>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Joining Text</h4>
+            <ol>
+                <li><strong>Basic concatenation:</strong>
+                    <ul>
+                        <li>A1: "John", B1: "Smith"</li>
+                        <li>C1: =CONCATENATE(A1," ",B1) → Result: "John Smith"</li>
+                        <li>C2: =A1&" "&B1 → Same result: "John Smith"</li>
+                    </ul>
+                </li>
+                <li><strong>Creating email addresses:</strong>
+                    <ul>
+                        <li>A2: "john.smith", B2: "@company.com"</li>
+                        <li>C3: =A2&B2 → Result: "john.smith@company.com"</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="function-category">
+            <h4>The LEFT, RIGHT, and MID Functions</h4>
+            <p><strong>Purpose:</strong> Extract specific characters from text strings</p>
+            <div class="function-syntax">
+                LEFT Syntax: =LEFT(text, num_chars)<br>
+                RIGHT Syntax: =RIGHT(text, num_chars)<br>
+                MID Syntax: =MID(text, start_num, num_chars)
+            </div>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Extracting Text Parts</h4>
+            <ol>
+                <li><strong>Set up data:</strong> A1: "ABC123XYZ"</li>
+                <li><strong>Extract different parts:</strong>
+                    <ul>
+                        <li>B1: =LEFT(A1,3) → Result: "ABC" (first 3 characters)</li>
+                        <li>B2: =RIGHT(A1,3) → Result: "XYZ" (last 3 characters)</li>
+                        <li>B3: =MID(A1,4,3) → Result: "123" (3 characters starting at position 4)</li>
+                    </ul>
+                </li>
+                <li><strong>Real-world example - extracting area codes:</strong>
+                    <ul>
+                        <li>A2: "(555) 123-4567"</li>
+                        <li>B4: =MID(A2,2,3) → Result: "555" (area code)</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="function-category">
+            <h4>The LEN Function</h4>
+            <p><strong>Purpose:</strong> Counts the number of characters in text</p>
+            <div class="function-syntax">Syntax: =LEN(text)</div>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Using LEN</h4>
+            <ol>
+                <li><strong>Basic character counting:</strong>
+                    <ul>
+                        <li>A1: "Hello World"</li>
+                        <li>B1: =LEN(A1) → Result: 11 (includes the space)</li>
+                    </ul>
+                </li>
+                <li><strong>Practical application - password strength:</strong>
+                    <ul>
+                        <li>A2: "MyPassword123"</li>
+                        <li>B2: =IF(LEN(A2)>=8,"Strong","Weak") → Result: "Strong"</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="practice-exercise">
+            <h3>Practice Exercise: Text Functions</h3>
+            <p><strong>Scenario:</strong> Format customer data</p>
+            
+            <ol>
+                <li><strong>Set up raw data:</strong>
+                    <ul>
+                        <li>A1: "john", B1: "smith", C1: "123 main st"</li>
+                        <li>A2: "mary", B2: "johnson", C2: "456 oak ave"</li>
+                    </ul>
+                </li>
+                <li><strong>Create formatted output:</strong>
+                    <ul>
+                        <li>D1: "Full Name", D2: =PROPER(A1)&" "&PROPER(B1) → "John Smith"</li>
+                        <li>E1: "Name Length", E2: =LEN(D2) → Character count</li>
+                        <li>F1: "First Initial", F2: =LEFT(D2,1) → "J"</li>
+                        <li>G1: "Address", G2: =PROPER(C1) → "123 Main St"</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="topic-section">
+        <h2>Topic 5: Date and Time Functions Introduction</h2>
+        
+        <h3>Essential Date and Time Functions</h3>
+        <p>These functions help you work with dates and times:</p>
+
+        <table class="function-table">
+            <thead>
+                <tr>
+                    <th>Function</th>
+                    <th>Purpose</th>
+                    <th>Example</th>
+                    <th>Result</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>TODAY</td>
+                    <td>Current date</td>
+                    <td>=TODAY()</td>
+                    <td>8/11/2025</td>
+                </tr>
+                <tr>
+                    <td>NOW</td>
+                    <td>Current date and time</td>
+                    <td>=NOW()</td>
+                    <td>8/11/2025 2:30 PM</td>
+                </tr>
+                <tr>
+                    <td>YEAR</td>
+                    <td>Extract year</td>
+                    <td>=YEAR("1/15/2024")</td>
+                    <td>2024</td>
+                </tr>
+                <tr>
+                    <td>MONTH</td>
+                    <td>Extract month</td>
+                    <td>=MONTH("1/15/2024")</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>DAY</td>
+                    <td>Extract day</td>
+                    <td>=DAY("1/15/2024")</td>
+                    <td>15</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="screenshot-container">
+            <h4>Visual Reference Screenshots:</h4>
+            <a href="https://support.microsoft.com/en-us/office/date-and-time-functions-reference-fd1b5961-c1ae-4677-be58-074152f97b81" target="_blank" class="screenshot-link">
+                📸 Excel Date Functions - Shows comprehensive date function examples
+            </a>
+            <a href="https://www.ablebits.com/office-addins-blog/calculate-average-excel/" target="_blank" class="screenshot-link">
+                📸 Date Calculations - Demonstrates working with dates in calculations
+            </a>
+        </div>
+
+        <h3>Understanding How Excel Handles Dates</h3>
+        <div class="info-box">
+            <p>Excel stores dates as numbers (called serial numbers):</p>
+            <ul>
+                <li>January 1, 1900 = 1</li>
+                <li>January 2, 1900 = 2</li>
+                <li>Today's date = a large number</li>
+            </ul>
+            <p>This allows Excel to perform calculations with dates.</p>
+        </div>
+
+        <div class="function-category">
+            <h4>The TODAY and NOW Functions</h4>
+            <p><strong>TODAY Purpose:</strong> Returns the current date</p>
+            <p><strong>NOW Purpose:</strong> Returns the current date and time</p>
+            <div class="function-syntax">Syntax: =TODAY() and =NOW() (no arguments needed)</div>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Using TODAY and NOW</h4>
+            <ol>
+                <li><strong>Current date and time:</strong>
+                    <ul>
+                        <li>A1: =TODAY() → Shows today's date</li>
+                        <li>A2: =NOW() → Shows current date and time</li>
+                    </ul>
+                </li>
+                <li><strong>Calculations with current date:</strong>
+                    <ul>
+                        <li>A3: =TODAY()+30 → Date 30 days from now</li>
+                        <li>A4: =TODAY()-7 → Date 7 days ago</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="function-category">
+            <h4>The YEAR, MONTH, and DAY Functions</h4>
+            <p><strong>Purpose:</strong> Extract specific parts from a date</p>
+            <div class="function-syntax">Syntax: =YEAR(date), =MONTH(date), =DAY(date)</div>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Extracting Date Parts</h4>
+            <ol>
+                <li><strong>Set up a date:</strong> A1: 1/15/2024 (or use =TODAY())</li>
+                <li><strong>Extract components:</strong>
+                    <ul>
+                        <li>B1: =YEAR(A1) → Result: 2024</li>
+                        <li>B2: =MONTH(A1) → Result: 1</li>
+                        <li>B3: =DAY(A1) → Result: 15</li>
+                    </ul>
+                </li>
+                <li><strong>Create custom date format:</strong>
+                    <ul>
+                        <li>B4: =MONTH(A1)&"/"&DAY(A1)&"/"&YEAR(A1) → Result: "1/15/2024"</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <h3>Date Calculations</h3>
+        <div class="step-by-step">
+            <h4>Step-by-Step: Date Arithmetic</h4>
+            <ol>
+                <li><strong>Calculate age:</strong>
+                    <ul>
+                        <li>A1: Birth date (e.g., 5/15/1990)</li>
+                        <li>B1: =TODAY()-A1 → Days lived</li>
+                        <li>C1: =(TODAY()-A1)/365.25 → Approximate age in years</li>
+                    </ul>
+                </li>
+                <li><strong>Calculate days between dates:</strong>
+                    <ul>
+                        <li>A2: Start date (1/1/2024), B2: End date (1/31/2024)</li>
+                        <li>C2: =B2-A2 → Result: 30 days</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="practice-exercise">
+            <h3>Practice Exercise: Date Functions</h3>
+            <p><strong>Scenario:</strong> Employee tracking system</p>
+            
+            <ol>
+                <li><strong>Set up employee data:</strong>
+                    <ul>
+                        <li>A1: "Employee", B1: "Hire Date", C1: "Years Service", D1: "Days Service"</li>
+                        <li>A2: "John", B2: 1/15/2020</li>
+                        <li>A3: "Sarah", B3: 3/22/2021</li>
+                    </ul>
+                </li>
+                <li><strong>Calculate service time:</strong>
+                    <ul>
+                        <li>C2: =ROUND((TODAY()-B2)/365.25,1) → Years of service</li>
+                        <li>D2: =TODAY()-B2 → Days of service</li>
+                        <li>Copy formulas to row 3</li>
+                    </ul>
+                </li>
+                <li><strong>Create summary:</strong>
+                    <ul>
+                        <li>A5: "Today's Date", B5: =TODAY()</li>
+                        <li>A6: "Current Year", B6: =YEAR(TODAY())</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="practice-exercise">
+        <h3>Comprehensive Practice Exercise: Student Grade Analysis System</h3>
+        
+        <p><strong>Project Overview:</strong> Create a student grade analysis system that demonstrates all Week 4 concepts.</p>
+
+        <div class="step-by-step">
+            <h4>Step 1: Set Up Student Data</h4>
+            <p>Create headers in row 1:</p>
+            <ul>
+                <li>A1: "Student ID", B1: "First Name", C1: "Last Name"</li>
+                <li>D1: "Test 1", E1: "Test 2", F1: "Test 3", G1: "Final Exam"</li>
+            </ul>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step 2: Enter Sample Data</h4>
+            <p>Enter student information:</p>
+            <ul>
+                <li>Row 2: 101, John, Smith, 85, 88, 92, 87</li>
+                <li>Row 3: 102, Sarah, Johnson, 92, 89, 95, 94</li>
+                <li>Row 4: 103, Mike, Wilson, 78, 82, 75, 80</li>
+                <li>Row 5: 104, Lisa, Brown, 95, 93, 97, 96</li>
+                <li>Row 6: 105, David, Lee, 82, 85, 79, 84</li>
+            </ul>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step 3: Create Calculated Columns</h4>
+            <p>Add calculation headers:</p>
+            <ul>
+                <li>H1: "Average", I1: "Letter Grade", J1: "Full Name", K1: "Pass/Fail"</li>
+            </ul>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step 4: Implement Functions</h4>
+            <ol>
+                <li><strong>Calculate averages (H column):</strong>
+                    <ul>
+                        <li>H2: =ROUND(AVERAGE(D2:G2),1)</li>
+                        <li>Copy to H3:H6</li>
+                    </ul>
+                </li>
+                <li><strong>Create full names (J column):</strong>
+                    <ul>
+                        <li>J2: =B2&" "&C2</li>
+                        <li>Copy to J3:J6</li>
+                    </ul>
+                </li>
+                <li><strong>Determine letter grades (I column):</strong>
+                    <ul>
+                        <li>I2: =IF(H2>=90,"A",IF(H2>=80,"B",IF(H2>=70,"C",IF(H2>=60,"D","F"))))</li>
+                        <li>Copy to I3:I6</li>
+                    </ul>
+                </li>
+                <li><strong>Pass/Fail status (K column):</strong>
+                    <ul>
+                        <li>K2: =IF(H2>=70,"Pass","Fail")</li>
+                        <li>Copy to K3:K6</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step 5: Create Statistical Analysis</h4>
+            <p>Add analysis section starting at row 8:</p>
+            <ul>
+                <li>A8: "CLASS STATISTICS"</li>
+                <li>A9: "Total Students:", B9: =COUNTA(A2:A6)</li>
+                <li>A10: "Average Score:", B10: =ROUND(AVERAGE(H2:H6),1)</li>
+                <li>A11: "Highest Score:", B11: =MAX(H2:H6)</li>
+                <li>A12: "Lowest Score:", B12: =MIN(H2:H6)</li>
+                <li>A13: "Students Passing:", B13: =COUNTIF(K2:K6,"Pass")</li>
+                <li>A14: "Students with A's:", B14: =COUNTIF(I2:I6,"A")</li>
+            </ul>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step 6: Add Date Information</h4>
+            <p>Add date section:</p>
+            <ul>
+                <li>A16: "Report Date:", B16: =TODAY()</li>
+                <li>A17: "Report Time:", B17: =NOW()</li>
+                <li>A18: "Academic Year:", B18: =YEAR(TODAY())</li>
+            </ul>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step 7: Create Name Analysis</h4>
+            <p>Analyze names:</p>
+            <ul>
+                <li>A20: "NAME ANALYSIS"</li>
+                <li>A21: "Longest Name:", B21: =MAX(LEN(J2:J6))</li>
+                <li>A22: "Average Name Length:", B22: =ROUND(AVERAGE(LEN(J2:J6)),1)</li>
+            </ul>
+        </div>
+
+        <div class="checklist">
+            <h4>Verification Checklist</h4>
+            <p>After completing this exercise, you should have demonstrated:</p>
+            <ul>
+                <li><strong>Math Functions:</strong> AVERAGE, MAX, MIN, ROUND</li>
+                <li><strong>Statistical Functions:</strong> COUNT, COUNTA, COUNTIF</li>
+                <li><strong>Text Functions:</strong> CONCATENATE (&), LEN</li>
+                <li><strong>Date Functions:</strong> TODAY, NOW, YEAR</li>
+                <li><strong>Nested Functions:</strong> Multiple functions working together</li>
+                <li><strong>Conditional Logic:</strong> IF statements for grading</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <h4>Expected Key Results:</h4>
+            <ul>
+                <li>Total Students: 5</li>
+                <li>Average Class Score: Around 87-88</li>
+                <li>Students Passing: 5 (all should pass)</li>
+                <li>Students with A's: 2 (Sarah and Lisa)</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="topic-section">
+        <h2>Key Differences Between Excel and Google Sheets</h2>
+        
+        <table class="differences-table">
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>Microsoft Excel</th>
+                    <th>Google Sheets</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Function Count</strong></td>
+                    <td>400+ built-in functions</td>
+                    <td>300+ built-in functions</td>
+                </tr>
+                <tr>
+                    <td><strong>Function Names</strong></td>
+                    <td>Some Excel-specific functions (XLOOKUP, FILTER)</td>
+                    <td>Some Sheets-specific functions (ARRAYFORMULA)</td>
+                </tr>
+                <tr>
+                    <td><strong>Text Joining</strong></td>
+                    <td>CONCAT and & operator; TEXTJOIN available</td>
+                    <td>CONCAT and & operator; limited TEXTJOIN in older versions</td>
+                </tr>
+                <tr>
+                    <td><strong>Date Serial Numbers</strong></td>
+                    <td>Dates start from 1/1/1900 (Windows)</td>
+                    <td>Dates start from 12/30/1899</td>
+                </tr>
+                <tr>
+                    <td><strong>Function Wizard</strong></td>
+                    <td>More detailed function wizard with examples</td>
+                    <td>Simpler function input interface</td>
+                </tr>
+                <tr>
+                    <td><strong>Custom Functions</strong></td>
+                    <td>VBA for custom functions</td>
+                    <td>Google Apps Script for custom functions</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="youtube-section">
+        <h3>Additional Resources</h3>
+        
+        <h4>Official Documentation:</h4>
+        <ul>
+            <li><strong>Excel:</strong> <a href="https://support.microsoft.com/en-us/office/excel-functions-by-category-5f91f4e9-7b42-46d2-9bd1-63f26a86c0eb" target="_blank">Excel functions by category</a></li>
+            <li><strong>Google Sheets:</strong> <a href="https://support.google.com/docs/table/25273?hl=en" target="_blank">Google Sheets function list</a></li>
+        </ul>
+
+        <h4>YouTube Video Tutorials:</h4>
+        
+        <div class="youtube-links">
+            <a href="https://www.youtube.com/c/ExcelIsFun" target="_blank" class="youtube-link">
+                <strong>ExcelIsFun - Function Tutorials</strong>
+                Comprehensive function library with examples and practice files
+            </a>
+            
+            <a href="https://www.youtube.com/c/ExcelCampus" target="_blank" class="youtube-link">
+                <strong>Excel Campus - Essential Functions</strong>
+                Focus on most-used functions for productivity
+            </a>
+            
+            <a href="https://www.youtube.com/c/LeilaGharani" target="_blank" class="youtube-link">
+                <strong>Leila Gharani - Excel Functions</strong>
+                Professional function techniques with real-world applications
+            </a>
+            
+            <a href="https://www.youtube.com/c/TeachersTech" target="_blank" class="youtube-link">
+                <strong>Teacher's Tech - Google Sheets</strong>
+                Beginner-friendly Google Sheets function instruction
+            </a>
+        </div>
+    </div>
+
+    <div class="next-section">
+        <h3>What's Next?</h3>
+        <p>In Week 5, we'll build on your function knowledge by learning:</p>
+        <ul>
+            <li><strong>Cell References & Ranges:</strong> Mastering relative, absolute, and mixed references</li>
+            <li><strong>Named Ranges:</strong> Creating meaningful names for cell ranges</li>
+            <li><strong>3D References:</strong> Working across multiple worksheets</li>
+            <li><strong>Advanced Range Selection:</strong> Techniques for selecting complex ranges</li>
+            <li><strong>Reference Troubleshooting:</strong> Fixing broken and circular references</li>
+        </ul>
+        <p><strong>Homework for this week:</strong> Complete the Student Grade Analysis System exercise and practice using each function category (math, statistical, text, date) in different scenarios.</p>
+    </div>
+
+    <div class="navigation">
+        <a href="#" class="nav-button">← Previous: Basic Formulas</a>
+        <a href="#" class="nav-button">Next: Cell References & Ranges →</a>
+    </div>
+</div>
+
+</body>
+</html>

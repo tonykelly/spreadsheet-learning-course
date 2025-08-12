@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 2: Data Entry & Formatting - Complete Lesson</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.5em;
+        }
+        
+        .header p {
+            margin: 0;
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .learning-objectives {
+            background-color: #e8f5e8;
+            border-left: 4px solid #28a745;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+        
+        .learning-objectives h2 {
+            color: #155724;
+            margin-top: 0;
+        }
+        
+        .topic-section {
+            margin: 40px 0;
+            padding: 25px;
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .topic-section h2 {
+            color: #495057;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .topic-section h3 {
+            color: #6c757d;
+            margin-top: 25px;
+        }
+        
+        .screenshot-container {
+            background-color: #f8f9fa;
+            border: 2px dashed #6c757d;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .screenshot-container h4 {
+            color: #495057;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        
+        .screenshot-link {
+            display: block;
+            color: #007bff;
+            text-decoration: none;
+            padding: 10px;
+            background-color: #e3f2fd;
+            border-radius: 5px;
+            margin: 10px 0;
+            border-left: 4px solid #2196f3;
+        }
+        
+        .screenshot-link:hover {
+            background-color: #bbdefb;
+            text-decoration: none;
+        }
+        
+        .step-by-step {
+            background-color: #e8f5e8;
+            border-left: 4px solid #28a745;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .step-by-step h4 {
+            color: #155724;
+            margin-top: 0;
+        }
+        
+        .step-by-step ol {
+            margin: 15px 0;
+        }
+        
+        .step-by-step li {
+            margin: 8px 0;
+        }
+        
+        .data-types-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .data-types-table th {
+            background-color: #495057;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .data-types-table td {
+            border: 1px solid #dee2e6;
+            padding: 12px;
+        }
+        
+        .data-types-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .info-box {
+            background-color: #d1ecf1;
+            border: 1px solid #bee5eb;
+            color: #0c5460;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .practice-exercise {
+            background-color: #e8f4f8;
+            border: 2px solid #17a2b8;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+        
+        .practice-exercise h3 {
+            color: #0c5460;
+            margin-top: 0;
+        }
+        
+        .differences-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 14px;
+        }
+        
+        .differences-table th {
+            background-color: #343a40;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        .differences-table td {
+            border: 1px solid #dee2e6;
+            padding: 10px;
+            vertical-align: top;
+        }
+        
+        .differences-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .youtube-section {
+            background-color: #fff5f5;
+            border: 2px solid #dc3545;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+        
+        .youtube-section h3 {
+            color: #721c24;
+            margin-top: 0;
+        }
+        
+        .youtube-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .youtube-link {
+            display: block;
+            color: #dc3545;
+            text-decoration: none;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .youtube-link:hover {
+            background-color: #e9ecef;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-decoration: none;
+        }
+        
+        .youtube-link strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .next-section {
+            background: linear-gradient(135deg, #fd7e14 0%, #e83e8c 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .next-section h3 {
+            margin-top: 0;
+            color: white;
+        }
+        
+        .checklist {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .checklist ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .checklist li {
+            margin: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .checklist li:before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+        }
+        
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            margin: 40px 0;
+            padding: 20px;
+            background-color: #e9ecef;
+            border-radius: 8px;
+        }
+        
+        .nav-button {
+            padding: 12px 24px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+        
+        .nav-button:hover {
+            background-color: #0056b3;
+            text-decoration: none;
+            color: white;
+        }
+        
+        .nav-button.disabled {
+            background-color: #6c757d;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>Week 2: Data Entry & Formatting</h1>
+        <p>Detailed Lesson for Complete Beginners</p>
+    </div>
+
+    <div class="learning-objectives">
+        <h2>Learning Objectives:</h2>
+        <p>By the end of this lesson, you will be able to:</p>
+        <ul>
+            <li>Understand different types of data in spreadsheets and how they behave</li>
+            <li>Apply basic text formatting (fonts, bold, italic, colors)</li>
+            <li>Format numbers as currency, percentages, and dates</li>
+            <li>Add borders and background colors to cells</li>
+            <li>Adjust row heights and column widths effectively</li>
+            <li>Use formatting to improve spreadsheet readability</li>
+        </ul>
+    </div>
+
+    <div class="topic-section">
+        <h2>Topic 1: Data Types in Spreadsheets</h2>
+        
+        <h3>Understanding How Spreadsheets Interpret Data</h3>
+        <p>Spreadsheets are smart - they automatically recognize different types of information and treat them differently. This is crucial to understand because it affects how your data looks and behaves in formulas.</p>
+
+        <div class="screenshot-container">
+            <h4>Visual Reference Screenshots:</h4>
+            <a href="https://www.datatrailmix.com/data-types-and-formatting-excel" target="_blank" class="screenshot-link">
+                📸 Excel Data Types Example - Shows how different data types appear and behave
+            </a>
+            <a href="https://support.microsoft.com/en-us/office/convert-dates-stored-as-text-to-dates-8df7663e-98e6-4295-96e4-32a67ec0a680" target="_blank" class="screenshot-link">
+                📸 Data Type Alignment - Demonstrates how Excel aligns different data types
+            </a>
+        </div>
+
+        <h3>The Three Main Data Types:</h3>
+
+        <div class="info-box">
+            <h4>1. Text (Labels)</h4>
+            <ul>
+                <li><strong>What it is:</strong> Words, descriptions, names, addresses</li>
+                <li><strong>How to recognize:</strong> Automatically aligns to the left in cells</li>
+                <li><strong>Examples:</strong> "John Smith", "Product Description", "New York"</li>
+                <li><strong>When to use:</strong> Headers, names, descriptions, any non-numeric information</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <h4>2. Numbers</h4>
+            <ul>
+                <li><strong>What it is:</strong> Quantities, measurements, scores, prices (without symbols)</li>
+                <li><strong>How to recognize:</strong> Automatically aligns to the right in cells</li>
+                <li><strong>Examples:</strong> 25, 3.14, -150, 1000</li>
+                <li><strong>When to use:</strong> Quantities, calculations, measurements</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <h4>3. Dates and Times</h4>
+            <ul>
+                <li><strong>What it is:</strong> Calendar dates and time values</li>
+                <li><strong>How to recognize:</strong> Excel converts them to date format automatically</li>
+                <li><strong>Examples:</strong> 1/15/2024, Jan 15, 2024, 12:30 PM</li>
+                <li><strong>When to use:</strong> Scheduling, tracking, time-based calculations</li>
+            </ul>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Understanding Data Types</h4>
+            <ol>
+                <li><strong>Open a new spreadsheet</strong></li>
+                <li><strong>In cell A1, type:</strong> "Name" (this is text - notice it aligns left)</li>
+                <li><strong>In cell B1, type:</strong> 100 (this is a number - notice it aligns right)</li>
+                <li><strong>In cell C1, type:</strong> 1/15/2024 (Excel converts this to a date)</li>
+                <li><strong>In cell D1, type:</strong> "100" (with quotes - this becomes text, aligns left)</li>
+            </ol>
+        </div>
+
+        <div class="warning-box">
+            <h4>Common Data Type Issues and Solutions:</h4>
+            <p><strong>Problem:</strong> Numbers stored as text (can't be used in calculations)</p>
+            <ul>
+                <li><strong>How to identify:</strong> Numbers that align to the left, or show a green triangle warning</li>
+                <li><strong>Solution:</strong> Use "Convert to Number" option or retype without quotes</li>
+            </ul>
+            
+            <p><strong>Problem:</strong> Dates not recognized</p>
+            <ul>
+                <li><strong>Solution:</strong> Use consistent date format like MM/DD/YYYY or DD/MM/YYYY</li>
+            </ul>
+            
+            <p><strong>Problem:</strong> Leading zeros disappear (like 001, 002)</p>
+            <ul>
+                <li><strong>Solution:</strong> Format cells as Text before entering data</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="topic-section">
+        <h2>Topic 2: Basic Text Formatting</h2>
+        
+        <h3>Making Your Text Look Professional</h3>
+        <p>Text formatting makes your spreadsheets easier to read and more visually appealing. Just like in a word processor, you can change fonts, sizes, colors, and styles.</p>
+
+        <div class="screenshot-container">
+            <h4>Visual Reference Screenshots:</h4>
+            <a href="https://edu.gcfglobal.org/en/excel2016/formatting-cells/1/" target="_blank" class="screenshot-link">
+                📸 Excel Text Formatting Options - Shows the Font group with formatting buttons
+            </a>
+            <a href="https://support.microsoft.com/en-us/office/format-text-in-cells-ca112674-a567-4d6f-b5f8-3100aa27f40e" target="_blank" class="screenshot-link">
+                📸 Format Cells Dialog - Complete font formatting interface
+            </a>
+        </div>
+
+        <h3>Font Basics</h3>
+
+        <div class="step-by-step">
+            <h4>Changing Font Type:</h4>
+            <ol>
+                <li><strong>Select the cell(s)</strong> you want to format</li>
+                <li><strong>Go to Home tab</strong> on the ribbon</li>
+                <li><strong>Click the dropdown arrow</strong> next to the font name (usually "Calibri")</li>
+                <li><strong>Choose a new font</strong> from the list</li>
+                <li><strong>Popular readable fonts:</strong> Arial, Calibri, Times New Roman, Tahoma</li>
+            </ol>
+            
+            <div class="warning-box">
+                <strong>Quick Tip:</strong> For business documents, stick to standard fonts like Arial or Calibri for readability.
+            </div>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Changing Font Size:</h4>
+            <ol>
+                <li><strong>Select the cell(s)</strong> you want to format</li>
+                <li><strong>Click the dropdown arrow</strong> next to the font size (usually "11")</li>
+                <li><strong>Choose a larger or smaller size</strong></li>
+                <li><strong>Common sizes:</strong>
+                    <ul>
+                        <li>Headers: 14-18 points</li>
+                        <li>Body text: 10-12 points</li>
+                        <li>Titles: 16-24 points</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <h3>Text Styles and Effects</h3>
+
+        <table class="data-types-table">
+            <thead>
+                <tr>
+                    <th>Format</th>
+                    <th>Button Method</th>
+                    <th>Keyboard Shortcut</th>
+                    <th>What it does</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Bold</td>
+                    <td>Click <strong>B</strong> button</td>
+                    <td>Ctrl + B</td>
+                    <td>Makes text thicker and darker</td>
+                </tr>
+                <tr>
+                    <td>Italic</td>
+                    <td>Click <em>I</em> button</td>
+                    <td>Ctrl + I</td>
+                    <td>Slants text to the right</td>
+                </tr>
+                <tr>
+                    <td>Underline</td>
+                    <td>Click <u>U</u> button</td>
+                    <td>Ctrl + U</td>
+                    <td>Adds line under text</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="step-by-step">
+            <h4>Changing Font Color:</h4>
+            <ol>
+                <li><strong>Select the cell(s)</strong> you want to format</li>
+                <li><strong>Click the dropdown arrow</strong> next to the Font Color button (looks like "A" with a colored underline)</li>
+                <li><strong>Choose a color</strong> from the palette</li>
+                <li><strong>For custom colors:</strong> Click "More Colors" at the bottom</li>
+            </ol>
+            
+            <div class="info-box">
+                <strong>Best Practices:</strong>
+                <ul>
+                    <li>Use dark colors for text (black, dark blue, dark gray)</li>
+                    <li>Ensure good contrast with the background</li>
+                    <li>Be consistent with color choices throughout your spreadsheet</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="practice-exercise">
+            <h3>Practice Exercise: Text Formatting</h3>
+            <ol>
+                <li><strong>Create a header row</strong> with these column titles:
+                    <br>Employee Name | Department | Salary | Start Date</li>
+                <li><strong>Format the headers:</strong>
+                    <ul>
+                        <li>Make them <strong>bold</strong> (Ctrl + B)</li>
+                        <li>Change font size to <strong>14</strong></li>
+                        <li><strong>Center-align</strong> the text</li>
+                        <li>Change color to <strong>dark blue</strong></li>
+                    </ul>
+                </li>
+                <li><strong>Add sample data</strong> below and practice different formatting options</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="topic-section">
+        <h2>Topic 3: Number Formatting</h2>
+        
+        <h3>Making Numbers Meaningful</h3>
+        <p>Raw numbers like "1000" or "0.15" don't tell the full story. Proper number formatting makes data immediately understandable and professional-looking.</p>
+
+        <div class="screenshot-container">
+            <h4>Visual Reference Screenshots:</h4>
+            <a href="https://support.microsoft.com/en-us/office/available-number-formats-in-excel-0afe8f52-97db-41f1-b972-4b46e9f1e8d2" target="_blank" class="screenshot-link">
+                📸 Number Format Options - Shows various number format categories
+            </a>
+            <a href="https://support.microsoft.com/en-us/office/format-numbers-as-currency-in-excel-0a03bb38-1a07-458d-9e30-2b54366bc7a4" target="_blank" class="screenshot-link">
+                📸 Currency Formatting - Demonstrates currency format application
+            </a>
+        </div>
+
+        <h3>Currency Formatting</h3>
+
+        <div class="step-by-step">
+            <h4>Basic Currency Formatting:</h4>
+            <ol>
+                <li><strong>Select the cells</strong> containing monetary values</li>
+                <li><strong>Click the "$" button</strong> in the Number group (Accounting Number Format)</li>
+                <li><strong>Alternative method:</strong> Click dropdown arrow next to Number Format and select "Currency"</li>
+            </ol>
+            
+            <div class="info-box">
+                <strong>Keyboard Shortcut:</strong> Ctrl + Shift + $ (applies default currency format)
+            </div>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Customizing Currency Format:</h4>
+            <ol>
+                <li><strong>Right-click</strong> on selected cells</li>
+                <li><strong>Choose "Format Cells"</strong> from the menu</li>
+                <li><strong>Select "Currency"</strong> from the Category list</li>
+                <li><strong>Customize:</strong>
+                    <ul>
+                        <li><strong>Symbol:</strong> Choose $ € £ ¥ or others</li>
+                        <li><strong>Decimal places:</strong> Usually 2 for currency</li>
+                        <li><strong>Negative numbers:</strong> How to display negative values</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <h3>Percentage Formatting</h3>
+
+        <div class="warning-box">
+            <h4>Important Note:</h4>
+            <p>Excel treats percentages as decimals multiplied by 100</p>
+            <ul>
+                <li>0.25 becomes 25%</li>
+                <li>1.5 becomes 150%</li>
+            </ul>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Converting Numbers to Percentages:</h4>
+            <ol>
+                <li><strong>Enter your decimal values</strong> (like 0.25 for 25%)</li>
+                <li><strong>Select the cells</strong></li>
+                <li><strong>Click the "%" button</strong> in the Number group</li>
+                <li><strong>Or use keyboard shortcut:</strong> Ctrl + Shift + %</li>
+            </ol>
+        </div>
+
+        <h3>Date and Time Formatting</h3>
+
+        <div class="info-box">
+            <h4>Common Date Formats:</h4>
+            <p>Excel recognizes dates in many formats and can display them consistently:</p>
+            <ul>
+                <li><strong>Short Date:</strong> 1/15/2024</li>
+                <li><strong>Long Date:</strong> Monday, January 15, 2024</li>
+                <li><strong>Custom Date:</strong> Jan-15-24</li>
+            </ul>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Formatting Dates:</h4>
+            <ol>
+                <li><strong>Enter dates</strong> in any recognizable format</li>
+                <li><strong>Select the date cells</strong></li>
+                <li><strong>Right-click</strong> and choose "Format Cells"</li>
+                <li><strong>Select "Date"</strong> from Category list</li>
+                <li><strong>Choose your preferred format</strong> from the Type list</li>
+            </ol>
+        </div>
+
+        <div class="practice-exercise">
+            <h3>Practice Exercise: Number Formatting</h3>
+            <ol>
+                <li><strong>Create a sales report</strong> with these columns:
+                    <br>Product | Price | Discount Rate | Sale Date</li>
+                <li><strong>Add sample data:</strong>
+                    <ul>
+                        <li>Product: Laptop, Phone, Tablet</li>
+                        <li>Price: 999.99, 699, 299.5</li>
+                        <li>Discount: 0.1, 0.15, 0.05</li>
+                        <li>Dates: Various dates</li>
+                    </ul>
+                </li>
+                <li><strong>Format appropriately:</strong>
+                    <ul>
+                        <li>Price as <strong>Currency</strong> ($)</li>
+                        <li>Discount Rate as <strong>Percentage</strong> (%)</li>
+                        <li>Dates in <strong>Short Date</strong> format</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="topic-section">
+        <h2>Topic 4: Cell Styling</h2>
+        
+        <h3>Making Data Stand Out</h3>
+        <p>Cell styling includes borders, background colors, and visual effects that make your spreadsheets more readable and professional.</p>
+
+        <div class="screenshot-container">
+            <h4>Visual Reference Screenshots:</h4>
+            <a href="https://support.microsoft.com/en-us/office/apply-or-remove-cell-borders-on-a-worksheet-dc8a310b-92e3-46a7-9f17-2ab745810f4a" target="_blank" class="screenshot-link">
+                📸 Cell Borders Interface - Shows border options and application
+            </a>
+            <a href="https://support.microsoft.com/en-us/office/add-or-change-the-background-color-of-cells-in-excel-ac10f131-b847-428f-b656-d65375fb815e" target="_blank" class="screenshot-link">
+                📸 Fill Color Options - Demonstrates background color application
+            </a>
+        </div>
+
+        <h3>Adding Cell Borders</h3>
+
+        <div class="step-by-step">
+            <h4>Basic Border Application:</h4>
+            <ol>
+                <li><strong>Select the cell(s)</strong> you want to add borders to</li>
+                <li><strong>Click the dropdown arrow</strong> next to the Borders button (looks like a grid)</li>
+                <li><strong>Choose a border style:</strong>
+                    <ul>
+                        <li><strong>All Borders:</strong> Adds borders around and inside selected cells</li>
+                        <li><strong>Outline:</strong> Adds border only around the outside</li>
+                        <li><strong>Top Border, Bottom Border:</strong> Adds specific edges</li>
+                        <li><strong>No Border:</strong> Removes existing borders</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="info-box">
+            <h4>Common Border Uses:</h4>
+            <ul>
+                <li><strong>Table headers:</strong> Thick bottom border</li>
+                <li><strong>Data sections:</strong> All borders for clarity</li>
+                <li><strong>Totals row:</strong> Thick top border</li>
+                <li><strong>Important cells:</strong> Thick outline border</li>
+            </ul>
+        </div>
+
+        <h3>Background Colors and Fill</h3>
+
+        <div class="step-by-step">
+            <h4>Adding Fill Colors:</h4>
+            <ol>
+                <li><strong>Select the cell(s)</strong> you want to color</li>
+                <li><strong>Click the dropdown arrow</strong> next to the Fill Color button (paint bucket icon)</li>
+                <li><strong>Choose a color</strong> from the palette</li>
+                <li><strong>For more colors:</strong> Click "More Colors" at the bottom</li>
+            </ol>
+        </div>
+
+        <div class="info-box">
+            <h4>Color Selection Best Practices:</h4>
+            <ul>
+                <li><strong>Headers:</strong> Light blue, light gray, or light green</li>
+                <li><strong>Important data:</strong> Light yellow for highlighting</li>
+                <li><strong>Alternating rows:</strong> Very light gray for easier reading</li>
+                <li><strong>Avoid:</strong> Bright colors that make text hard to read</li>
+            </ul>
+        </div>
+
+        <h3>Format Painter Tool</h3>
+
+        <div class="step-by-step">
+            <h4>Copying Formatting Quickly:</h4>
+            <p>The Format Painter lets you copy all formatting from one cell to others:</p>
+            <ol>
+                <li><strong>Click on a cell</strong> with the formatting you want to copy</li>
+                <li><strong>Click the Format Painter button</strong> (paintbrush icon) in the Clipboard group</li>
+                <li><strong>Click on the cell(s)</strong> you want to apply the formatting to</li>
+                <li><strong>For multiple applications:</strong> Double-click Format Painter, then click multiple cells</li>
+            </ol>
+        </div>
+
+        <div class="practice-exercise">
+            <h3>Practice Exercise: Cell Styling</h3>
+            <ol>
+                <li><strong>Create a monthly budget table:</strong>
+                    <br>Headers: Category | Budgeted | Actual | Difference</li>
+                <li><strong>Style the table:</strong>
+                    <ul>
+                        <li><strong>Header row:</strong> Bold text, dark blue background, white font color</li>
+                        <li><strong>Data rows:</strong> Add all borders for clarity</li>
+                        <li><strong>Total row:</strong> Bold text, light gray background</li>
+                        <li><strong>Negative differences:</strong> Light red background</li>
+                        <li><strong>Positive differences:</strong> Light green background</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="topic-section">
+        <h2>Topic 5: Row and Column Operations</h2>
+        
+        <h3>Controlling Layout and Appearance</h3>
+        <p>Proper row and column sizing is essential for readable, professional-looking spreadsheets.</p>
+
+        <h3>Adjusting Column Widths</h3>
+
+        <div class="step-by-step">
+            <h4>Auto-Sizing Columns:</h4>
+            <p><strong>Method 1 - Double-click:</strong></p>
+            <ol>
+                <li><strong>Position your cursor</strong> on the right edge of the column header (between two column letters)</li>
+                <li><strong>Wait for the cursor</strong> to change to a double-headed arrow</li>
+                <li><strong>Double-click</strong> - Excel automatically sizes the column to fit the longest content</li>
+            </ol>
+            
+            <p><strong>Method 2 - Manual Dragging:</strong></p>
+            <ol>
+                <li><strong>Position cursor</strong> on the column edge</li>
+                <li><strong>Click and drag</strong> to make wider or narrower</li>
+                <li><strong>Release</strong> when desired width is reached</li>
+            </ol>
+        </div>
+
+        <h3>Freezing Panes</h3>
+
+        <div class="step-by-step">
+            <h4>Keeping Headers Visible:</h4>
+            <p><strong>When to use:</strong> When you have large datasets and want to keep headers visible while scrolling</p>
+            <ol>
+                <li><strong>Click on the cell</strong> below and to the right of what you want to freeze
+                    <ul>
+                        <li>To freeze row 1: Click on cell A2</li>
+                        <li>To freeze column A: Click on cell B1</li>
+                        <li>To freeze both: Click on cell B2</li>
+                    </ul>
+                </li>
+                <li><strong>Go to View tab</strong> on the ribbon</li>
+                <li><strong>Click "Freeze Panes"</strong></li>
+                <li><strong>Choose "Freeze Panes"</strong> from the dropdown</li>
+            </ol>
+        </div>
+
+        <div class="practice-exercise">
+            <h3>Practice Exercise: Row and Column Operations</h3>
+            <ol>
+                <li><strong>Create a product inventory list</strong> with many columns and rows</li>
+                <li><strong>Practice these operations:</strong>
+                    <ul>
+                        <li>Auto-size all columns to fit content</li>
+                        <li>Make the "Description" column extra wide</li>
+                        <li>Hide the "Internal Code" column</li>
+                        <li>Increase row height for better readability</li>
+                        <li>Freeze the header row and first column</li>
+                        <li>Scroll around to see the freeze effect</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="practice-exercise">
+        <h3>Comprehensive Practice Exercise: Employee Information Dashboard</h3>
+        
+        <p><strong>Project Overview:</strong> Create a professional employee information dashboard that demonstrates all Week 2 skills.</p>
+
+        <div class="step-by-step">
+            <h4>Step 1: Set Up Your Data Structure</h4>
+            <p>Create these column headers in row 1:</p>
+            <ul>
+                <li>A1: Employee ID, B1: Full Name, C1: Department, D1: Hire Date</li>
+                <li>E1: Annual Salary, F1: Performance Score, G1: Bonus Rate, H1: Email Address</li>
+            </ul>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step 2: Enter Sample Data</h4>
+            <p>Add these sample employees (rows 2-6):</p>
+            <ul>
+                <li><strong>Row 2:</strong> 001 | John Smith | Sales | 1/15/2020 | 75000 | 4.2 | 0.05 | john.smith@company.com</li>
+                <li><strong>Row 3:</strong> 002 | Sarah Johnson | Marketing | 3/22/2019 | 68000 | 4.8 | 0.08 | sarah.johnson@company.com</li>
+                <li><strong>Row 4:</strong> 003 | Mike Wilson | IT | 7/10/2021 | 85000 | 4.0 | 0.03 | mike.wilson@company.com</li>
+                <li><strong>Row 5:</strong> 004 | Lisa Brown | HR | 11/5/2018 | 72000 | 4.6 | 0.06 | lisa.brown@company.com</li>
+                <li><strong>Row 6:</strong> 005 | David Lee | Finance | 2/28/2022 | 78000 | 4.4 | 0.04 | david.lee@company.com</li>
+            </ul>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step 3: Format the Headers</h4>
+            <ol>
+                <li><strong>Select the header row</strong> (A1:H1)</li>
+                <li><strong>Apply these formats:</strong>
+                    <ul>
+                        <li><strong>Font:</strong> Change to Arial, size 12</li>
+                        <li><strong>Style:</strong> Bold (Ctrl + B)</li>
+                        <li><strong>Alignment:</strong> Center align</li>
+                        <li><strong>Background:</strong> Dark blue fill color</li>
+                        <li><strong>Font color:</strong> White</li>
+                        <li><strong>Borders:</strong> All borders with thick line style</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step 4: Format Data Types Appropriately</h4>
+            <ol>
+                <li><strong>Employee ID column (A):</strong> Format as Text to preserve leading zeros</li>
+                <li><strong>Hire Date column (D):</strong> Format as Short Date (MM/DD/YYYY)</li>
+                <li><strong>Annual Salary column (E):</strong> Format as Currency ($)</li>
+                <li><strong>Bonus Rate column (G):</strong> Format as Percentage (%)</li>
+            </ol>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step 5: Apply Cell Styling</h4>
+            <ol>
+                <li><strong>Data rows</strong> (A2:H6): Add all borders (thin lines)</li>
+                <li><strong>Alternate row colors:</strong> Light gray for rows 2, 4, 6</li>
+                <li><strong>Department column</strong> (C): Use different background colors for each department</li>
+            </ol>
+        </div>
+
+        <div class="checklist">
+            <h4>Verification Checklist</h4>
+            <p>After completing this exercise, you should have demonstrated:</p>
+            <ul>
+                <li><strong>Data Types:</strong> Text (names), numbers (scores), currency (salary), percentages (bonus), dates</li>
+                <li><strong>Text Formatting:</strong> Different fonts, bold headers, centered text, font colors</li>
+                <li><strong>Number Formatting:</strong> Currency symbols, percentage signs, proper date display</li>
+                <li><strong>Cell Styling:</strong> Background colors, borders, visual hierarchy</li>
+                <li><strong>Layout Control:</strong> Proper column widths, row heights, frozen headers</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="topic-section">
+        <h2>Key Differences Between Excel and Google Sheets</h2>
+        
+        <table class="differences-table">
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>Microsoft Excel</th>
+                    <th>Google Sheets</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Formatting Options</strong></td>
+                    <td>More extensive formatting options including advanced borders, patterns, and effects</td>
+                    <td>Fewer but sufficient formatting choices for most needs</td>
+                </tr>
+                <tr>
+                    <td><strong>Conditional Formatting</strong></td>
+                    <td>More rules and options available</td>
+                    <td>Basic conditional formatting supported</td>
+                </tr>
+                <tr>
+                    <td><strong>Custom Number Formats</strong></td>
+                    <td>Extensive custom number format options with complex codes</td>
+                    <td>Limited custom number format options</td>
+                </tr>
+                <tr>
+                    <td><strong>Cell Styles</strong></td>
+                    <td>Built-in cell styles gallery with predefined combinations</td>
+                    <td>No pre-defined styles gallery, must create manually</td>
+                </tr>
+                <tr>
+                    <td><strong>Format Painter</strong></td>
+                    <td>Can double-click to apply multiple times</td>
+                    <td>Single use only, must click for each application</td>
+                </tr>
+                <tr>
+                    <td><strong>Currency Symbols</strong></td>
+                    <td>Supports wide range of international currency symbols</td>
+                    <td>Basic currency symbol support</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="youtube-section">
+        <h3>Additional Resources</h3>
+        
+        <h4>Official Documentation:</h4>
+        <ul>
+            <li><strong>Excel:</strong> <a href="https://support.microsoft.com/en-us/office/format-numbers-in-cells-7fc5bf93-7913-40ff-bd4a-60ce90755a6d" target="_blank">Format numbers in cells</a></li>
+            <li><strong>Google Sheets:</strong> <a href="https://support.google.com/docs/answer/46973?hl=en&co=GENIE.Platform%3DDesktop" target="_blank">Format your spreadsheet</a></li>
+        </ul>
+
+        <h4>YouTube Video Tutorials:</h4>
+        
+        <div class="youtube-links">
+            <a href="https://www.youtube.com/c/ExcelIsFun" target="_blank" class="youtube-link">
+                <strong>ExcelIsFun - Excel Basics Series</strong>
+                Over 3,000 videos covering formatting, data entry, and number formatting
+            </a>
+            
+            <a href="https://www.youtube.com/c/LeilaGharani" target="_blank" class="youtube-link">
+                <strong>Leila Gharani - Excel Tutorials</strong>
+                Professional formatting techniques with downloadable practice files
+            </a>
+            
+            <a href="https://www.youtube.com/c/ExcelCampus" target="_blank" class="youtube-link">
+                <strong>Excel Campus - Formatting Tutorials</strong>
+                Jon Acampora's comprehensive formatting and styling guides
+            </a>
+            
+            <a href="https://www.youtube.com/c/TeachersTech" target="_blank" class="youtube-link">
+                <strong>Teacher's Tech - Google Sheets</strong>
+                Beginner-friendly Google Sheets formatting instruction
+            </a>
+        </div>
+    </div>
+
+    <div class="next-section">
+        <h3>What's Next?</h3>
+        <p>In Week 3, we'll build on your formatting skills by learning:</p>
+        <ul>
+            <li><strong>Basic Formulas:</strong> Creating calculations using arithmetic operators</li>
+            <li><strong>Cell References:</strong> How to reference other cells in formulas</li>
+            <li><strong>Formula Copying:</strong> Making formulas work across multiple cells</li>
+            <li><strong>Error Handling:</strong> Understanding and fixing common formula errors</li>
+        </ul>
+        <p><strong>Homework for this week:</strong> Complete the Employee Information Dashboard exercise and practice formatting a personal expense tracker or any data you work with regularly.</p>
+    </div>
+
+    <div class="navigation">
+        <a href="#" class="nav-button">← Previous: Spreadsheet Basics</a>
+        <a href="#" class="nav-button">Next: Basic Formulas →</a>
+    </div>
+</div>
+
+</body>
+</html>

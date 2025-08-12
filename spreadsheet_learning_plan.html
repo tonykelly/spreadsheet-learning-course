@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12-Week Comprehensive Spreadsheet Learning Plan</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            margin: 0 0 15px 0;
+            font-size: 2.5em;
+        }
+        
+        .header p {
+            margin: 0;
+            font-size: 1.3em;
+            opacity: 0.9;
+        }
+        
+        .overview {
+            background-color: #e8f4fd;
+            border-left: 4px solid #007bff;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+        
+        .overview h2 {
+            color: #0056b3;
+            margin-top: 0;
+        }
+        
+        .learning-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .learning-table th {
+            background: linear-gradient(135deg, #343a40 0%, #495057 100%);
+            color: white;
+            padding: 20px 15px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+        
+        .learning-table td {
+            border: 1px solid #dee2e6;
+            padding: 18px 15px;
+            vertical-align: top;
+        }
+        
+        .learning-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .learning-table tr:hover {
+            background-color: #e3f2fd;
+            transition: background-color 0.3s ease;
+        }
+        
+        .week-number {
+            font-weight: bold;
+            color: #007bff;
+            font-size: 1.1em;
+        }
+        
+        .lesson-title {
+            font-weight: 600;
+            color: #495057;
+            margin-bottom: 8px;
+        }
+        
+        .lesson-summary {
+            color: #6c757d;
+            line-height: 1.5;
+        }
+        
+        .time-estimate {
+            font-weight: bold;
+            color: #28a745;
+            text-align: center;
+        }
+        
+        .difficulty-beginner {
+            background-color: #d4edda;
+            color: #155724;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+        
+        .difficulty-intermediate {
+            background-color: #fff3cd;
+            color: #856404;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+        
+        .difficulty-advanced {
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+        
+        .key-topics {
+            font-size: 0.9em;
+            color: #6c757d;
+            margin-top: 5px;
+        }
+        
+        .progression-info {
+            background-color: #e8f5e8;
+            border-left: 4px solid #28a745;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+        
+        .progression-info h3 {
+            color: #155724;
+            margin-top: 0;
+        }
+        
+        .total-time {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .platform-note {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+        
+        .legend {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>12-Week Comprehensive Spreadsheet Learning Plan</h1>
+        <p>From Complete Beginner to Confident User</p>
+    </div>
+
+    <div class="overview">
+        <h2>Course Overview</h2>
+        <p>This comprehensive 12-week program is designed to take you from complete spreadsheet beginner to confident user. Each week builds upon the previous lessons, gradually introducing more advanced concepts while reinforcing fundamental skills.</p>
+        
+        <p><strong>Who this is for:</strong> Complete beginners with no prior spreadsheet experience</p>
+        <p><strong>Platforms covered:</strong> Microsoft Excel and Google Sheets (differences highlighted throughout)</p>
+        <p><strong>Learning approach:</strong> Hands-on practice with real-world examples and projects</p>
+    </div>
+
+    <div class="legend">
+        <div class="legend-item">
+            <span class="difficulty-beginner">Beginner</span>
+            <span>Foundational concepts</span>
+        </div>
+        <div class="legend-item">
+            <span class="difficulty-intermediate">Intermediate</span>
+            <span>Building skills</span>
+        </div>
+        <div class="legend-item">
+            <span class="difficulty-advanced">Advanced</span>
+            <span>Complex applications</span>
+        </div>
+    </div>
+
+    <table class="learning-table">
+        <thead>
+            <tr>
+                <th>Week</th>
+                <th>Lesson Title & Summary</th>
+                <th>Key Topics Covered</th>
+                <th>Difficulty</th>
+                <th>Est. Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="week-number">Week 1</td>
+                <td>
+                    <div class="lesson-title">Spreadsheet Basics</div>
+                    <div class="lesson-summary">Introduction to spreadsheet applications, understanding the interface, basic navigation, and simple data entry. Learn the fundamental concepts of cells, rows, columns, and worksheets.</div>
+                </td>
+                <td class="key-topics">
+                    • Excel vs Google Sheets overview<br>
+                    • Grid system (cells, rows, columns)<br>
+                    • Basic navigation and shortcuts<br>
+                    • Data entry and auto-fill<br>
+                    • Workbooks vs worksheets
+                </td>
+                <td><span class="difficulty-beginner">Beginner</span></td>
+                <td class="time-estimate">3-4 hours</td>
+            </tr>
+            
+            <tr>
+                <td class="week-number">Week 2</td>
+                <td>
+                    <div class="lesson-title">Data Entry & Formatting</div>
+                    <div class="lesson-summary">Master different data types, apply professional formatting to text and numbers, use borders and colors effectively, and control row/column sizing for optimal presentation.</div>
+                </td>
+                <td class="key-topics">
+                    • Data types (text, numbers, dates)<br>
+                    • Text formatting (fonts, colors, styles)<br>
+                    • Number formatting (currency, percentages)<br>
+                    • Cell styling (borders, backgrounds)<br>
+                    • Row/column operations
+                </td>
+                <td><span class="difficulty-beginner">Beginner</span></td>
+                <td class="time-estimate">3-4 hours</td>
+            </tr>
+            
+            <tr>
+                <td class="week-number">Week 3</td>
+                <td>
+                    <div class="lesson-title">Basic Formulas</div>
+                    <div class="lesson-summary">Learn formula fundamentals, arithmetic operators, cell references, and how to copy formulas. Understand and troubleshoot common formula errors.</div>
+                </td>
+                <td class="key-topics">
+                    • Formula structure and syntax<br>
+                    • Arithmetic operators (+, -, *, /, ^)<br>
+                    • Cell references in formulas<br>
+                    • Copying and filling formulas<br>
+                    • Common errors (#DIV/0!, #VALUE!, etc.)
+                </td>
+                <td><span class="difficulty-beginner">Beginner</span></td>
+                <td class="time-estimate">4-5 hours</td>
+            </tr>
+            
+            <tr>
+                <td class="week-number">Week 4</td>
+                <td>
+                    <div class="lesson-title">Essential Functions</div>
+                    <div class="lesson-summary">Master the most commonly used functions including mathematical, statistical, text, and date functions. Learn to combine functions for more complex calculations.</div>
+                </td>
+                <td class="key-topics">
+                    • Math functions (SUM, AVERAGE, MIN, MAX)<br>
+                    • Statistical functions (COUNT, COUNTIF)<br>
+                    • Text functions (CONCATENATE, LEFT, RIGHT)<br>
+                    • Date functions (TODAY, YEAR, MONTH)<br>
+                    • Nested functions
+                </td>
+                <td><span class="difficulty-intermediate">Intermediate</span></td>
+                <td class="time-estimate">4-5 hours</td>
+            </tr>
+            
+            <tr>
+                <td class="week-number">Week 5</td>
+                <td>
+                    <div class="lesson-title">Cell References & Ranges</div>
+                    <div class="lesson-summary">Master relative, absolute, and mixed references. Work with cell ranges effectively, create named ranges, and understand 3D references across multiple sheets.</div>
+                </td>
+                <td class="key-topics">
+                    • Relative vs absolute references ($A$1)<br>
+                    • Mixed references ($A1, A$1)<br>
+                    • Working with ranges (A1:B10)<br>
+                    • Named ranges for clarity<br>
+                    • 3D references across sheets
+                </td>
+                <td><span class="difficulty-intermediate">Intermediate</span></td>
+                <td class="time-estimate">4-5 hours</td>
+            </tr>
+            
+            <tr>
+                <td class="week-number">Week 6</td>
+                <td>
+                    <div class="lesson-title">Sorting & Filtering</div>
+                    <div class="lesson-summary">Organize and analyze data using sorting and filtering techniques. Create data validation rules and learn best practices for data organization.</div>
+                </td>
+                <td class="key-topics">
+                    • Single and multi-level sorting<br>
+                    • AutoFilter and custom filters<br>
+                    • Advanced filtering techniques<br>
+                    • Data validation and dropdowns<br>
+                    • Data organization principles
+                </td>
+                <td><span class="difficulty-intermediate">Intermediate</span></td>
+                <td class="time-estimate">4-5 hours</td>
+            </tr>
+            
+            <tr>
+                <td class="week-number">Week 7</td>
+                <td>
+                    <div class="lesson-title">Logical Functions</div>
+                    <div class="lesson-summary">Create decision-making formulas using IF statements, logical operators, and error handling functions. Build complex nested logical structures.</div>
+                </td>
+                <td class="key-topics">
+                    • IF function and nested IFs<br>
+                    • Logical operators (AND, OR, NOT)<br>
+                    • Multiple conditions and decision trees<br>
+                    • Error handling (IFERROR, IFNA)<br>
+                    • Boolean logic principles
+                </td>
+                <td><span class="difficulty-intermediate">Intermediate</span></td>
+                <td class="time-estimate">5-6 hours</td>
+            </tr>
+            
+            <tr>
+                <td class="week-number">Week 8</td>
+                <td>
+                    <div class="lesson-title">Lookup & Reference Functions</div>
+                    <div class="lesson-summary">Master data retrieval using VLOOKUP, HLOOKUP, INDEX/MATCH combinations, and other lookup functions for dynamic data management systems.</div>
+                </td>
+                <td class="key-topics">
+                    • VLOOKUP and HLOOKUP functions<br>
+                    • INDEX and MATCH combination<br>
+                    • XLOOKUP (newer Excel versions)<br>
+                    • Two-way lookups<br>
+                    • Lookup best practices and troubleshooting
+                </td>
+                <td><span class="difficulty-advanced">Advanced</span></td>
+                <td class="time-estimate">5-6 hours</td>
+            </tr>
+            
+            <tr>
+                <td class="week-number">Week 9</td>
+                <td>
+                    <div class="lesson-title">Basic Data Analysis</div>
+                    <div class="lesson-summary">Summarize and analyze data using pivot tables, statistical functions, and what-if analysis tools. Create meaningful insights from raw data.</div>
+                </td>
+                <td class="key-topics">
+                    • Pivot tables creation and customization<br>
+                    • Data summarization techniques<br>
+                    • What-if analysis (Goal Seek, scenarios)<br>
+                    • Statistical analysis functions<br>
+                    • Trend analysis and projections
+                </td>
+                <td><span class="difficulty-advanced">Advanced</span></td>
+                <td class="time-estimate">6-7 hours</td>
+            </tr>
+            
+            <tr>
+                <td class="week-number">Week 10</td>
+                <td>
+                    <div class="lesson-title">Charts & Visualizations</div>
+                    <div class="lesson-summary">Create effective data visualizations using various chart types. Learn dashboard design principles and build interactive visual reports.</div>
+                </td>
+                <td class="key-topics">
+                    • Chart types and selection criteria<br>
+                    • Chart customization and formatting<br>
+                    • Sparklines and conditional formatting<br>
+                    • Dashboard design principles<br>
+                    • Interactive elements and controls
+                </td>
+                <td><span class="difficulty-advanced">Advanced</span></td>
+                <td class="time-estimate">5-6 hours</td>
+            </tr>
+            
+            <tr>
+                <td class="week-number">Week 11</td>
+                <td>
+                    <div class="lesson-title">Data Import & Export</div>
+                    <div class="lesson-summary">Work with external data sources, import from various file formats, export and share spreadsheets, and link multiple data sources together.</div>
+                </td>
+                <td class="key-topics">
+                    • Importing text files (CSV, TXT)<br>
+                    • Web data and external connections<br>
+                    • Export options and file formats<br>
+                    • Linking spreadsheets and workbooks<br>
+                    • Data cleaning and preparation
+                </td>
+                <td><span class="difficulty-advanced">Advanced</span></td>
+                <td class="time-estimate">4-5 hours</td>
+            </tr>
+            
+            <tr>
+                <td class="week-number">Week 12</td>
+                <td>
+                    <div class="lesson-title">Practical Applications</div>
+                    <div class="lesson-summary">Apply all learned concepts to real-world scenarios. Create complete spreadsheet solutions for personal finance, business applications, and data analysis projects.</div>
+                </td>
+                <td class="key-topics">
+                    • Personal finance applications<br>
+                    • Business solution templates<br>
+                    • Project management tools<br>
+                    • Performance optimization<br>
+                    • Best practices and maintenance
+                </td>
+                <td><span class="difficulty-advanced">Advanced</span></td>
+                <td class="time-estimate">6-8 hours</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="total-time">
+        <h3>Total Estimated Time: 55-70 Hours</h3>
+        <p>Average of 4.5-6 hours per week | Flexible self-paced learning</p>
+    </div>
+
+    <div class="progression-info">
+        <h3>Learning Progression</h3>
+        <p><strong>Weeks 1-3:</strong> Foundation building with basic spreadsheet concepts, formatting, and simple formulas.</p>
+        <p><strong>Weeks 4-6:</strong> Skill development with functions, references, and data management techniques.</p>
+        <p><strong>Weeks 7-9:</strong> Advanced functionality including logical operations, lookups, and data analysis.</p>
+        <p><strong>Weeks 10-12:</strong> Professional applications with visualizations, data connections, and real-world projects.</p>
+    </div>
+
+    <div class="platform-note">
+        <h4>📝 Platform Compatibility Note</h4>
+        <p>All lessons cover both Microsoft Excel and Google Sheets, with key differences highlighted throughout. Most concepts apply to both platforms, though some advanced features may be platform-specific.</p>
+    </div>
+</div>
+
+</body>
+</html>

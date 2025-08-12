@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 1: Spreadsheet Basics - Complete Lesson</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.5em;
+        }
+        
+        .header p {
+            margin: 0;
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .learning-objectives {
+            background-color: #e8f4fd;
+            border-left: 4px solid #007bff;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+        
+        .learning-objectives h2 {
+            color: #0056b3;
+            margin-top: 0;
+        }
+        
+        .topic-section {
+            margin: 40px 0;
+            padding: 25px;
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .topic-section h2 {
+            color: #495057;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .topic-section h3 {
+            color: #6c757d;
+            margin-top: 25px;
+        }
+        
+        .screenshot-container {
+            background-color: #f8f9fa;
+            border: 2px dashed #6c757d;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .screenshot-container h4 {
+            color: #495057;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        
+        .screenshot-link {
+            display: block;
+            color: #007bff;
+            text-decoration: none;
+            padding: 10px;
+            background-color: #e3f2fd;
+            border-radius: 5px;
+            margin: 10px 0;
+            border-left: 4px solid #2196f3;
+        }
+        
+        .screenshot-link:hover {
+            background-color: #bbdefb;
+            text-decoration: none;
+        }
+        
+        .step-by-step {
+            background-color: #e8f5e8;
+            border-left: 4px solid #28a745;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .step-by-step h4 {
+            color: #155724;
+            margin-top: 0;
+        }
+        
+        .step-by-step ol {
+            margin: 15px 0;
+        }
+        
+        .step-by-step li {
+            margin: 8px 0;
+        }
+        
+        .data-types-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .data-types-table th {
+            background-color: #495057;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .data-types-table td {
+            border: 1px solid #dee2e6;
+            padding: 12px;
+        }
+        
+        .data-types-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .info-box {
+            background-color: #d1ecf1;
+            border: 1px solid #bee5eb;
+            color: #0c5460;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .practice-exercise {
+            background-color: #e8f4f8;
+            border: 2px solid #17a2b8;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+        
+        .practice-exercise h3 {
+            color: #0c5460;
+            margin-top: 0;
+        }
+        
+        .differences-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 14px;
+        }
+        
+        .differences-table th {
+            background-color: #343a40;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        .differences-table td {
+            border: 1px solid #dee2e6;
+            padding: 10px;
+            vertical-align: top;
+        }
+        
+        .differences-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .youtube-section {
+            background-color: #fff5f5;
+            border: 2px solid #dc3545;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+        
+        .youtube-section h3 {
+            color: #721c24;
+            margin-top: 0;
+        }
+        
+        .youtube-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .youtube-link {
+            display: block;
+            color: #dc3545;
+            text-decoration: none;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .youtube-link:hover {
+            background-color: #e9ecef;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-decoration: none;
+        }
+        
+        .youtube-link strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .next-section {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .next-section h3 {
+            margin-top: 0;
+            color: white;
+        }
+        
+        .checklist {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .checklist ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .checklist li {
+            margin: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .checklist li:before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+        }
+        
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            margin: 40px 0;
+            padding: 20px;
+            background-color: #e9ecef;
+            border-radius: 8px;
+        }
+        
+        .nav-button {
+            padding: 12px 24px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+        
+        .nav-button:hover {
+            background-color: #0056b3;
+            text-decoration: none;
+            color: white;
+        }
+        
+        .nav-button.disabled {
+            background-color: #6c757d;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>Week 1: Spreadsheet Basics</h1>
+        <p>Detailed Lesson for Complete Beginners</p>
+    </div>
+
+    <div class="learning-objectives">
+        <h2>Learning Objectives:</h2>
+        <p>By the end of this lesson, you will be able to:</p>
+        <ul>
+            <li>Understand what a spreadsheet is and why it's useful</li>
+            <li>Navigate confidently through the Excel/Google Sheets interface</li>
+            <li>Create new workbooks and worksheets</li>
+            <li>Perform basic cell selection and data entry operations</li>
+            <li>Use simple navigation techniques and keyboard shortcuts</li>
+        </ul>
+    </div>
+
+    <div class="topic-section">
+        <h2>Topic 1: Introduction to Spreadsheet Applications</h2>
+        
+        <h3>What is a Spreadsheet?</h3>
+        <p>A spreadsheet is a computer program that organizes data in rows and columns, similar to a digital ledger or table. Think of it as an electronic version of an accountant's ledger book, but much more powerful and flexible.</p>
+
+        <h3>Common Uses for Spreadsheets:</h3>
+        <ul>
+            <li><strong>Personal Finance:</strong> Track expenses, create budgets, monitor savings</li>
+            <li><strong>Business:</strong> Manage inventories, track sales, calculate payroll</li>
+            <li><strong>Education:</strong> Grade tracking, attendance records, project planning</li>
+            <li><strong>Home Management:</strong> Meal planning, household chores, vacation planning</li>
+            <li><strong>Data Analysis:</strong> Organizing information to find patterns and insights</li>
+        </ul>
+
+        <h3>Understanding Excel vs. Google Sheets</h3>
+        
+        <div class="info-box">
+            <h4>Microsoft Excel:</h4>
+            <ul>
+                <li>Desktop application (also available online)</li>
+                <li>Part of Microsoft Office suite</li>
+                <li>Requires purchase or subscription</li>
+                <li>More advanced features for complex calculations</li>
+                <li>Better for handling very large datasets</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <h4>Google Sheets:</h4>
+            <ul>
+                <li>Web-based application (works in your browser)</li>
+                <li>Part of Google Workspace (formerly G Suite)</li>
+                <li>Completely free with Google account</li>
+                <li>Excellent for collaboration and sharing</li>
+                <li>Automatic saving to the cloud</li>
+            </ul>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Getting Started</h4>
+            <p><strong>For Excel:</strong></p>
+            <ol>
+                <li>If you have Excel installed: Click the Start menu → Microsoft Office → Excel</li>
+                <li>If you don't have Excel: Go to office.com → Sign in with Microsoft account → Click Excel</li>
+                <li>Click "Blank workbook" to start fresh</li>
+            </ol>
+            
+            <p><strong>For Google Sheets:</strong></p>
+            <ol>
+                <li>Open your web browser</li>
+                <li>Go to sheets.google.com</li>
+                <li>Sign in with your Google account (create one if needed at accounts.google.com)</li>
+                <li>Click the "+" button or "Blank" to create a new spreadsheet</li>
+            </ol>
+        </div>
+
+        <div class="screenshot-container">
+            <h4>Visual Reference Screenshots:</h4>
+            <a href="https://www.w3schools.com/excel/excel_overview.php" target="_blank" class="screenshot-link">
+                📸 Excel Interface Overview - Shows the Excel ribbon and worksheet structure
+            </a>
+            <a href="https://excelx.com/ribbon/" target="_blank" class="screenshot-link">
+                📸 Excel Ribbon Components - Detailed view of Excel's ribbon interface
+            </a>
+        </div>
+    </div>
+
+    <div class="topic-section">
+        <h2>Topic 2: Understanding the Grid System</h2>
+        
+        <h3>The Spreadsheet Grid</h3>
+        <p>When you open a spreadsheet, you'll see a grid made up of:</p>
+
+        <h4>Cells</h4>
+        <ul>
+            <li>Each rectangle in the grid is called a <strong>cell</strong></li>
+            <li>This is where you enter information (text, numbers, formulas)</li>
+            <li>Only one cell can be selected (active) at a time</li>
+            <li>The active cell has a colored border around it</li>
+        </ul>
+
+        <h4>Rows</h4>
+        <ul>
+            <li>Horizontal lines of cells</li>
+            <li>Numbered from 1, 2, 3, and so on</li>
+            <li>Excel has over 1 million rows; Google Sheets starts with 1,000 but can add more</li>
+        </ul>
+
+        <h4>Columns</h4>
+        <ul>
+            <li>Vertical lines of cells</li>
+            <li>Labeled with letters: A, B, C... Z, then AA, AB, AC, etc.</li>
+            <li>Excel has over 16,000 columns; Google Sheets has 26 columns by default</li>
+        </ul>
+
+        <h4>Cell Addresses</h4>
+        <p>Every cell has a unique "address" combining its column letter and row number:</p>
+        <ul>
+            <li><strong>A1</strong> = Column A, Row 1 (top-left cell)</li>
+            <li><strong>B5</strong> = Column B, Row 5</li>
+            <li><strong>Z100</strong> = Column Z, Row 100</li>
+        </ul>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Understanding Cell Addresses</h4>
+            <ol>
+                <li><strong>Click on different cells</strong> and watch the cell address change</li>
+                <li><strong>Look for the Name Box</strong> (shows current cell address):
+                    <ul>
+                        <li>In Excel: Upper-left corner above the grid</li>
+                        <li>In Google Sheets: Left side of the formula bar</li>
+                    </ul>
+                </li>
+                <li><strong>Practice:</strong> Click on cell D7 and verify it shows "D7" in the Name Box</li>
+            </ol>
+        </div>
+
+        <div class="screenshot-container">
+            <h4>Visual Reference Screenshots:</h4>
+            <a href="https://teststeststests.com/microsoft-office/excel-2016/tutorials/1-learn-excel-basics/2-the-excel-screen/excel-screen-excel-basics-tutorial/" target="_blank" class="screenshot-link">
+                📸 Excel Cell Grid and Addressing - Shows cells, rows, columns, and Name Box
+            </a>
+            <a href="https://openwa.pressbooks.pub/bustechessentials/chapter/chapter-8-microsoft-excel/" target="_blank" class="screenshot-link">
+                📸 Understanding Excel Interface - Detailed view of Excel grid system
+            </a>
+        </div>
+
+        <h3>Worksheets vs. Workbooks</h3>
+        
+        <div class="info-box">
+            <p><strong>Worksheet (or Sheet):</strong></p>
+            <ul>
+                <li>A single page/tab in your spreadsheet file</li>
+                <li>Contains the grid of cells you work with</li>
+                <li>Think of it like one page in a notebook</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <p><strong>Workbook (Excel) / Spreadsheet (Google Sheets):</strong></p>
+            <ul>
+                <li>The entire file containing one or more worksheets</li>
+                <li>Like a complete notebook with multiple pages</li>
+                <li>Can contain dozens of worksheets for organizing different types of data</li>
+            </ul>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Working with Sheet Tabs</h4>
+            <ol>
+                <li><strong>Find the sheet tabs</strong> at the bottom of your screen</li>
+                <li><strong>Default name:</strong> Usually "Sheet1" for your first worksheet</li>
+                <li><strong>Create a new sheet:</strong>
+                    <ul>
+                        <li>Excel: Right-click on sheet tab → Insert → Worksheet</li>
+                        <li>Google Sheets: Click the "+" button next to sheet tabs</li>
+                    </ul>
+                </li>
+                <li><strong>Rename a sheet:</strong>
+                    <ul>
+                        <li>Excel: Right-click sheet tab → Rename</li>
+                        <li>Google Sheets: Right-click sheet tab → Rename</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="screenshot-container">
+            <h4>Visual Reference Screenshots:</h4>
+            <a href="https://teststeststests.com/microsoft-office/excel-2016/tutorials/1-learn-excel-basics/2-the-excel-screen/excel-screen-excel-basics-tutorial/" target="_blank" class="screenshot-link">
+                📸 Excel Worksheet Tabs - Shows worksheet tabs at bottom of Excel
+            </a>
+            <a href="https://www.sheetgo.com/blog/spreadsheets-tips/work-with-multiple-sheets/" target="_blank" class="screenshot-link">
+                📸 Google Sheets Tab Management - Comprehensive guide to working with sheet tabs
+            </a>
+        </div>
+    </div>
+
+    <div class="topic-section">
+        <h2>Topic 3: Basic Navigation</h2>
+        
+        <h3>Mouse Navigation</h3>
+        <ul>
+            <li><strong>Click any cell</strong> to select it</li>
+            <li><strong>Click and drag</strong> to select multiple cells</li>
+            <li><strong>Double-click a cell</strong> to edit its contents</li>
+            <li><strong>Scroll</strong> using your mouse wheel or scroll bars</li>
+        </ul>
+
+        <h3>Essential Keyboard Shortcuts</h3>
+        <p>These shortcuts work in both Excel and Google Sheets:</p>
+
+        <table class="data-types-table">
+            <thead>
+                <tr>
+                    <th>Action</th>
+                    <th>Shortcut</th>
+                    <th>What it does</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Move right</td>
+                    <td>Tab or →</td>
+                    <td>Moves to the next cell to the right</td>
+                </tr>
+                <tr>
+                    <td>Move left</td>
+                    <td>Shift + Tab or ←</td>
+                    <td>Moves to the cell to the left</td>
+                </tr>
+                <tr>
+                    <td>Move down</td>
+                    <td>Enter or ↓</td>
+                    <td>Moves to the cell below</td>
+                </tr>
+                <tr>
+                    <td>Move up</td>
+                    <td>Shift + Enter or ↑</td>
+                    <td>Moves to the cell above</td>
+                </tr>
+                <tr>
+                    <td>Go to cell A1</td>
+                    <td>Ctrl + Home</td>
+                    <td>Jumps to the top-left cell</td>
+                </tr>
+                <tr>
+                    <td>Copy</td>
+                    <td>Ctrl + C</td>
+                    <td>Copies selected content</td>
+                </tr>
+                <tr>
+                    <td>Paste</td>
+                    <td>Ctrl + V</td>
+                    <td>Pastes copied content</td>
+                </tr>
+                <tr>
+                    <td>Undo</td>
+                    <td>Ctrl + Z</td>
+                    <td>Undoes the last action</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Navigation Practice</h4>
+            <ol>
+                <li><strong>Start at cell A1</strong></li>
+                <li><strong>Press Tab</strong> four times (you should be at cell E1)</li>
+                <li><strong>Press Enter</strong> three times (you should be at cell E4)</li>
+                <li><strong>Press Ctrl + Home</strong> (you should return to cell A1)</li>
+                <li><strong>Practice clicking different cells</strong> and using arrow keys to move around</li>
+            </ol>
+        </div>
+
+        <h3>Selection Techniques</h3>
+
+        <div class="info-box">
+            <p><strong>Single Cell Selection:</strong> Click once on any cell</p>
+            <p><strong>Range Selection (multiple cells):</strong></p>
+            <ul>
+                <li>Click and drag from one cell to another</li>
+                <li>Or click first cell, hold Shift, click last cell</li>
+                <li>Example: Select A1 to C3 by clicking A1, holding Shift, clicking C3</li>
+            </ul>
+            <p><strong>Entire Row Selection:</strong> Click on the row number (1, 2, 3, etc.)</p>
+            <p><strong>Entire Column Selection:</strong> Click on the column letter (A, B, C, etc.)</p>
+            <p><strong>Multiple Non-Adjacent Selections:</strong></p>
+            <ul>
+                <li>Select first range</li>
+                <li>Hold Ctrl (Windows) or Cmd (Mac)</li>
+                <li>Select additional ranges while holding the key</li>
+            </ul>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Selection Practice</h4>
+            <ol>
+                <li><strong>Select cell B2</strong> by clicking on it</li>
+                <li><strong>Select range A1:C3</strong> by clicking A1, holding Shift, clicking C3</li>
+                <li><strong>Select entire column A</strong> by clicking the "A" header</li>
+                <li><strong>Select entire row 5</strong> by clicking the "5" on the left side</li>
+                <li><strong>Practice non-adjacent selection:</strong> Select A1, hold Ctrl, select C3, hold Ctrl, select E5</li>
+            </ol>
+        </div>
+
+        <div class="screenshot-container">
+            <h4>Visual Reference Screenshots:</h4>
+            <a href="https://openwa.pressbooks.pub/bustechessentials/chapter/chapter-8-microsoft-excel/" target="_blank" class="screenshot-link">
+                📸 Excel Cell Selection Techniques - Shows how to select cells and ranges
+            </a>
+            <a href="https://www.comdex.com.au/post/excels-screenshot-tool" target="_blank" class="screenshot-link">
+                📸 Excel Screenshot Tutorial - Demonstrates selection and interface elements
+            </a>
+        </div>
+    </div>
+
+    <div class="topic-section">
+        <h2>Topic 4: Simple Data Entry</h2>
+        
+        <h3>Types of Data You Can Enter</h3>
+
+        <div class="info-box">
+            <p><strong>Text (Labels):</strong></p>
+            <ul>
+                <li>Names, descriptions, headers</li>
+                <li>Example: "Student Name", "Product Description"</li>
+                <li>Appears left-aligned in cells by default</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <p><strong>Numbers:</strong></p>
+            <ul>
+                <li>Quantities, prices, scores, dates</li>
+                <li>Example: 25, 3.14, 1500</li>
+                <li>Appears right-aligned in cells by default</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <p><strong>Dates:</strong></p>
+            <ul>
+                <li>Type in various formats: 1/15/2024, Jan 15, 2024, 15-Jan-24</li>
+                <li>Spreadsheets automatically recognize and format dates</li>
+            </ul>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Basic Data Entry</h4>
+            <ol>
+                <li><strong>Click on cell A1</strong></li>
+                <li><strong>Type:</strong> "Name" (this is a text label)</li>
+                <li><strong>Press Tab</strong> to move to B1</li>
+                <li><strong>Type:</strong> "Age"</li>
+                <li><strong>Press Tab</strong> to move to C1</li>
+                <li><strong>Type:</strong> "Score"</li>
+                <li><strong>Press Enter</strong> to move to the next row</li>
+                <li><strong>In cell A2, type:</strong> "John"</li>
+                <li><strong>In cell B2, type:</strong> 25</li>
+                <li><strong>In cell C2, type:</strong> 87.5</li>
+            </ol>
+        </div>
+
+        <h3>Auto-Fill Feature</h3>
+        <p>Auto-fill is a powerful feature that can automatically continue patterns or copy data.</p>
+
+        <div class="info-box">
+            <p><strong>How Auto-Fill Works:</strong></p>
+            <ul>
+                <li>Enter data in one or more cells</li>
+                <li>Select the cell(s)</li>
+                <li>Look for the small square in the bottom-right corner (fill handle)</li>
+                <li>Click and drag the fill handle to extend the pattern</li>
+            </ul>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Using Auto-Fill</h4>
+            <ol>
+                <li><strong>In cell D1, type:</strong> "January"</li>
+                <li><strong>Press Enter,</strong> then click back on D1</li>
+                <li><strong>Look for the small square</strong> in the bottom-right corner of the cell</li>
+                <li><strong>Click and drag</strong> that square to the right through column G</li>
+                <li><strong>Release the mouse</strong> - you should see: January, February, March, April</li>
+            </ol>
+        </div>
+
+        <div class="warning-box">
+            <p><strong>Other Auto-Fill Examples:</strong></p>
+            <ul>
+                <li>Type "1" in A1, "2" in A2, select both, then drag down = 3, 4, 5, 6...</li>
+                <li>Type "Monday" and drag = Tuesday, Wednesday, Thursday...</li>
+                <li>Type "Q1" and drag = Q2, Q3, Q4...</li>
+            </ul>
+        </div>
+
+        <div class="screenshot-container">
+            <h4>Visual Reference Screenshots:</h4>
+            <a href="https://www.w3schools.com/excel/excel_fill.php" target="_blank" class="screenshot-link">
+                📸 Excel Auto-Fill Feature - Shows the fill handle and auto-fill functionality
+            </a>
+            <a href="https://recorder.itopvpn.com/blog/screenshot-excel-2567" target="_blank" class="screenshot-link">
+                📸 Taking Screenshots in Excel - Shows various Excel interface elements including fill handle
+            </a>
+        </div>
+
+        <h3>Undo and Redo</h3>
+        <div class="info-box">
+            <p><strong>Undo (Ctrl + Z):</strong></p>
+            <ul>
+                <li>Reverses your last action</li>
+                <li>Can undo multiple actions by pressing repeatedly</li>
+            </ul>
+            <p><strong>Redo:</strong></p>
+            <ul>
+                <li>Excel: Ctrl + Y</li>
+                <li>Google Sheets: Ctrl + Shift + Z</li>
+                <li>Redoes an action you just undid</li>
+            </ul>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Undo Practice</h4>
+            <ol>
+                <li><strong>Type something</strong> in any cell</li>
+                <li><strong>Press Ctrl + Z</strong> to undo it</li>
+                <li><strong>Press the redo shortcut</strong> to bring it back</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="practice-exercise">
+        <h3>Meaningful Practice Exercise: Create a Personal Monthly Budget Tracker</h3>
+        
+        <p><strong>Objective:</strong> Create a simple budget spreadsheet that demonstrates all the basic concepts we've learned.</p>
+
+        <div class="step-by-step">
+            <h4>Step 1: Set Up Your Workbook</h4>
+            <ol>
+                <li><strong>Open a new spreadsheet</strong> (Excel or Google Sheets)</li>
+                <li><strong>Save it</strong> with the name "My Monthly Budget"
+                    <ul>
+                        <li>Excel: Ctrl + S, choose location, type name</li>
+                        <li>Google Sheets: Click "Untitled spreadsheet" at top, type new name</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step 2: Create Multiple Sheets</h4>
+            <ol>
+                <li><strong>Rename Sheet1</strong> to "January Budget"</li>
+                <li><strong>Create a second sheet</strong> and name it "Summary"</li>
+                <li><strong>Practice navigating</strong> between the sheets by clicking their tabs</li>
+            </ol>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step 3: Enter Headers and Use Auto-Fill</h4>
+            <p><strong>In the "January Budget" sheet:</strong></p>
+            <ol>
+                <li><strong>Click cell A1</strong> and type "Category"</li>
+                <li><strong>In B1</strong> type "Budgeted Amount"</li>
+                <li><strong>In C1</strong> type "Actual Amount"</li>
+                <li><strong>In D1</strong> type "Difference"</li>
+            </ol>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step 4: Enter Data and Practice Selection</h4>
+            <ol>
+                <li><strong>In column A (starting A2),</strong> enter these categories:
+                    <ul>
+                        <li>Housing</li>
+                        <li>Food</li>
+                        <li>Transportation</li>
+                        <li>Entertainment</li>
+                        <li>Savings</li>
+                    </ul>
+                </li>
+                <li><strong>In column B (starting B2),</strong> enter these budget amounts:
+                    <ul>
+                        <li>1200</li>
+                        <li>400</li>
+                        <li>300</li>
+                        <li>150</li>
+                        <li>200</li>
+                    </ul>
+                </li>
+                <li><strong>Practice different selection methods:</strong>
+                    <ul>
+                        <li>Select the entire "Category" column (click column A header)</li>
+                        <li>Select the range A1:D1 (your headers)</li>
+                        <li>Select all budget amounts (B2:B6)</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step 5: Navigation Practice</h4>
+            <ol>
+                <li><strong>Start at cell A1</strong></li>
+                <li><strong>Use Tab</strong> to move across your headers</li>
+                <li><strong>Use Enter</strong> to move down your categories</li>
+                <li><strong>Use Ctrl + Home</strong> to return to A1</li>
+                <li><strong>Click on different cells</strong> and watch the cell address change in the Name Box</li>
+            </ol>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step 6: Auto-Fill Practice</h4>
+            <ol>
+                <li><strong>Go to the Summary sheet</strong></li>
+                <li><strong>In A1,</strong> type "Month"</li>
+                <li><strong>In A2,</strong> type "January"</li>
+                <li><strong>Select A2</strong> and use the fill handle to drag down to A7</li>
+                <li><strong>You should see:</strong> January, February, March, April, May, June</li>
+            </ol>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step 7: Practice Undo/Redo</h4>
+            <ol>
+                <li><strong>Add some random text</strong> in an empty cell</li>
+                <li><strong>Press Ctrl + Z</strong> to undo</li>
+                <li><strong>Press the redo shortcut</strong> to bring it back</li>
+                <li><strong>Try undoing multiple actions</strong> to see how it works</li>
+            </ol>
+        </div>
+
+        <div class="checklist">
+            <h4>Verification Checklist</h4>
+            <p>By the end of this exercise, you should have:</p>
+            <ul>
+                <li>A workbook with two renamed sheets</li>
+                <li>Proper headers in row 1</li>
+                <li>Budget categories and amounts entered</li>
+                <li>Practiced cell selection techniques</li>
+                <li>Used auto-fill to create month names</li>
+                <li>Navigated using both mouse and keyboard</li>
+                <li>Successfully used undo/redo functions</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="topic-section">
+        <h2>Key Differences Between Excel and Google Sheets</h2>
+        
+        <table class="differences-table">
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>Microsoft Excel</th>
+                    <th>Google Sheets</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Interface</strong></td>
+                    <td>Ribbon-based with many tabs and options</td>
+                    <td>Simpler menu bar with fewer visible options</td>
+                </tr>
+                <tr>
+                    <td><strong>File Storage</strong></td>
+                    <td>Saves locally by default (can save to OneDrive)</td>
+                    <td>Automatically saves to Google Drive cloud storage</td>
+                </tr>
+                <tr>
+                    <td><strong>Performance</strong></td>
+                    <td>Handles very large datasets efficiently</td>
+                    <td>May slow down with datasets over 100,000 rows</td>
+                </tr>
+                <tr>
+                    <td><strong>Collaboration</strong></td>
+                    <td>Real-time collaboration available with Microsoft 365</td>
+                    <td>Built-in real-time collaboration (multiple people can edit simultaneously)</td>
+                </tr>
+                <tr>
+                    <td><strong>Auto-save</strong></td>
+                    <td>Must manually save (Ctrl + S) by default</td>
+                    <td>Saves automatically every few seconds</td>
+                </tr>
+                <tr>
+                    <td><strong>Keyboard Shortcuts</strong></td>
+                    <td>More extensive shortcut options</td>
+                    <td>Fewer shortcuts but covers most essential functions</td>
+                </tr>
+                <tr>
+                    <td><strong>Offline Access</strong></td>
+                    <td>Works offline (desktop version)</td>
+                    <td>Limited offline capabilities (requires setup)</td>
+                </tr>
+                <tr>
+                    <td><strong>Cost</strong></td>
+                    <td>Requires purchase or subscription</td>
+                    <td>Completely free with Google account</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="youtube-section">
+        <h3>Additional Resources</h3>
+        
+        <h4>Official Documentation:</h4>
+        <ul>
+            <li><strong>Excel:</strong> <a href="https://support.microsoft.com/en-us/office/basic-tasks-in-excel-dc775dd1-fa52-430f-9c3c-d998d1735fca" target="_blank">Microsoft's Basic Tasks in Excel</a></li>
+            <li><strong>Google Sheets:</strong> <a href="https://support.google.com/docs/answer/6000292?hl=en&co=GENIE.Platform%3DDesktop" target="_blank">How to use Google Sheets</a></li>
+        </ul>
+
+        <h4>YouTube Video Tutorials:</h4>
+        
+        <div class="youtube-links">
+            <a href="https://www.youtube.com/c/ExcelIsFun" target="_blank" class="youtube-link">
+                <strong>ExcelIsFun - Excel Basics Series</strong>
+                Over 3,000 videos covering everything from basics to advanced topics
+            </a>
+            
+            <a href="https://www.youtube.com/c/ExcelCampus" target="_blank" class="youtube-link">
+                <strong>Excel Campus - Excel Basics for Beginners</strong>
+                Jon Acampora's comprehensive tutorials
+            </a>
+            
+            <a href="https://www.youtube.com/playlist?list=PLpQQipWcxwt9U7qgyYkvNH3Mp8XHXCMmQ" target="_blank" class="youtube-link">
+                <strong>GCFGlobal Excel Tutorial Playlist</strong>
+                Step-by-step beginner-friendly tutorials
+            </a>
+            
+            <a href="https://www.youtube.com/c/LeilaGharani" target="_blank" class="youtube-link">
+                <strong>Leila Gharani - Google Sheets Tutorials</strong>
+                Practical Google Sheets tips and tutorials for all levels
+            </a>
+            
+            <a href="https://www.youtube.com/playlist?list=PLpQQipWcxwt8zNmIzXjQSMsYwKyqnC5LF" target="_blank" class="youtube-link">
+                <strong>GCFGlobal Google Sheets Playlist</strong>
+                Complete beginner's guide to Google Sheets
+            </a>
+            
+            <a href="https://www.youtube.com/c/LearnGoogleSheetsExcel" target="_blank" class="youtube-link">
+                <strong>Learn Google Sheets & Excel Spreadsheets</strong>
+                Comprehensive tutorials for both platforms
+            </a>
+        </div>
+
+        <div class="warning-box">
+            <p><strong>Recommended Beginner Video:</strong></p>
+            <p>"Excel/Google Sheets Basics for Complete Beginners" - Search for these terms on YouTube to find current, highly-rated tutorial videos that cover interface navigation and basic data entry.</p>
+        </div>
+    </div>
+
+    <div class="next-section">
+        <h3>What's Next?</h3>
+        <p>In Week 2, we'll build on these basics by learning:</p>
+        <ul>
+            <li>How to format your data to make it look professional</li>
+            <li>Different types of data and how spreadsheets handle them</li>
+            <li>Basic cell styling and formatting options</li>
+            <li>How to make your spreadsheets easier to read and understand</li>
+        </ul>
+        <p><strong>Homework for this week:</strong> Practice the exercise above and try creating your own simple list (like a grocery list, to-do list, or contact list) to get comfortable with basic data entry and navigation.</p>
+    </div>
+
+    <div class="navigation">
+        <a href="#" class="nav-button disabled">← Previous Lesson</a>
+        <a href="#" class="nav-button">Next Lesson: Data Entry & Formatting →</a>
+    </div>
+</div>
+
+</body>
+</html>

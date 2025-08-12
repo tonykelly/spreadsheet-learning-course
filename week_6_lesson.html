@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 6: Sorting & Filtering - Complete Lesson</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #198754 0%, #20c997 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.5em;
+        }
+        
+        .header p {
+            margin: 0;
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .learning-objectives {
+            background-color: #d1f2eb;
+            border-left: 4px solid #198754;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+        
+        .learning-objectives h2 {
+            color: #0f5132;
+            margin-top: 0;
+        }
+        
+        .topic-section {
+            margin: 40px 0;
+            padding: 25px;
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .topic-section h2 {
+            color: #495057;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .topic-section h3 {
+            color: #6c757d;
+            margin-top: 25px;
+        }
+        
+        .screenshot-container {
+            background-color: #f8f9fa;
+            border: 2px dashed #6c757d;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .screenshot-container h4 {
+            color: #495057;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        
+        .screenshot-link {
+            display: block;
+            color: #007bff;
+            text-decoration: none;
+            padding: 10px;
+            background-color: #e3f2fd;
+            border-radius: 5px;
+            margin: 10px 0;
+            border-left: 4px solid #2196f3;
+        }
+        
+        .screenshot-link:hover {
+            background-color: #bbdefb;
+            text-decoration: none;
+        }
+        
+        .step-by-step {
+            background-color: #d1f2eb;
+            border-left: 4px solid #198754;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .step-by-step h4 {
+            color: #0f5132;
+            margin-top: 0;
+        }
+        
+        .step-by-step ol {
+            margin: 15px 0;
+        }
+        
+        .step-by-step li {
+            margin: 8px 0;
+        }
+        
+        .sort-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .sort-table th {
+            background-color: #198754;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .sort-table td {
+            border: 1px solid #dee2e6;
+            padding: 12px;
+        }
+        
+        .sort-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .filter-example {
+            background-color: #e8f5e8;
+            border: 1px solid #28a745;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 1.1em;
+        }
+        
+        .data-principle {
+            background-color: #e3f2fd;
+            border: 2px solid #2196f3;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .info-box {
+            background-color: #d1ecf1;
+            border: 1px solid #bee5eb;
+            color: #0c5460;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .practice-exercise {
+            background-color: #e8f4f8;
+            border: 2px solid #17a2b8;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+        
+        .practice-exercise h3 {
+            color: #0c5460;
+            margin-top: 0;
+        }
+        
+        .differences-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 14px;
+        }
+        
+        .differences-table th {
+            background-color: #343a40;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        .differences-table td {
+            border: 1px solid #dee2e6;
+            padding: 10px;
+            vertical-align: top;
+        }
+        
+        .differences-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .youtube-section {
+            background-color: #fff5f5;
+            border: 2px solid #dc3545;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+        
+        .youtube-section h3 {
+            color: #721c24;
+            margin-top: 0;
+        }
+        
+        .youtube-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .youtube-link {
+            display: block;
+            color: #dc3545;
+            text-decoration: none;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .youtube-link:hover {
+            background-color: #e9ecef;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-decoration: none;
+        }
+        
+        .youtube-link strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .next-section {
+            background: linear-gradient(135deg, #6f42c1 0%, #d63384 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .next-section h3 {
+            margin-top: 0;
+            color: white;
+        }
+        
+        .checklist {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .checklist ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .checklist li {
+            margin: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .checklist li:before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+        }
+        
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            margin: 40px 0;
+            padding: 20px;
+            background-color: #e9ecef;
+            border-radius: 8px;
+        }
+        
+        .nav-button {
+            padding: 12px 24px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+        
+        .nav-button:hover {
+            background-color: #0056b3;
+            text-decoration: none;
+            color: white;
+        }
+        
+        .filter-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .filter-type {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        
+        .filter-type h4 {
+            color: #495057;
+            margin-top: 0;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 8px;
+        }
+        
+        .validation-rules {
+            background-color: #fff3cd;
+            border: 1px solid #ffc107;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>Week 6: Sorting & Filtering</h1>
+        <p>Organizing and Analyzing Your Data</p>
+    </div>
+
+    <div class="learning-objectives">
+        <h2>Learning Objectives:</h2>
+        <p>By the end of this lesson, you will be able to:</p>
+        <ul>
+            <li>Organize data efficiently using single and multi-level sorting</li>
+            <li>Filter data to display only relevant information</li>
+            <li>Create and use data validation rules for clean data entry</li>
+            <li>Apply advanced filtering techniques with multiple criteria</li>
+            <li>Understand best practices for data organization and structure</li>
+        </ul>
+    </div>
+
+    <div class="topic-section">
+        <h2>Topic 1: Data Organization Principles</h2>
+        
+        <h3>Setting Up Data for Success</h3>
+        <p>Before you can effectively sort and filter data, it's crucial to organize it properly. Well-structured data makes everything else easier and more reliable.</p>
+
+        <div class="screenshot-container">
+            <h4>Visual Reference Screenshots:</h4>
+            <a href="https://support.microsoft.com/en-us/office/sort-data-in-a-range-or-table-62d0b95d-2a90-4610-a6ae-2e545c4a4654" target="_blank" class="screenshot-link">
+                📸 Excel Sorting Guide - Shows proper data organization for sorting
+            </a>
+            <a href="https://support.google.com/docs/answer/3540681?hl=en&co=GENIE.Platform%3DDesktop" target="_blank" class="screenshot-link">
+                📸 Google Sheets Filtering - Demonstrates data organization and filtering setup
+            </a>
+        </div>
+
+        <div class="data-principle">
+            <h4>Essential Data Organization Rules:</h4>
+            <ol>
+                <li><strong>Headers in Row 1:</strong> Each column should have a clear, descriptive header</li>
+                <li><strong>One Data Type per Column:</strong> Don't mix text and numbers in the same column</li>
+                <li><strong>No Empty Rows/Columns:</strong> Avoid gaps in your data range</li>
+                <li><strong>Consistent Formatting:</strong> Use the same date format, number format, etc.</li>
+                <li><strong>No Merged Cells:</strong> Merged cells break sorting and filtering</li>
+            </ol>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Preparing Data for Sorting and Filtering</h4>
+            <ol>
+                <li><strong>Create proper headers:</strong>
+                    <ul>
+                        <li>A1: "Employee Name"</li>
+                        <li>B1: "Department"</li>
+                        <li>C1: "Hire Date"</li>
+                        <li>D1: "Salary"</li>
+                        <li>E1: "Performance Rating"</li>
+                    </ul>
+                </li>
+                <li><strong>Enter consistent data:</strong>
+                    <ul>
+                        <li>Use same date format throughout (MM/DD/YYYY)</li>
+                        <li>Format salary as currency</li>
+                        <li>Use consistent department names (not "Sales" and "sales")</li>
+                    </ul>
+                </li>
+                <li><strong>Check for data quality:</strong>
+                    <ul>
+                        <li>No empty rows within the data</li>
+                        <li>No extra spaces in text entries</li>
+                        <li>Consistent capitalization</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="warning-box">
+            <h4>Common Data Organization Mistakes:</h4>
+            <ul>
+                <li><strong>Multiple header rows:</strong> Avoid titles above your column headers</li>
+                <li><strong>Inconsistent data entry:</strong> "New York" vs "NY" vs "new york"</li>
+                <li><strong>Mixed data types:</strong> Numbers stored as text, dates as text</li>
+                <li><strong>Empty rows for spacing:</strong> Use formatting instead of empty rows</li>
+                <li><strong>Data in merged cells:</strong> Unmerge before sorting/filtering</li>
+            </ul>
+        </div>
+
+        <div class="practice-exercise">
+            <h3>Practice Exercise: Data Cleanup</h3>
+            <p><strong>Scenario:</strong> Clean up a messy customer database</p>
+            
+            <ol>
+                <li><strong>Create messy data (intentionally):</strong>
+                    <ul>
+                        <li>Mix of "Customer Name" and blank headers</li>
+                        <li>Inconsistent date formats (1/1/2023, Jan 1 2023, 2023-01-01)</li>
+                        <li>Mix of "CA", "California", "ca" in state column</li>
+                        <li>Some merged cells</li>
+                    </ul>
+                </li>
+                <li><strong>Clean the data:</strong>
+                    <ul>
+                        <li>Add proper headers</li>
+                        <li>Standardize all date formats</li>
+                        <li>Standardize state abbreviations</li>
+                        <li>Unmerge cells</li>
+                        <li>Remove empty rows</li>
+                    </ul>
+                </li>
+                <li><strong>Verify the cleanup:</strong>
+                    <ul>
+                        <li>Select data range and confirm it's contiguous</li>
+                        <li>Check data types are consistent in each column</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="topic-section">
+        <h2>Topic 2: Basic Sorting</h2>
+        
+        <h3>Understanding Sort Operations</h3>
+        <p>Sorting rearranges your data in a specific order (alphabetical, numerical, chronological) while keeping related information in each row together.</p>
+
+        <table class="sort-table">
+            <thead>
+                <tr>
+                    <th>Sort Type</th>
+                    <th>When to Use</th>
+                    <th>Example</th>
+                    <th>Result</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>A to Z (Ascending)</strong></td>
+                    <td>Alphabetical order, smallest to largest</td>
+                    <td>Names, dates (oldest first)</td>
+                    <td>Adams, Brown, Smith</td>
+                </tr>
+                <tr>
+                    <td><strong>Z to A (Descending)</strong></td>
+                    <td>Reverse alphabetical, largest to smallest</td>
+                    <td>Salaries (highest first)</td>
+                    <td>Smith, Brown, Adams</td>
+                </tr>
+                <tr>
+                    <td><strong>Custom Sort</strong></td>
+                    <td>Specific business logic or multiple criteria</td>
+                    <td>Department priority, then by name</td>
+                    <td>CEO, Manager, Employee</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Simple Single-Column Sort</h4>
+            <ol>
+                <li><strong>Set up sample data:</strong>
+                    <ul>
+                        <li>A1: "Name", B1: "Score", C1: "Grade"</li>
+                        <li>A2: "John", B2: 85, C2: "B"</li>
+                        <li>A3: "Alice", B3: 92, C3: "A"</li>
+                        <li>A4: "Bob", B4: 78, C4: "C"</li>
+                    </ul>
+                </li>
+                <li><strong>Select your data:</strong>
+                    <ul>
+                        <li>Click anywhere in your data table</li>
+                        <li>Excel/Sheets will automatically detect the data range</li>
+                        <li>Or manually select A1:C4</li>
+                    </ul>
+                </li>
+                <li><strong>Sort by name (A to Z):</strong>
+                    <ul>
+                        <li><strong>Excel:</strong> Data tab → Sort A to Z (with Name column selected)</li>
+                        <li><strong>Google Sheets:</strong> Data menu → Sort range → Sort by Column A (A→Z)</li>
+                    </ul>
+                </li>
+                <li><strong>Verify the result:</strong>
+                    <ul>
+                        <li>Names should now be: Alice, Bob, John</li>
+                        <li>Notice how the scores and grades stayed with their respective names</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="info-box">
+            <h4>Sort Behavior with Different Data Types:</h4>
+            <ul>
+                <li><strong>Text:</strong> Sorts alphabetically (A-Z or Z-A)</li>
+                <li><strong>Numbers:</strong> Sorts numerically (smallest to largest or vice versa)</li>
+                <li><strong>Dates:</strong> Sorts chronologically (oldest to newest or vice versa)</li>
+                <li><strong>Mixed data:</strong> Numbers first, then text, then blanks</li>
+            </ul>
+        </div>
+
+        <h3>Multi-Level Sorting</h3>
+        <p>When you need to sort by multiple criteria, such as department first, then by salary within each department.</p>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Multi-Level Sort</h4>
+            <ol>
+                <li><strong>Set up employee data:</strong>
+                    <ul>
+                        <li>A1: "Name", B1: "Department", C1: "Salary"</li>
+                        <li>A2: "John", B2: "Sales", C2: 50000</li>
+                        <li>A3: "Alice", B3: "IT", C3: 65000</li>
+                        <li>A4: "Bob", B4: "Sales", C4: 55000</li>
+                        <li>A5: "Carol", B5: "IT", C5: 60000</li>
+                    </ul>
+                </li>
+                <li><strong>Access multi-level sort:</strong>
+                    <ul>
+                        <li><strong>Excel:</strong> Data tab → Sort (the main Sort button, not A-Z)</li>
+                        <li><strong>Google Sheets:</strong> Data menu → Sort range → Advanced range sorting options</li>
+                    </ul>
+                </li>
+                <li><strong>Set up sort criteria:</strong>
+                    <ul>
+                        <li><strong>Primary sort:</strong> Department (A to Z)</li>
+                        <li><strong>Secondary sort:</strong> Salary (largest to smallest)</li>
+                    </ul>
+                </li>
+                <li><strong>Execute the sort and verify:</strong>
+                    <ul>
+                        <li>IT employees should appear first, with Alice before Carol (higher salary)</li>
+                        <li>Then Sales employees, with Bob before John (higher salary)</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="practice-exercise">
+            <h3>Practice Exercise: Complex Sorting</h3>
+            <p><strong>Scenario:</strong> Sort a student grade report</p>
+            
+            <ol>
+                <li><strong>Create student data:</strong>
+                    <ul>
+                        <li>Include: Student Name, Class (A, B, C), Subject, Grade (0-100)</li>
+                        <li>Create at least 10 rows of varied data</li>
+                    </ul>
+                </li>
+                <li><strong>Perform multi-level sorts:</strong>
+                    <ul>
+                        <li><strong>Sort 1:</strong> By Class, then by Student Name</li>
+                        <li><strong>Sort 2:</strong> By Subject, then by Grade (highest first)</li>
+                        <li><strong>Sort 3:</strong> By Grade (lowest first) to identify students needing help</li>
+                    </ul>
+                </li>
+                <li><strong>Observe how the sorting affects data analysis</strong></li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="topic-section">
+        <h2>Topic 3: Filtering Techniques</h2>
+        
+        <h3>Understanding Filters</h3>
+        <p>Filtering shows only the rows that meet specific criteria, temporarily hiding the rest. Unlike sorting, filtering doesn't rearrange data—it just controls what's visible.</p>
+
+        <div class="filter-types">
+            <div class="filter-type">
+                <h4>AutoFilter</h4>
+                <p>Basic filtering with dropdown arrows on each column header. Great for quick, simple filtering tasks.</p>
+            </div>
+            <div class="filter-type">
+                <h4>Custom Filter</h4>
+                <p>More control over filter criteria, including ranges, multiple conditions, and complex logic.</p>
+            </div>
+            <div class="filter-type">
+                <h4>Text Filters</h4>
+                <p>Filter text columns using contains, starts with, ends with, and other text-specific criteria.</p>
+            </div>
+            <div class="filter-type">
+                <h4>Number Filters</h4>
+                <p>Filter numeric data using greater than, less than, between ranges, and top/bottom values.</p>
+            </div>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Applying AutoFilter</h4>
+            <ol>
+                <li><strong>Set up employee data:</strong>
+                    <ul>
+                        <li>A1: "Name", B1: "Department", C1: "Salary", D1: "Years"</li>
+                        <li>Add several rows of employee data</li>
+                    </ul>
+                </li>
+                <li><strong>Enable AutoFilter:</strong>
+                    <ul>
+                        <li><strong>Excel:</strong> Select data → Data tab → Filter</li>
+                        <li><strong>Google Sheets:</strong> Select data → Data menu → Create a filter</li>
+                    </ul>
+                </li>
+                <li><strong>Notice the dropdown arrows:</strong>
+                    <ul>
+                        <li>Small dropdown arrows appear in each header cell</li>
+                        <li>These arrows provide access to filtering options</li>
+                    </ul>
+                </li>
+                <li><strong>Apply a simple filter:</strong>
+                    <ul>
+                        <li>Click dropdown arrow in Department column</li>
+                        <li>Uncheck "Sales" to hide Sales employees</li>
+                        <li>Click OK</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="info-box">
+            <h4>Filter Indicators:</h4>
+            <ul>
+                <li><strong>Dropdown arrow changes color:</strong> Indicates a filter is active on that column</li>
+                <li><strong>Row numbers have gaps:</strong> Shows that some rows are hidden</li>
+                <li><strong>Status bar shows count:</strong> Displays how many rows are visible vs. total</li>
+            </ul>
+        </div>
+
+        <h3>Advanced Filtering Options</h3>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Custom Number Filters</h4>
+            <ol>
+                <li><strong>Filter by salary range:</strong>
+                    <ul>
+                        <li>Click dropdown in Salary column</li>
+                        <li>Choose "Number Filters" → "Between"</li>
+                        <li>Enter range: 50000 to 70000</li>
+                        <li>Only employees with salaries in this range will show</li>
+                    </ul>
+                </li>
+                <li><strong>Filter top performers:</strong>
+                    <ul>
+                        <li>Click dropdown in Salary column</li>
+                        <li>Choose "Number Filters" → "Top 10"</li>
+                        <li>Adjust to show top 3 or top 25%</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Text Filters</h4>
+            <ol>
+                <li><strong>Filter names starting with specific letter:</strong>
+                    <ul>
+                        <li>Click dropdown in Name column</li>
+                        <li>Choose "Text Filters" → "Begins With"</li>
+                        <li>Enter "A" to show only names starting with A</li>
+                    </ul>
+                </li>
+                <li><strong>Filter names containing text:</strong>
+                    <ul>
+                        <li>Choose "Text Filters" → "Contains"</li>
+                        <li>Enter "son" to find Johnson, Wilson, etc.</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <h3>Multiple Filter Criteria</h3>
+        <div class="info-box">
+            <p><strong>Filter Logic:</strong> When you apply filters to multiple columns, Excel shows only rows that meet ALL criteria (AND logic). For example:</p>
+            <ul>
+                <li>Department = "IT" AND Salary > 60000</li>
+                <li>Shows only IT employees earning more than $60,000</li>
+            </ul>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Combining Multiple Filters</h4>
+            <ol>
+                <li><strong>Apply first filter:</strong>
+                    <ul>
+                        <li>Filter Department to show only "IT" and "Sales"</li>
+                    </ul>
+                </li>
+                <li><strong>Apply second filter:</strong>
+                    <ul>
+                        <li>Filter Years to show only employees with 5+ years</li>
+                    </ul>
+                </li>
+                <li><strong>Apply third filter:</strong>
+                    <ul>
+                        <li>Filter Salary to show only salaries above $55,000</li>
+                    </ul>
+                </li>
+                <li><strong>Result:</strong>
+                    <ul>
+                        <li>Shows only IT or Sales employees with 5+ years earning $55,000+</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="practice-exercise">
+            <h3>Practice Exercise: Advanced Filtering</h3>
+            <p><strong>Scenario:</strong> Analyze sales performance data</p>
+            
+            <ol>
+                <li><strong>Create sales data:</strong>
+                    <ul>
+                        <li>Columns: Salesperson, Region, Product, Sale Amount, Sale Date</li>
+                        <li>Include at least 20 rows with varied data</li>
+                    </ul>
+                </li>
+                <li><strong>Apply various filters to answer these questions:</strong>
+                    <ul>
+                        <li>Who are the top 10% performers by sale amount?</li>
+                        <li>Which salespeople in the West region sold laptops?</li>
+                        <li>What sales occurred in the last quarter above $5,000?</li>
+                        <li>Which products have names containing "Pro"?</li>
+                    </ul>
+                </li>
+                <li><strong>Practice clearing and reapplying filters</strong></li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="topic-section">
+        <h2>Topic 4: Data Validation</h2>
+        
+        <h3>Controlling Data Entry</h3>
+        <p>Data validation ensures that only specific types of data can be entered into cells, preventing errors and maintaining data quality.</p>
+
+        <div class="validation-rules">
+            <h4>Common Validation Rules:</h4>
+            <ul>
+                <li><strong>Dropdown Lists:</strong> Choose from predefined options</li>
+                <li><strong>Number Ranges:</strong> Only allow numbers within specific limits</li>
+                <li><strong>Date Ranges:</strong> Restrict dates to specific periods</li>
+                <li><strong>Text Length:</strong> Control minimum/maximum character count</li>
+                <li><strong>Custom Formulas:</strong> Create complex validation logic</li>
+            </ul>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Creating Dropdown Lists</h4>
+            <ol>
+                <li><strong>Set up your list source:</strong>
+                    <ul>
+                        <li>In a separate area (like column F), list valid departments:</li>
+                        <li>F1: "Sales", F2: "Marketing", F3: "IT", F4: "HR"</li>
+                    </ul>
+                </li>
+                <li><strong>Select target cells:</strong>
+                    <ul>
+                        <li>Select the Department column where you want validation</li>
+                    </ul>
+                </li>
+                <li><strong>Apply data validation:</strong>
+                    <ul>
+                        <li><strong>Excel:</strong> Data tab → Data Validation</li>
+                        <li><strong>Google Sheets:</strong> Data menu → Data validation</li>
+                    </ul>
+                </li>
+                <li><strong>Configure the validation:</strong>
+                    <ul>
+                        <li>Allow: List (Excel) or Dropdown (Google Sheets)</li>
+                        <li>Source: Select your F1:F4 range</li>
+                        <li>Check "In-cell dropdown" if available</li>
+                    </ul>
+                </li>
+                <li><strong>Test the validation:</strong>
+                    <ul>
+                        <li>Click in a Department cell</li>
+                        <li>Notice the dropdown arrow appears</li>
+                        <li>Try entering invalid data—it should be rejected</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Number Range Validation</h4>
+            <ol>
+                <li><strong>Select salary column cells</strong></li>
+                <li><strong>Open Data Validation dialog</strong></li>
+                <li><strong>Configure number validation:</strong>
+                    <ul>
+                        <li>Allow: Decimal (Excel) or Number (Google Sheets)</li>
+                        <li>Data: Between</li>
+                        <li>Minimum: 30000</li>
+                        <li>Maximum: 150000</li>
+                    </ul>
+                </li>
+                <li><strong>Add helpful messages:</strong>
+                    <ul>
+                        <li>Input Message: "Enter salary between $30,000 and $150,000"</li>
+                        <li>Error Message: "Salary must be between $30,000 and $150,000"</li>
+                    </ul>
+                </li>
+                <li><strong>Test the validation:</strong>
+                    <ul>
+                        <li>Try entering 25000 (should be rejected)</li>
+                        <li>Try entering 175000 (should be rejected)</li>
+                        <li>Enter 75000 (should be accepted)</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Date Range Validation</h4>
+            <ol>
+                <li><strong>Select hire date column</strong></li>
+                <li><strong>Configure date validation:</strong>
+                    <ul>
+                        <li>Allow: Date</li>
+                        <li>Data: Between</li>
+                        <li>Start date: 1/1/2000 (no hiring before this date)</li>
+                        <li>End date: TODAY() (no future hire dates)</li>
+                    </ul>
+                </li>
+                <li><strong>Test with various dates</strong></li>
+            </ol>
+        </div>
+
+        <div class="practice-exercise">
+            <h3>Practice Exercise: Complete Validation System</h3>
+            <p><strong>Scenario:</strong> Create a validated employee entry form</p>
+            
+            <ol>
+                <li><strong>Set up validation for each column:</strong>
+                    <ul>
+                        <li><strong>Name:</strong> Text length between 2 and 50 characters</li>
+                        <li><strong>Department:</strong> Dropdown list (Sales, IT, HR, Finance)</li>
+                        <li><strong>Salary:</strong> Number between 35,000 and 200,000</li>
+                        <li><strong>Hire Date:</strong> Date between 1/1/2010 and today</li>
+                        <li><strong>Performance Rating:</strong> Dropdown (Excellent, Good, Satisfactory, Needs Improvement)</li>
+                    </ul>
+                </li>
+                <li><strong>Add helpful input messages for each validation</strong></li>
+                <li><strong>Test the system:</strong>
+                    <ul>
+                        <li>Try entering invalid data in each column</li>
+                        <li>Verify appropriate error messages appear</li>
+                        <li>Enter valid data to ensure it works correctly</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="practice-exercise">
+        <h3>Comprehensive Practice Exercise: Product Inventory Management System</h3>
+        
+        <p><strong>Project Overview:</strong> Create a complete inventory management system that demonstrates all Week 6 concepts including data organization, sorting, filtering, and validation.</p>
+
+        <div class="step-by-step">
+            <h4>Step 1: Set Up the Data Structure</h4>
+            <ol>
+                <li><strong>Create column headers:</strong>
+                    <ul>
+                        <li>A1: "Product ID", B1: "Product Name", C1: "Category"</li>
+                        <li>D1: "Supplier", E1: "Cost", F1: "Sale Price"</li>
+                        <li>G1: "Stock Quantity", H1: "Reorder Level", I1: "Last Updated"</li>
+                    </ul>
+                </li>
+                <li><strong>Enter sample data (at least 20 products):</strong>
+                    <ul>
+                        <li>Include various categories: Electronics, Clothing, Books, Home & Garden</li>
+                        <li>Include different suppliers</li>
+                        <li>Vary the quantities and prices</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step 2: Apply Data Validation</h4>
+            <ol>
+                <li><strong>Category dropdown:</strong>
+                    <ul>
+                        <li>Create list in separate area: Electronics, Clothing, Books, Home & Garden</li>
+                        <li>Apply validation to Category column</li>
+                    </ul>
+                </li>
+                <li><strong>Price validation:</strong>
+                    <ul>
+                        <li>Cost: Between $1 and $1000</li>
+                        <li>Sale Price: Between $2 and $1500</li>
+                    </ul>
+                </li>
+                <li><strong>Stock quantity validation:</strong>
+                    <ul>
+                        <li>Whole numbers between 0 and 10000</li>
+                    </ul>
+                </li>
+                <li><strong>Date validation:</strong>
+                    <ul>
+                        <li>Last Updated: Must be today or earlier</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step 3: Create Analysis Views with Sorting</h4>
+            <ol>
+                <li><strong>Sort by profitability:</strong>
+                    <ul>
+                        <li>Add calculated column for Profit Margin: =(F2-E2)/F2</li>
+                        <li>Sort by profit margin (highest first)</li>
+                    </ul>
+                </li>
+                <li><strong>Sort by stock status:</strong>
+                    <ul>
+                        <li>Sort by Stock Quantity (lowest first) to see what needs restocking</li>
+                    </ul>
+                </li>
+                <li><strong>Sort by category and name:</strong>
+                    <ul>
+                        <li>Multi-level sort: Category (A-Z), then Product Name (A-Z)</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step 4: Create Filtered Reports</h4>
+            <ol>
+                <li><strong>Low stock report:</strong>
+                    <ul>
+                        <li>Filter where Stock Quantity ≤ Reorder Level</li>
+                        <li>This shows items that need to be reordered</li>
+                    </ul>
+                </li>
+                <li><strong>High-value inventory:</strong>
+                    <ul>
+                        <li>Filter Sale Price > $100</li>
+                        <li>Shows expensive items requiring special attention</li>
+                    </ul>
+                </li>
+                <li><strong>Category analysis:</strong>
+                    <ul>
+                        <li>Filter by Electronics category</li>
+                        <li>Further filter by specific supplier</li>
+                    </ul>
+                </li>
+                <li><strong>Recent updates:</strong>
+                    <ul>
+                        <li>Filter Last Updated within last 30 days</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step 5: Advanced Analysis</h4>
+            <ol>
+                <li><strong>Create status indicators:</strong>
+                    <ul>
+                        <li>Add column: "Stock Status"</li>
+                        <li>Formula: =IF(G2<=H2,"Reorder",IF(G2<H2*2,"Low","OK"))</li>
+                        <li>Apply data validation with dropdown: Reorder, Low, OK</li>
+                    </ul>
+                </li>
+                <li><strong>Profitability analysis:</strong>
+                    <ul>
+                        <li>Filter to show top 25% by profit margin</li>
+                        <li>Sort by category to see which categories are most profitable</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="checklist">
+            <h4>Verification Checklist</h4>
+            <p>After completing this exercise, you should have demonstrated:</p>
+            <ul>
+                <li><strong>Data Organization:</strong> Proper headers, consistent formatting, no gaps</li>
+                <li><strong>Single-Column Sorting:</strong> Sort by price, name, quantity</li>
+                <li><strong>Multi-Level Sorting:</strong> Category then name, profit then stock</li>
+                <li><strong>Basic Filtering:</strong> Show specific categories, suppliers</li>
+                <li><strong>Advanced Filtering:</strong> Number ranges, text criteria, dates</li>
+                <li><strong>Multiple Filters:</strong> Combine category, price, and stock filters</li>
+                <li><strong>Data Validation:</strong> Dropdowns, number ranges, date validation</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <h4>Real-World Applications:</h4>
+            <p>This inventory system demonstrates skills applicable to:</p>
+            <ul>
+                <li><strong>Business:</strong> Customer databases, sales reports, employee records</li>
+                <li><strong>Personal:</strong> Household inventory, expense tracking, contact lists</li>
+                <li><strong>Academic:</strong> Student records, research data, survey results</li>
+                <li><strong>Project Management:</strong> Task lists, resource allocation, timeline tracking</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="topic-section">
+        <h2>Key Differences Between Excel and Google Sheets</h2>
+        
+        <table class="differences-table">
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>Microsoft Excel</th>
+                    <th>Google Sheets</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Sort Capabilities</strong></td>
+                    <td>More advanced sort options including custom lists and sort by color</td>
+                    <td>Basic sort functionality with fewer options</td>
+                </tr>
+                <tr>
+                    <td><strong>Filter Interface</strong></td>
+                    <td>More comprehensive filter interface with advanced options</td>
+                    <td>Simpler filter interface, easier for beginners</td>
+                </tr>
+                <tr>
+                    <td><strong>Advanced Filter</strong></td>
+                    <td>Dedicated Advanced Filter feature for complex criteria</td>
+                    <td>No dedicated Advanced Filter, use basic filters</td>
+                </tr>
+                <tr>
+                    <td><strong>Custom Lists</strong></td>
+                    <td>Can create custom sort lists (like days of week)</td>
+                    <td>Limited custom sort options</td>
+                </tr>
+                <tr>
+                    <td><strong>Filter Views</strong></td>
+                    <td>No equivalent feature</td>
+                    <td>Filter Views to save personal filters without affecting others</td>
+                </tr>
+                <tr>
+                    <td><strong>Data Validation</strong></td>
+                    <td>More validation options and custom formulas</td>
+                    <td>Basic validation functionality, simpler interface</td>
+                </tr>
+                <tr>
+                    <td><strong>Slicers</strong></td>
+                    <td>Supports visual filter slicers for tables and pivot tables</td>
+                    <td>No native slicer support</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="youtube-section">
+        <h3>Additional Resources</h3>
+        
+        <h4>Official Documentation:</h4>
+        <ul>
+            <li><strong>Excel:</strong> <a href="https://support.microsoft.com/en-us/office/sort-data-in-a-range-or-table-62d0b95d-2a90-4610-a6ae-2e545c4a4654" target="_blank">Sort data in a range or table</a></li>
+            <li><strong>Google Sheets:</strong> <a href="https://support.google.com/docs/answer/3540681?hl=en&co=GENIE.Platform%3DDesktop" target="_blank">Sort and filter your data</a></li>
+        </ul>
+
+        <h4>YouTube Video Tutorials:</h4>
+        
+        <div class="youtube-links">
+            <a href="https://www.youtube.com/c/ExcelIsFun" target="_blank" class="youtube-link">
+                <strong>ExcelIsFun - Sorting and Filtering</strong>
+                Comprehensive tutorials on advanced sorting and filtering techniques
+            </a>
+            
+            <a href="https://www.youtube.com/c/ExcelCampus" target="_blank" class="youtube-link">
+                <strong>Excel Campus - Data Organization</strong>
+                Best practices for organizing and managing data in Excel
+            </a>
+            
+            <a href="https://www.youtube.com/c/LeilaGharani" target="_blank" class="youtube-link">
+                <strong>Leila Gharani - Data Analysis</strong>
+                Professional data analysis techniques with sorting and filtering
+            </a>
+            
+            <a href="https://www.youtube.com/c/TeachersTech" target="_blank" class="youtube-link">
+                <strong>Teacher's Tech - Google Sheets Filtering</strong>
+                Google Sheets specific tutorials for sorting and filtering
+            </a>
+        </div>
+    </div>
+
+    <div class="next-section">
+        <h3>What's Next?</h3>
+        <p>In Week 7, we'll build on your data management skills by learning:</p>
+        <ul>
+            <li><strong>Logical Functions:</strong> IF statements and decision-making formulas</li>
+            <li><strong>Multiple Conditions:</strong> AND, OR, and NOT logical operators</li>
+            <li><strong>Nested Logic:</strong> Complex decision trees with multiple IF statements</li>
+            <li><strong>Error Handling:</strong> IFERROR and graceful error management</li>
+            <li><strong>Boolean Logic:</strong> Understanding TRUE/FALSE values in formulas</li>
+        </ul>
+        <p><strong>Homework for this week:</strong> Complete the Product Inventory Management System and practice sorting and filtering with your own data sets.</p>
+    </div>
+
+    <div class="navigation">
+        <a href="#" class="nav-button">← Previous: Cell References & Ranges</a>
+        <a href="#" class="nav-button">Next: Logical Functions →</a>
+    </div>
+</div>
+
+</body>
+</html>
