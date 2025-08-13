@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 9: Basic Data Analysis - Complete Lesson</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #9b59b6 0%, #3498db 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.5em;
+        }
+        
+        .header p {
+            margin: 0;
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .learning-objectives {
+            background-color: #f4f1ff;
+            border-left: 4px solid #9b59b6;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+        
+        .learning-objectives h2 {
+            color: #6c3483;
+            margin-top: 0;
+        }
+        
+        .topic-section {
+            margin: 40px 0;
+            padding: 25px;
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .topic-section h2 {
+            color: #495057;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .topic-section h3 {
+            color: #6c757d;
+            margin-top: 25px;
+        }
+        
+        .screenshot-container {
+            background-color: #f8f9fa;
+            border: 2px dashed #6c757d;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .screenshot-container h4 {
+            color: #495057;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        
+        .screenshot-link {
+            display: block;
+            color: #007bff;
+            text-decoration: none;
+            padding: 10px;
+            background-color: #e3f2fd;
+            border-radius: 5px;
+            margin: 10px 0;
+            border-left: 4px solid #2196f3;
+        }
+        
+        .screenshot-link:hover {
+            background-color: #bbdefb;
+            text-decoration: none;
+        }
+        
+        .step-by-step {
+            background-color: #f4f1ff;
+            border-left: 4px solid #9b59b6;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .step-by-step h4 {
+            color: #6c3483;
+            margin-top: 0;
+        }
+        
+        .step-by-step ol {
+            margin: 15px 0;
+        }
+        
+        .step-by-step li {
+            margin: 8px 0;
+        }
+        
+        .function-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .function-table th {
+            background-color: #9b59b6;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .function-table td {
+            border: 1px solid #dee2e6;
+            padding: 12px;
+        }
+        
+        .function-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .formula-example {
+            background-color: #f4f1ff;
+            border: 1px solid #9b59b6;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 1.1em;
+        }
+        
+        .analysis-principle {
+            background-color: #e8f6ff;
+            border: 2px solid #3498db;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .info-box {
+            background-color: #d1ecf1;
+            border: 1px solid #bee5eb;
+            color: #0c5460;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .practice-exercise {
+            background-color: #e8f4f8;
+            border: 2px solid #17a2b8;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+        
+        .practice-exercise h3 {
+            color: #0c5460;
+            margin-top: 0;
+        }
+        
+        .differences-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 14px;
+        }
+        
+        .differences-table th {
+            background-color: #343a40;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        .differences-table td {
+            border: 1px solid #dee2e6;
+            padding: 10px;
+            vertical-align: top;
+        }
+        
+        .differences-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .youtube-section {
+            background-color: #fff5f5;
+            border: 2px solid #dc3545;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+        
+        .youtube-section h3 {
+            color: #721c24;
+            margin-top: 0;
+        }
+        
+        .youtube-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .youtube-link {
+            display: block;
+            color: #dc3545;
+            text-decoration: none;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .youtube-link:hover {
+            background-color: #e9ecef;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-decoration: none;
+        }
+        
+        .youtube-link strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .next-section {
+            background: linear-gradient(135deg, #6f42c1 0%, #d63384 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .next-section h3 {
+            margin-top: 0;
+            color: white;
+        }
+        
+        .checklist {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .checklist ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .checklist li {
+            margin: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .checklist li:before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+        }
+        
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            margin: 40px 0;
+            padding: 20px;
+            background-color: #e9ecef;
+            border-radius: 8px;
+        }
+        
+        .nav-button {
+            padding: 12px 24px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+        
+        .nav-button:hover {
+            background-color: #0056b3;
+            text-decoration: none;
+            color: white;
+        }
+        
+        .analysis-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .analysis-type {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        
+        .analysis-type h4 {
+            color: #495057;
+            margin-top: 0;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 8px;
+        }
+        
+        .stats-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 14px;
+        }
+        
+        .stats-table th,
+        .stats-table td {
+            border: 1px solid #dee2e6;
+            padding: 8px;
+            text-align: center;
+        }
+        
+        .stats-table th {
+            background-color: #9b59b6;
+            color: white;
+        }
+        
+        .pivot-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .pivot-area {
+            background-color: #f8f9fa;
+            border: 2px solid #dee2e6;
+            padding: 20px;
+            border-radius: 8px;
+            min-height: 200px;
+        }
+        
+        .pivot-area h4 {
+            color: #495057;
+            margin-top: 0;
+            text-align: center;
+            background-color: #9b59b6;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        
+        .scenario-analysis {
+            background-color: #fff8e1;
+            border: 2px solid #ff9800;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div style="margin-bottom: 20px;">
+        <a href="index.html" style="display: inline-flex; align-items: center; color: #007bff; text-decoration: none; font-weight: 500;">
+            ← Back to Course Home
+        </a>
+    </div>
+    <div class="header">
+        <h1>Week 9: Basic Data Analysis</h1>
+        <p>Pivot Tables, Statistics, and What-if Analysis</p>
+    </div>
+
+    <div class="learning-objectives">
+        <h2>Learning Objectives:</h2>
+        <p>By the end of this lesson, you will be able to:</p>
+        <ul>
+            <li>Create and customize pivot tables for data summarization</li>
+            <li>Use statistical functions to analyze data trends and patterns</li>
+            <li>Perform what-if analysis using data tables and scenarios</li>
+            <li>Create interactive dashboards with slicers and filters</li>
+            <li>Apply business intelligence concepts to real-world data</li>
+        </ul>
+    </div>
+
+    <div class="topic-section">
+        <h2>Topic 1: Introduction to Data Analysis</h2>
+        
+        <h3>What is Data Analysis?</h3>
+        <p>Data analysis involves examining, cleaning, transforming, and modeling data to discover useful information, inform conclusions, and support decision-making. In spreadsheets, we have powerful tools to perform various types of analysis.</p>
+
+        <div class="screenshot-container">
+            <h4>Visual Reference Screenshots:</h4>
+            <a href="https://support.microsoft.com/en-us/office/create-a-pivottable-to-analyze-worksheet-data-a9a84538-bfe9-40a9-a8e9-f99134456576" target="_blank" class="screenshot-link">
+                📸 Excel Pivot Tables - Complete guide to creating and customizing pivot tables
+            </a>
+            <a href="https://support.google.com/docs/answer/1272900?hl=en" target="_blank" class="screenshot-link">
+                📸 Google Sheets Pivot Tables - Creating pivot tables and pivot charts
+            </a>
+        </div>
+
+        <div class="analysis-principle">
+            <h4>Types of Data Analysis:</h4>
+            <ul>
+                <li><strong>Descriptive Analysis:</strong> What happened? (averages, totals, trends)</li>
+                <li><strong>Diagnostic Analysis:</strong> Why did it happen? (correlations, patterns)</li>
+                <li><strong>Predictive Analysis:</strong> What might happen? (forecasting, trends)</li>
+                <li><strong>Prescriptive Analysis:</strong> What should we do? (recommendations, optimization)</li>
+            </ul>
+        </div>
+
+        <div class="analysis-types">
+            <div class="analysis-type">
+                <h4>Summarization</h4>
+                <p>Grouping and aggregating data to see totals, averages, counts, and other summary statistics.</p>
+                <ul>
+                    <li>Sales by region</li>
+                    <li>Average performance by department</li>
+                    <li>Product category totals</li>
+                </ul>
+            </div>
+            
+            <div class="analysis-type">
+                <h4>Comparison</h4>
+                <p>Comparing different groups, time periods, or categories to identify differences and similarities.</p>
+                <ul>
+                    <li>Year-over-year growth</li>
+                    <li>Department performance</li>
+                    <li>Product comparisons</li>
+                </ul>
+            </div>
+            
+            <div class="analysis-type">
+                <h4>Trend Analysis</h4>
+                <p>Examining data over time to identify patterns, cycles, and long-term trends.</p>
+                <ul>
+                    <li>Monthly sales trends</li>
+                    <li>Seasonal patterns</li>
+                    <li>Growth trajectories</li>
+                </ul>
+            </div>
+            
+            <div class="analysis-type">
+                <h4>What-if Analysis</h4>
+                <p>Testing different scenarios to understand potential outcomes and make informed decisions.</p>
+                <ul>
+                    <li>Budget scenarios</li>
+                    <li>Price sensitivity</li>
+                    <li>Resource allocation</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="practice-exercise">
+            <h3>Practice Exercise: Data Analysis Planning</h3>
+            <p><strong>Scenario:</strong> Plan analysis approaches for different business questions</p>
+            
+            <ol>
+                <li><strong>Identify analysis needs for these questions:</strong>
+                    <ul>
+                        <li>"Which products are our best sellers?"</li>
+                        <li>"How has our customer satisfaction changed over time?"</li>
+                        <li>"What would happen if we increased prices by 10%?"</li>
+                        <li>"Which sales reps need additional training?"</li>
+                    </ul>
+                </li>
+                <li><strong>For each question, determine:</strong>
+                    <ul>
+                        <li>Type of analysis needed</li>
+                        <li>Data required</li>
+                        <li>Appropriate tools/functions</li>
+                        <li>Expected outputs</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="topic-section">
+        <h2>Topic 2: Pivot Tables - Data Summarization</h2>
+        
+        <h3>Understanding Pivot Tables</h3>
+        <p>Pivot tables are one of the most powerful tools for data analysis. They allow you to quickly summarize, analyze, explore, and present large amounts of data by reorganizing and aggregating it in meaningful ways.</p>
+
+        <div class="formula-example">
+            <strong>Pivot Table Components:</strong><br>
+            • Rows: Categories to group data vertically<br>
+            • Columns: Categories to group data horizontally<br>
+            • Values: Data to be summarized (sum, count, average, etc.)<br>
+            • Filters: Criteria to limit which data is included
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Creating Your First Pivot Table</h4>
+            <ol>
+                <li><strong>Set up sales data:</strong>
+                    <ul>
+                        <li>A1: "Date", B1: "Salesperson", C1: "Product", D1: "Category", E1: "Amount"</li>
+                        <li>Add 20+ rows of sample sales data with various dates, people, products, and amounts</li>
+                        <li>Include multiple categories like Electronics, Clothing, Books</li>
+                        <li>Use dates spanning several months</li>
+                    </ul>
+                </li>
+                <li><strong>Create the pivot table:</strong>
+                    <ul>
+                        <li><strong>Excel:</strong> Select data → Insert tab → PivotTable</li>
+                        <li><strong>Google Sheets:</strong> Select data → Insert menu → Pivot table</li>
+                        <li>Choose to place in new worksheet</li>
+                    </ul>
+                </li>
+                <li><strong>Configure basic layout:</strong>
+                    <ul>
+                        <li><strong>Rows:</strong> Drag "Category" to Rows area</li>
+                        <li><strong>Values:</strong> Drag "Amount" to Values area (should auto-sum)</li>
+                        <li>You now have total sales by category</li>
+                    </ul>
+                </li>
+                <li><strong>Add more detail:</strong>
+                    <ul>
+                        <li><strong>Rows:</strong> Add "Product" below "Category"</li>
+                        <li>Now you see category totals with product breakdowns</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <h3>Advanced Pivot Table Techniques</h3>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Multi-Dimensional Analysis</h4>
+            <ol>
+                <li><strong>Create cross-tabulation:</strong>
+                    <ul>
+                        <li><strong>Rows:</strong> Salesperson</li>
+                        <li><strong>Columns:</strong> Category</li>
+                        <li><strong>Values:</strong> Amount (Sum)</li>
+                        <li>This shows sales by person and category in a matrix format</li>
+                    </ul>
+                </li>
+                <li><strong>Add time analysis:</strong>
+                    <ul>
+                        <li><strong>Rows:</strong> Date (grouped by month)</li>
+                        <li><strong>Columns:</strong> Category</li>
+                        <li><strong>Values:</strong> Amount (Sum)</li>
+                        <li>Shows monthly sales trends by category</li>
+                    </ul>
+                </li>
+                <li><strong>Group dates automatically:</strong>
+                    <ul>
+                        <li>Right-click on date field in pivot table</li>
+                        <li>Choose "Group" and select Months, Quarters, or Years</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Different Value Calculations</h4>
+            <ol>
+                <li><strong>Change summary function:</strong>
+                    <ul>
+                        <li>Right-click on "Sum of Amount" in Values area</li>
+                        <li>Choose "Value Field Settings" or "Summarize by"</li>
+                        <li>Try Average, Count, Maximum, Minimum</li>
+                    </ul>
+                </li>
+                <li><strong>Add calculated fields:</strong>
+                    <ul>
+                        <li><strong>Excel:</strong> PivotTable Tools → Fields, Items & Sets → Calculated Field</li>
+                        <li><strong>Google Sheets:</strong> Add formula in Values area</li>
+                        <li>Example: Create "Average Sale Size" = Amount / Count</li>
+                    </ul>
+                </li>
+                <li><strong>Show percentages:</strong>
+                    <ul>
+                        <li>Right-click value field → "Show Values As"</li>
+                        <li>Choose "% of Grand Total" or "% of Row Total"</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="pivot-layout">
+            <div class="pivot-area">
+                <h4>Simple Summary</h4>
+                <table class="stats-table">
+                    <tr><th>Category</th><th>Total Sales</th></tr>
+                    <tr><td>Electronics</td><td>$45,000</td></tr>
+                    <tr><td>Clothing</td><td>$32,000</td></tr>
+                    <tr><td>Books</td><td>$18,000</td></tr>
+                    <tr><td><strong>Grand Total</strong></td><td><strong>$95,000</strong></td></tr>
+                </table>
+            </div>
+            
+            <div class="pivot-area">
+                <h4>Cross-Tabulation</h4>
+                <table class="stats-table">
+                    <tr><th>Salesperson</th><th>Electronics</th><th>Clothing</th><th>Books</th></tr>
+                    <tr><td>John</td><td>$15,000</td><td>$12,000</td><td>$8,000</td></tr>
+                    <tr><td>Alice</td><td>$20,000</td><td>$10,000</td><td>$6,000</td></tr>
+                    <tr><td>Bob</td><td>$10,000</td><td>$10,000</td><td>$4,000</td></tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <h4>Pivot Table Best Practices:</h4>
+            <ul>
+                <li><strong>Clean data first:</strong> Remove duplicates, fix inconsistencies</li>
+                <li><strong>Use table format:</strong> Convert data range to table for dynamic updates</li>
+                <li><strong>Refresh regularly:</strong> Update pivot tables when source data changes</li>
+                <li><strong>Keep it simple:</strong> Start with basic analysis, add complexity gradually</li>
+                <li><strong>Name your fields:</strong> Use clear, descriptive field names</li>
+            </ul>
+        </div>
+
+        <div class="practice-exercise">
+            <h3>Practice Exercise: Sales Performance Analysis</h3>
+            <p><strong>Scenario:</strong> Analyze comprehensive sales data using multiple pivot tables</p>
+            
+            <ol>
+                <li><strong>Create comprehensive sales dataset:</strong>
+                    <ul>
+                        <li>Include: Date, Salesperson, Customer, Product, Category, Region, Quantity, Unit Price, Total</li>
+                        <li>Add 50+ transactions across 6 months</li>
+                        <li>Include multiple salespeople, regions, and product categories</li>
+                    </ul>
+                </li>
+                <li><strong>Create multiple analysis views:</strong>
+                    <ul>
+                        <li><strong>View 1:</strong> Total sales by region and month</li>
+                        <li><strong>View 2:</strong> Top performing salespeople by total and average sale</li>
+                        <li><strong>View 3:</strong> Product performance by category and individual item</li>
+                        <li><strong>View 4:</strong> Customer analysis by purchase frequency and value</li>
+                    </ul>
+                </li>
+                <li><strong>Add calculated insights:</strong>
+                    <ul>
+                        <li>Growth rates month-over-month</li>
+                        <li>Sales per salesperson ratios</li>
+                        <li>Product profitability analysis</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="topic-section">
+        <h2>Topic 3: Statistical Functions</h2>
+        
+        <h3>Essential Statistical Functions</h3>
+        <p>Statistical functions help you understand your data through measures of central tendency, variation, and relationships between variables.</p>
+
+        <table class="function-table">
+            <thead>
+                <tr>
+                    <th>Function</th>
+                    <th>Purpose</th>
+                    <th>Formula</th>
+                    <th>Use Case</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>AVERAGE</strong></td>
+                    <td>Mean value</td>
+                    <td>=AVERAGE(range)</td>
+                    <td>Typical performance, average sales</td>
+                </tr>
+                <tr>
+                    <td><strong>MEDIAN</strong></td>
+                    <td>Middle value</td>
+                    <td>=MEDIAN(range)</td>
+                    <td>Central tendency when outliers present</td>
+                </tr>
+                <tr>
+                    <td><strong>MODE</strong></td>
+                    <td>Most frequent value</td>
+                    <td>=MODE(range)</td>
+                    <td>Most common score, popular item</td>
+                </tr>
+                <tr>
+                    <td><strong>STDEV</strong></td>
+                    <td>Standard deviation</td>
+                    <td>=STDEV(range)</td>
+                    <td>Measure of variability, consistency</td>
+                </tr>
+                <tr>
+                    <td><strong>CORREL</strong></td>
+                    <td>Correlation coefficient</td>
+                    <td>=CORREL(array1,array2)</td>
+                    <td>Relationship strength between variables</td>
+                </tr>
+                <tr>
+                    <td><strong>PERCENTILE</strong></td>
+                    <td>Value at specific percentile</td>
+                    <td>=PERCENTILE(range,k)</td>
+                    <td>Performance benchmarks, rankings</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Descriptive Statistics Analysis</h4>
+            <ol>
+                <li><strong>Set up test score data:</strong>
+                    <ul>
+                        <li>A1: "Student", B1: "Math Score", C1: "Science Score"</li>
+                        <li>Add 20 students with scores ranging from 60-100</li>
+                    </ul>
+                </li>
+                <li><strong>Calculate basic statistics:</strong>
+                    <ul>
+                        <li>E1: "Statistic", F1: "Math", G1: "Science"</li>
+                        <li>E2: "Average", F2: =AVERAGE(B2:B21), G2: =AVERAGE(C2:C21)</li>
+                        <li>E3: "Median", F3: =MEDIAN(B2:B21), G3: =MEDIAN(C2:C21)</li>
+                        <li>E4: "Mode", F4: =MODE(B2:B21), G4: =MODE(C2:C21)</li>
+                        <li>E5: "Std Dev", F5: =STDEV(B2:B21), G5: =STDEV(C2:C21)</li>
+                    </ul>
+                </li>
+                <li><strong>Add percentile analysis:</strong>
+                    <ul>
+                        <li>E6: "90th %ile", F6: =PERCENTILE(B2:B21,0.9)</li>
+                        <li>E7: "75th %ile", F7: =PERCENTILE(B2:B21,0.75)</li>
+                        <li>E8: "25th %ile", F8: =PERCENTILE(B2:B21,0.25)</li>
+                    </ul>
+                </li>
+                <li><strong>Calculate correlation:</strong>
+                    <ul>
+                        <li>E9: "Correlation", F9: =CORREL(B2:B21,C2:C21)</li>
+                        <li>This shows how Math and Science scores relate</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <h3>Advanced Statistical Analysis</h3>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Performance Distribution Analysis</h4>
+            <ol>
+                <li><strong>Create performance categories:</strong>
+                    <ul>
+                        <li>Use statistical measures to define performance bands</li>
+                        <li>High: Above (Average + 1 Std Dev)</li>
+                        <li>Medium: Between (Average ± 1 Std Dev)</li>
+                        <li>Low: Below (Average - 1 Std Dev)</li>
+                    </ul>
+                </li>
+                <li><strong>Calculate category boundaries:</strong>
+                    <ul>
+                        <li>High Cutoff: =AVERAGE(B2:B21)+STDEV(B2:B21)</li>
+                        <li>Low Cutoff: =AVERAGE(B2:B21)-STDEV(B2:B21)</li>
+                    </ul>
+                </li>
+                <li><strong>Categorize each student:</strong>
+                    <ul>
+                        <li>D2: =IF(B2>$F$11,"High",IF(B2<$F$12,"Low","Medium"))</li>
+                        <li>Copy down for all students</li>
+                    </ul>
+                </li>
+                <li><strong>Count students in each category:</strong>
+                    <ul>
+                        <li>=COUNTIF(D2:D21,"High")</li>
+                        <li>=COUNTIF(D2:D21,"Medium")</li>
+                        <li>=COUNTIF(D2:D21,"Low")</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Trend Analysis with Statistics</h4>
+            <ol>
+                <li><strong>Set up time series data:</strong>
+                    <ul>
+                        <li>Monthly sales data for 12 months</li>
+                        <li>A1: "Month", B1: "Sales"</li>
+                    </ul>
+                </li>
+                <li><strong>Calculate trend statistics:</strong>
+                    <ul>
+                        <li><strong>Growth rate:</strong> =(B13-B2)/B2 (annual growth)</li>
+                        <li><strong>Average monthly change:</strong> =AVERAGE((B3:B13-B2:B12)/B2:B12)</li>
+                        <li><strong>Volatility:</strong> =STDEV(B2:B13)/AVERAGE(B2:B13)</li>
+                    </ul>
+                </li>
+                <li><strong>Identify outliers:</strong>
+                    <ul>
+                        <li>Calculate z-scores: =(B2-$F$15)/$F$16</li>
+                        <li>Flag outliers: =IF(ABS(C2)>2,"Outlier","")</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="practice-exercise">
+            <h3>Practice Exercise: Employee Performance Statistics</h3>
+            <p><strong>Scenario:</strong> Analyze employee performance using comprehensive statistical methods</p>
+            
+            <ol>
+                <li><strong>Create employee performance dataset:</strong>
+                    <ul>
+                        <li>Include: Employee ID, Name, Department, Performance Score (1-10), Sales Target, Actual Sales</li>
+                        <li>Add data for 30+ employees across multiple departments</li>
+                    </ul>
+                </li>
+                <li><strong>Calculate department statistics:</strong>
+                    <ul>
+                        <li>Average performance by department</li>
+                        <li>Standard deviation to measure consistency</li>
+                        <li>Percentile rankings within departments</li>
+                    </ul>
+                </li>
+                <li><strong>Analyze relationships:</strong>
+                    <ul>
+                        <li>Correlation between performance score and sales achievement</li>
+                        <li>Department performance variability</li>
+                        <li>Identify top and bottom performers statistically</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="topic-section">
+        <h2>Topic 4: What-if Analysis</h2>
+        
+        <h3>Introduction to What-if Analysis</h3>
+        <p>What-if analysis allows you to test different scenarios by changing input values and observing the impact on results. This is crucial for planning, budgeting, and decision-making.</p>
+
+        <div class="scenario-analysis">
+            <h4>Types of What-if Analysis:</h4>
+            <ul>
+                <li><strong>Goal Seek:</strong> Find the input value needed to achieve a specific goal</li>
+                <li><strong>Data Tables:</strong> See how changing one or two variables affects results</li>
+                <li><strong>Scenario Manager:</strong> Compare multiple complete scenarios</li>
+                <li><strong>Sensitivity Analysis:</strong> Understand which variables have the biggest impact</li>
+            </ul>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Goal Seek Analysis</h4>
+            <ol>
+                <li><strong>Set up loan payment model:</strong>
+                    <ul>
+                        <li>A1: "Loan Amount", B1: 250000</li>
+                        <li>A2: "Interest Rate", B2: 0.05 (5%)</li>
+                        <li>A3: "Term (Years)", B3: 30</li>
+                        <li>A4: "Monthly Payment", B4: =PMT(B2/12,B3*12,-B1)</li>
+                    </ul>
+                </li>
+                <li><strong>Use Goal Seek to find affordable loan:</strong>
+                    <ul>
+                        <li><strong>Excel:</strong> Data tab → What-If Analysis → Goal Seek</li>
+                        <li><strong>Google Sheets:</strong> Extensions → Add-ons → Get add-ons → Search "Goal Seek"</li>
+                        <li>Set cell: B4 (monthly payment)</li>
+                        <li>To value: 1200 (target payment)</li>
+                        <li>By changing cell: B1 (loan amount)</li>
+                    </ul>
+                </li>
+                <li><strong>Interpret results:</strong>
+                    <ul>
+                        <li>Goal Seek finds the maximum loan amount for $1,200/month payment</li>
+                        <li>Result shows affordable loan amount is approximately $223,000</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Data Table Analysis</h4>
+            <ol>
+                <li><strong>Create sales projection model:</strong>
+                    <ul>
+                        <li>A1: "Price", B1: 100</li>
+                        <li>A2: "Units Sold", B2: 1000</li>
+                        <li>A3: "Variable Cost", B3: 60</li>
+                        <li>A4: "Fixed Costs", B4: 25000</li>
+                        <li>A5: "Profit", B5: =B1*B2-B3*B2-B4</li>
+                    </ul>
+                </li>
+                <li><strong>Set up one-variable data table:</strong>
+                    <ul>
+                        <li>D1: "Price Scenarios"</li>
+                        <li>D2: 80, D3: 90, D4: 100, D5: 110, D6: 120</li>
+                        <li>E1: =B5 (reference to profit formula)</li>
+                    </ul>
+                </li>
+                <li><strong>Create data table:</strong>
+                    <ul>
+                        <li>Select range D1:E6</li>
+                        <li><strong>Excel:</strong> Data tab → What-If Analysis → Data Table</li>
+                        <li>Column input cell: B1 (price)</li>
+                        <li><strong>Google Sheets:</strong> Use array formula or manual calculations</li>
+                    </ul>
+                </li>
+                <li><strong>Analyze results:</strong>
+                    <ul>
+                        <li>See how profit changes with different prices</li>
+                        <li>Identify optimal pricing strategy</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Two-Variable Data Table</h4>
+            <ol>
+                <li><strong>Extend the analysis with two variables:</strong>
+                    <ul>
+                        <li>Test different combinations of price and units sold</li>
+                    </ul>
+                </li>
+                <li><strong>Set up two-variable table:</strong>
+                    <ul>
+                        <li>G1: =B5 (profit formula)</li>
+                        <li>G2: 80, G3: 90, G4: 100, G5: 110, G6: 120 (prices)</li>
+                        <li>H1: 800, I1: 1000, J1: 1200, K1: 1400 (units)</li>
+                    </ul>
+                </li>
+                <li><strong>Create two-variable data table:</strong>
+                    <ul>
+                        <li>Select range G1:K6</li>
+                        <li><strong>Excel:</strong> Data Table with row input (units) and column input (price)</li>
+                        <li>Results show profit for each price/volume combination</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <h3>Scenario Analysis</h3>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Business Scenario Planning</h4>
+            <ol>
+                <li><strong>Set up business model:</strong>
+                    <ul>
+                        <li>Revenue assumptions (growth rate, market size)</li>
+                        <li>Cost assumptions (variable costs, fixed costs)</li>
+                        <li>Key metrics (profit, ROI, break-even)</li>
+                    </ul>
+                </li>
+                <li><strong>Define scenarios:</strong>
+                    <ul>
+                        <li><strong>Optimistic:</strong> High growth, low costs</li>
+                        <li><strong>Realistic:</strong> Moderate growth, expected costs</li>
+                        <li><strong>Pessimistic:</strong> Low growth, high costs</li>
+                    </ul>
+                </li>
+                <li><strong>Create scenario summary:</strong>
+                    <ul>
+                        <li>Table showing key outputs for each scenario</li>
+                        <li>Probability-weighted averages</li>
+                        <li>Risk assessment based on variance</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="practice-exercise">
+            <h3>Practice Exercise: Investment Portfolio Analysis</h3>
+            <p><strong>Scenario:</strong> Analyze investment scenarios using comprehensive what-if analysis</p>
+            
+            <ol>
+                <li><strong>Create investment model:</strong>
+                    <ul>
+                        <li>Initial investment amount</li>
+                        <li>Expected annual return rates</li>
+                        <li>Time horizon</li>
+                        <li>Regular contribution amounts</li>
+                        <li>Final portfolio value calculation</li>
+                    </ul>
+                </li>
+                <li><strong>Use Goal Seek to find:</strong>
+                    <ul>
+                        <li>Required return rate to reach $1 million</li>
+                        <li>Monthly contribution needed for target goal</li>
+                        <li>Time needed to reach financial independence</li>
+                    </ul>
+                </li>
+                <li><strong>Create data tables for sensitivity analysis:</strong>
+                    <ul>
+                        <li>How portfolio value changes with different return rates</li>
+                        <li>Impact of contribution amounts on final value</li>
+                        <li>Two-variable table: return rate vs. time horizon</li>
+                    </ul>
+                </li>
+                <li><strong>Build scenario comparison:</strong>
+                    <ul>
+                        <li>Conservative, moderate, and aggressive investment strategies</li>
+                        <li>Compare risk vs. reward for each approach</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="practice-exercise">
+        <h3>Comprehensive Practice Exercise: Business Intelligence Dashboard</h3>
+        
+        <p><strong>Project Overview:</strong> Create a complete business intelligence dashboard that demonstrates all Week 9 concepts including pivot tables, statistical analysis, and what-if scenarios.</p>
+
+        <div class="step-by-step">
+            <h4>Step 1: Comprehensive Data Setup</h4>
+            <ol>
+                <li><strong>Sales Transaction Data:</strong>
+                    <ul>
+                        <li>Columns: Date, Order ID, Customer ID, Salesperson, Product, Category, Quantity, Unit Price, Discount %, Total</li>
+                        <li>Include 200+ transactions across 12 months</li>
+                        <li>Multiple salespeople, products, and customer types</li>
+                    </ul>
+                </li>
+                <li><strong>Customer Master Data:</strong>
+                    <ul>
+                        <li>Customer ID, Company Name, Industry, Region, Customer Type (New/Existing)</li>
+                    </ul>
+                </li>
+                <li><strong>Product Master Data:</strong>
+                    <ul>
+                        <li>Product ID, Name, Category, Cost, List Price, Launch Date</li>
+                    </ul>
+                </li>
+                <li><strong>Target Data:</strong>
+                    <ul>
+                        <li>Monthly sales targets by salesperson and product category</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step 2: Sales Performance Dashboard</h4>
+            <ol>
+                <li><strong>Create multiple pivot table views:</strong>
+                    <ul>
+                        <li><strong>Sales by Month:</strong> Track trends and seasonality</li>
+                        <li><strong>Salesperson Performance:</strong> Individual and team metrics</li>
+                        <li><strong>Product Analysis:</strong> Best/worst performers by category</li>
+                        <li><strong>Customer Segmentation:</strong> Analysis by industry and region</li>
+                    </ul>
+                </li>
+                <li><strong>Add calculated fields:</strong>
+                    <ul>
+                        <li>Profit margin per transaction</li>
+                        <li>Average order value by customer type</li>
+                        <li>Sales target achievement percentage</li>
+                    </ul>
+                </li>
+                <li><strong>Create dynamic filters:</strong>
+                    <ul>
+                        <li>Date range selectors</li>
+                        <li>Product category filters</li>
+                        <li>Salesperson and region slicers</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step 3: Statistical Analysis Layer</h4>
+            <ol>
+                <li><strong>Performance distribution analysis:</strong>
+                    <ul>
+                        <li>Calculate statistical profiles for each salesperson</li>
+                        <li>Identify high/medium/low performers using standard deviations</li>
+                        <li>Find correlations between customer type and order size</li>
+                    </ul>
+                </li>
+                <li><strong>Trend analysis:</strong>
+                    <ul>
+                        <li>Monthly growth rates and volatility</li>
+                        <li>Seasonal pattern identification</li>
+                        <li>Product lifecycle analysis using statistics</li>
+                    </ul>
+                </li>
+                <li><strong>Outlier detection:</strong>
+                    <ul>
+                        <li>Identify unusual sales transactions</li>
+                        <li>Flag exceptional performance (positive and negative)</li>
+                        <li>Analyze discount patterns statistically</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step 4: Forecasting and What-if Analysis</h4>
+            <ol>
+                <li><strong>Sales forecasting model:</strong>
+                    <ul>
+                        <li>Use historical trends to project future sales</li>
+                        <li>Create seasonal adjustment factors</li>
+                        <li>Build confidence intervals around forecasts</li>
+                    </ul>
+                </li>
+                <li><strong>Pricing scenario analysis:</strong>
+                    <ul>
+                        <li>Model impact of price changes on volume and revenue</li>
+                        <li>Create data tables for different pricing strategies</li>
+                        <li>Analyze price elasticity by product category</li>
+                    </ul>
+                </li>
+                <li><strong>Goal seeking for targets:</strong>
+                    <ul>
+                        <li>Find required monthly sales to hit annual targets</li>
+                        <li>Determine optimal product mix for maximum profit</li>
+                        <li>Calculate commission rates needed to motivate performance</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step 5: Interactive Dashboard Creation</h4>
+            <ol>
+                <li><strong>Executive summary sheet:</strong>
+                    <ul>
+                        <li>Key performance indicators (KPIs)</li>
+                        <li>Year-to-date vs. target performance</li>
+                        <li>Top 5 products, customers, and salespeople</li>
+                    </ul>
+                </li>
+                <li><strong>Drill-down capabilities:</strong>
+                    <ul>
+                        <li>Click-through from summary to detailed analysis</li>
+                        <li>Interactive filters that update multiple charts</li>
+                        <li>Dynamic date range selection</li>
+                    </ul>
+                </li>
+                <li><strong>Scenario comparison tool:</strong>
+                    <ul>
+                        <li>Side-by-side comparison of what-if scenarios</li>
+                        <li>Risk assessment dashboard</li>
+                        <li>Recommendation engine based on analysis</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="checklist">
+            <h4>Verification Checklist</h4>
+            <p>After completing this exercise, you should have demonstrated:</p>
+            <ul>
+                <li><strong>Pivot Tables:</strong> Multiple layouts and summarization methods</li>
+                <li><strong>Calculated Fields:</strong> Custom metrics and KPIs</li>
+                <li><strong>Statistical Functions:</strong> Descriptive statistics and correlations</li>
+                <li><strong>Trend Analysis:</strong> Time-based patterns and forecasting</li>
+                <li><strong>What-if Analysis:</strong> Goal seeking and scenario planning</li>
+                <li><strong>Data Tables:</strong> Sensitivity analysis with multiple variables</li>
+                <li><strong>Interactive Elements:</strong> Filters, slicers, and dynamic updates</li>
+                <li><strong>Business Intelligence:</strong> KPIs and performance dashboards</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <h4>Real-World Applications:</h4>
+            <p>This BI dashboard demonstrates skills applicable to:</p>
+            <ul>
+                <li><strong>Sales Management:</strong> Performance tracking, territory analysis, commission planning</li>
+                <li><strong>Finance:</strong> Budget analysis, variance reporting, ROI calculations</li>
+                <li><strong>Operations:</strong> Efficiency metrics, quality control, resource optimization</li>
+                <li><strong>Marketing:</strong> Campaign effectiveness, customer segmentation, pricing strategy</li>
+                <li><strong>Strategic Planning:</strong> Market analysis, competitive intelligence, growth modeling</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="topic-section">
+        <h2>Key Differences Between Excel and Google Sheets</h2>
+        
+        <table class="differences-table">
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>Microsoft Excel</th>
+                    <th>Google Sheets</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Pivot Tables</strong></td>
+                    <td>Full-featured with advanced options and calculations</td>
+                    <td>Good functionality but fewer advanced features</td>
+                </tr>
+                <tr>
+                    <td><strong>Statistical Functions</strong></td>
+                    <td>Comprehensive statistical analysis toolkit</td>
+                    <td>Basic statistical functions, fewer advanced options</td>
+                </tr>
+                <tr>
+                    <td><strong>What-if Analysis</strong></td>
+                    <td>Built-in Goal Seek, Data Tables, Scenario Manager</td>
+                    <td>Goal Seek via add-ons, manual what-if analysis</td>
+                </tr>
+                <tr>
+                    <td><strong>Data Analysis Toolpak</strong></td>
+                    <td>Advanced statistical analysis add-in available</td>
+                    <td>Not available, use formulas or external tools</td>
+                </tr>
+                <tr>
+                    <td><strong>Slicers</strong></td>
+                    <td>Full slicer support for tables and pivot tables</td>
+                    <td>Basic filter views, limited slicer functionality</td>
+                </tr>
+                <tr>
+                    <td><strong>Performance</strong></td>
+                    <td>Better with very large datasets and complex analysis</td>
+                    <td>Good for most business analysis needs</td>
+                </tr>
+                <tr>
+                    <td><strong>Collaboration</strong></td>
+                    <td>Improved sharing but primarily desktop-based</td>
+                    <td>Excellent real-time collaboration capabilities</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="youtube-section">
+        <h3>Additional Resources</h3>
+        
+        <h4>Official Documentation:</h4>
+        <ul>
+            <li><strong>Excel:</strong> <a href="https://support.microsoft.com/en-us/office/create-a-pivottable-to-analyze-worksheet-data-a9a84538-bfe9-40a9-a8e9-f99134456576" target="_blank">Create a PivotTable to analyze worksheet data</a></li>
+            <li><strong>Google Sheets:</strong> <a href="https://support.google.com/docs/answer/1272900?hl=en" target="_blank">Create & use pivot tables</a></li>
+        </ul>
+
+        <h4>YouTube Video Tutorials:</h4>
+        
+        <div class="youtube-links">
+            <a href="https://www.youtube.com/c/ExcelIsFun" target="_blank" class="youtube-link">
+                <strong>ExcelIsFun - Pivot Tables & Analysis</strong>
+                Comprehensive tutorials on data analysis and pivot table mastery
+            </a>
+            
+            <a href="https://www.youtube.com/c/ExcelCampus" target="_blank" class="youtube-link">
+                <strong>Excel Campus - Business Intelligence</strong>
+                Professional data analysis techniques and dashboard creation
+            </a>
+            
+            <a href="https://www.youtube.com/c/LeilaGharani" target="_blank" class="youtube-link">
+                <strong>Leila Gharani - Data Analysis</strong>
+                Business-focused analysis techniques and best practices
+            </a>
+            
+            <a href="https://www.youtube.com/c/TeachersTech" target="_blank" class="youtube-link">
+                <strong>Teacher's Tech - Google Sheets Analysis</strong>
+                Google Sheets specific data analysis and pivot table tutorials
+            </a>
+        </div>
+    </div>
+
+    <div class="next-section">
+        <h3>What's Next?</h3>
+        <p>In Week 10, we'll explore data visualization and charts:</p>
+        <ul>
+            <li><strong>Chart Types:</strong> Choosing the right visualization for your data</li>
+            <li><strong>Chart Creation:</strong> Building effective and professional charts</li>
+            <li><strong>Chart Customization:</strong> Formatting, styling, and branding</li>
+            <li><strong>Interactive Charts:</strong> Dynamic visualizations with controls</li>
+            <li><strong>Dashboard Design:</strong> Combining charts into cohesive dashboards</li>
+        </ul>
+        <p><strong>Homework for this week:</strong> Complete the Business Intelligence Dashboard and practice data analysis with your own datasets.</p>
+    </div>
+
+    <div class="navigation">
+        <a href="week_8_lesson.html" class="nav-button">← Previous: Lookup Functions</a>
+        <a href="week_10_lesson.html" class="nav-button">Next: Charts & Visualization →</a>
+    </div>
+</div>
+
+</body>
+</html>

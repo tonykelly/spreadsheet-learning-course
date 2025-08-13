@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 11: Data Import & Export - Complete Lesson</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #e67e22 0%, #f39c12 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.5em;
+        }
+        
+        .header p {
+            margin: 0;
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .learning-objectives {
+            background-color: #fef5e7;
+            border-left: 4px solid #e67e22;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+        
+        .learning-objectives h2 {
+            color: #ba4a00;
+            margin-top: 0;
+        }
+        
+        .topic-section {
+            margin: 40px 0;
+            padding: 25px;
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .topic-section h2 {
+            color: #495057;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .topic-section h3 {
+            color: #6c757d;
+            margin-top: 25px;
+        }
+        
+        .screenshot-container {
+            background-color: #f8f9fa;
+            border: 2px dashed #6c757d;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .screenshot-container h4 {
+            color: #495057;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        
+        .screenshot-link {
+            display: block;
+            color: #007bff;
+            text-decoration: none;
+            padding: 10px;
+            background-color: #e3f2fd;
+            border-radius: 5px;
+            margin: 10px 0;
+            border-left: 4px solid #2196f3;
+        }
+        
+        .screenshot-link:hover {
+            background-color: #bbdefb;
+            text-decoration: none;
+        }
+        
+        .step-by-step {
+            background-color: #fef5e7;
+            border-left: 4px solid #e67e22;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .step-by-step h4 {
+            color: #ba4a00;
+            margin-top: 0;
+        }
+        
+        .step-by-step ol {
+            margin: 15px 0;
+        }
+        
+        .step-by-step li {
+            margin: 8px 0;
+        }
+        
+        .format-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .format-table th {
+            background-color: #e67e22;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .format-table td {
+            border: 1px solid #dee2e6;
+            padding: 12px;
+        }
+        
+        .format-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .data-example {
+            background-color: #fef5e7;
+            border: 1px solid #e67e22;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 1.1em;
+        }
+        
+        .import-principle {
+            background-color: #e8f5e8;
+            border: 2px solid #28a745;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .info-box {
+            background-color: #d1ecf1;
+            border: 1px solid #bee5eb;
+            color: #0c5460;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .practice-exercise {
+            background-color: #e8f4f8;
+            border: 2px solid #17a2b8;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+        
+        .practice-exercise h3 {
+            color: #0c5460;
+            margin-top: 0;
+        }
+        
+        .differences-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 14px;
+        }
+        
+        .differences-table th {
+            background-color: #343a40;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        .differences-table td {
+            border: 1px solid #dee2e6;
+            padding: 10px;
+            vertical-align: top;
+        }
+        
+        .differences-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .youtube-section {
+            background-color: #fff5f5;
+            border: 2px solid #dc3545;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+        
+        .youtube-section h3 {
+            color: #721c24;
+            margin-top: 0;
+        }
+        
+        .youtube-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .youtube-link {
+            display: block;
+            color: #dc3545;
+            text-decoration: none;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .youtube-link:hover {
+            background-color: #e9ecef;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-decoration: none;
+        }
+        
+        .youtube-link strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .next-section {
+            background: linear-gradient(135deg, #6f42c1 0%, #d63384 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .next-section h3 {
+            margin-top: 0;
+            color: white;
+        }
+        
+        .checklist {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .checklist ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .checklist li {
+            margin: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .checklist li:before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+        }
+        
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            margin: 40px 0;
+            padding: 20px;
+            background-color: #e9ecef;
+            border-radius: 8px;
+        }
+        
+        .nav-button {
+            padding: 12px 24px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+        
+        .nav-button:hover {
+            background-color: #0056b3;
+            text-decoration: none;
+            color: white;
+        }
+        
+        .data-formats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .data-format {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        
+        .data-format h4 {
+            color: #495057;
+            margin-top: 0;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 8px;
+        }
+        
+        .cleaning-techniques {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .cleaning-card {
+            background-color: #f8f9fa;
+            border: 2px solid #dee2e6;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        .cleaning-card h4 {
+            color: #495057;
+            margin-top: 0;
+            text-align: center;
+            background-color: #e67e22;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        
+        .external-sources {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .external-source {
+            background-color: #f1f3f4;
+            border: 1px solid #d0d7de;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .external-source h5 {
+            color: #495057;
+            margin: 0 0 10px 0;
+        }
+        
+        .data-flow {
+            background-color: #f8f9fa;
+            border: 2px dashed #e67e22;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .flow-step {
+            display: inline-block;
+            background-color: white;
+            border: 2px solid #e67e22;
+            padding: 10px 15px;
+            margin: 5px;
+            border-radius: 5px;
+            color: #e67e22;
+            font-weight: bold;
+        }
+        
+        .flow-arrow {
+            color: #e67e22;
+            font-size: 1.2em;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div style="margin-bottom: 20px;">
+        <a href="index.html" style="display: inline-flex; align-items: center; color: #007bff; text-decoration: none; font-weight: 500;">
+            ← Back to Course Home
+        </a>
+    </div>
+    <div class="header">
+        <h1>Week 11: Data Import & Export</h1>
+        <p>Working with External Data Sources and Formats</p>
+    </div>
+
+    <div class="learning-objectives">
+        <h2>Learning Objectives:</h2>
+        <p>By the end of this lesson, you will be able to:</p>
+        <ul>
+            <li>Import data from various file formats (CSV, TXT, JSON, XML)</li>
+            <li>Connect to external data sources and databases</li>
+            <li>Clean and transform imported data for analysis</li>
+            <li>Export data in multiple formats for different purposes</li>
+            <li>Establish data refresh workflows and automation</li>
+        </ul>
+    </div>
+
+    <div class="topic-section">
+        <h2>Topic 1: Understanding Data Import/Export</h2>
+        
+        <h3>Why External Data Matters</h3>
+        <p>Modern business analysis requires working with data from multiple sources. Learning to efficiently import, clean, and export data is essential for creating comprehensive analyses and reports.</p>
+
+        <div class="screenshot-container">
+            <h4>Visual Reference Screenshots:</h4>
+            <a href="https://support.microsoft.com/en-us/office/import-data-from-a-csv-html-or-text-file-b62efe49-4d5b-4429-b788-e1211b5e90f6" target="_blank" class="screenshot-link">
+                📸 Excel Data Import - Complete guide to importing various file formats
+            </a>
+            <a href="https://support.google.com/docs/answer/40608?hl=en&co=GENIE.Platform%3DDesktop" target="_blank" class="screenshot-link">
+                📸 Google Sheets Import - Importing data from different sources
+            </a>
+        </div>
+
+        <div class="import-principle">
+            <h4>Data Import/Export Workflow:</h4>
+            <div class="data-flow">
+                <div class="flow-step">Source Data</div>
+                <span class="flow-arrow">→</span>
+                <div class="flow-step">Import</div>
+                <span class="flow-arrow">→</span>
+                <div class="flow-step">Clean</div>
+                <span class="flow-arrow">→</span>
+                <div class="flow-step">Transform</div>
+                <span class="flow-arrow">→</span>
+                <div class="flow-step">Analyze</div>
+                <span class="flow-arrow">→</span>
+                <div class="flow-step">Export</div>
+            </div>
+        </div>
+
+        <div class="data-formats">
+            <div class="data-format">
+                <h4>Structured Formats</h4>
+                <p><strong>Characteristics:</strong> Organized in rows and columns</p>
+                <ul>
+                    <li><strong>CSV:</strong> Comma-separated values, universal compatibility</li>
+                    <li><strong>TSV:</strong> Tab-separated values, Excel native</li>
+                    <li><strong>XLSX:</strong> Excel workbook with multiple sheets</li>
+                    <li><strong>Database exports:</strong> SQL, Access, Oracle</li>
+                </ul>
+            </div>
+            
+            <div class="data-format">
+                <h4>Semi-Structured Formats</h4>
+                <p><strong>Characteristics:</strong> Hierarchical or nested data</p>
+                <ul>
+                    <li><strong>JSON:</strong> JavaScript Object Notation, web APIs</li>
+                    <li><strong>XML:</strong> Extensible Markup Language, enterprise systems</li>
+                    <li><strong>HTML tables:</strong> Web page data extraction</li>
+                    <li><strong>API responses:</strong> RESTful web services</li>
+                </ul>
+            </div>
+            
+            <div class="data-format">
+                <h4>Unstructured Formats</h4>
+                <p><strong>Characteristics:</strong> Free-form text requiring parsing</p>
+                <ul>
+                    <li><strong>Fixed-width:</strong> Column positions define fields</li>
+                    <li><strong>Log files:</strong> Application and system logs</li>
+                    <li><strong>PDF tables:</strong> Extracted using OCR or tools</li>
+                    <li><strong>Email exports:</strong> Contact lists and communications</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="external-sources">
+            <div class="external-source">
+                <h5>Web Sources</h5>
+                <p>APIs, web scraping, online databases, social media exports</p>
+            </div>
+            <div class="external-source">
+                <h5>Enterprise Systems</h5>
+                <p>CRM, ERP, HR systems, accounting software</p>
+            </div>
+            <div class="external-source">
+                <h5>Cloud Storage</h5>
+                <p>Google Drive, OneDrive, Dropbox, AWS S3</p>
+            </div>
+            <div class="external-source">
+                <h5>Databases</h5>
+                <p>SQL Server, MySQL, Oracle, Access, MongoDB</p>
+            </div>
+        </div>
+
+        <div class="practice-exercise">
+            <h3>Practice Exercise: Data Source Inventory</h3>
+            <p><strong>Scenario:</strong> Identify and catalog potential data sources for business analysis</p>
+            
+            <ol>
+                <li><strong>List your organization's data sources:</strong>
+                    <ul>
+                        <li>Internal systems (HR, sales, accounting, operations)</li>
+                        <li>External sources (vendors, customers, market data)</li>
+                        <li>File formats currently in use</li>
+                        <li>Update frequencies and access methods</li>
+                    </ul>
+                </li>
+                <li><strong>Categorize by:</strong>
+                    <ul>
+                        <li>Data format (structured, semi-structured, unstructured)</li>
+                        <li>Access method (manual export, API, database connection)</li>
+                        <li>Update frequency (real-time, daily, weekly, monthly)</li>
+                        <li>Business importance (critical, important, nice-to-have)</li>
+                    </ul>
+                </li>
+                <li><strong>Prioritize integration opportunities</strong></li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="topic-section">
+        <h2>Topic 2: File Format Import (CSV, TXT, JSON)</h2>
+        
+        <h3>CSV Import Mastery</h3>
+        <p>CSV (Comma-Separated Values) is the most common data exchange format. Mastering CSV import includes handling various delimiters, encodings, and data quality issues.</p>
+
+        <table class="format-table">
+            <thead>
+                <tr>
+                    <th>Format</th>
+                    <th>Delimiter</th>
+                    <th>Use Cases</th>
+                    <th>Common Issues</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>CSV</strong></td>
+                    <td>Comma (,)</td>
+                    <td>Universal data exchange, exports from most systems</td>
+                    <td>Commas in data, different encodings, date formats</td>
+                </tr>
+                <tr>
+                    <td><strong>TSV</strong></td>
+                    <td>Tab</td>
+                    <td>Data with commas in values, Excel default</td>
+                    <td>Tab characters in data, alignment issues</td>
+                </tr>
+                <tr>
+                    <td><strong>PSV</strong></td>
+                    <td>Pipe (|)</td>
+                    <td>Database exports, data with commas and tabs</td>
+                    <td>Less common, may need custom import settings</td>
+                </tr>
+                <tr>
+                    <td><strong>Fixed Width</strong></td>
+                    <td>Column positions</td>
+                    <td>Legacy systems, mainframe exports</td>
+                    <td>Alignment issues, trailing spaces</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: CSV Import with Custom Settings</h4>
+            <ol>
+                <li><strong>Prepare sample CSV data:</strong>
+                    <div class="data-example">
+"Name","Department","Salary","Hire Date","Notes"<br>
+"Smith, John","Sales","50,000","2023-01-15","High performer, promoted"<br>
+"Johnson, Alice","IT","65,000","2022-06-01","Technical lead"<br>
+"Wilson, Bob","Marketing","45,000","2023-03-10","Creative director"
+                    </div>
+                </li>
+                <li><strong>Import using Text Import Wizard:</strong>
+                    <ul>
+                        <li><strong>Excel:</strong> Data tab → Get Data → From File → From Text/CSV</li>
+                        <li><strong>Google Sheets:</strong> File → Import → Upload → CSV</li>
+                        <li>Choose "Delimited" data type</li>
+                        <li>Preview shows how data will be parsed</li>
+                    </ul>
+                </li>
+                <li><strong>Configure delimiter settings:</strong>
+                    <ul>
+                        <li>Select comma as delimiter</li>
+                        <li>Choose text qualifier (usually double quotes)</li>
+                        <li>Handle consecutive delimiters (treat as one)</li>
+                    </ul>
+                </li>
+                <li><strong>Set column data types:</strong>
+                    <ul>
+                        <li>Name: Text</li>
+                        <li>Department: Text</li>
+                        <li>Salary: Number (remove commas)</li>
+                        <li>Hire Date: Date (specify format)</li>
+                        <li>Notes: Text</li>
+                    </ul>
+                </li>
+                <li><strong>Verify import results:</strong>
+                    <ul>
+                        <li>Check that commas in names didn't split columns</li>
+                        <li>Verify salary numbers are formatted correctly</li>
+                        <li>Ensure dates are recognized properly</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Advanced Text File Import</h4>
+            <ol>
+                <li><strong>Create complex text file example:</strong>
+                    <div class="data-example">
+John Smith    Sales     50000  2023-01-15  High performer<br>
+Alice Johnson IT        65000  2022-06-01  Technical lead<br>
+Bob Wilson    Marketing 45000  2023-03-10  Creative
+                    </div>
+                </li>
+                <li><strong>Use fixed-width import:</strong>
+                    <ul>
+                        <li>Choose "Fixed width" in import wizard</li>
+                        <li>Set column break lines manually</li>
+                        <li>Preview shows column alignment</li>
+                    </ul>
+                </li>
+                <li><strong>Handle data quality issues:</strong>
+                    <ul>
+                        <li>Trim leading/trailing spaces</li>
+                        <li>Handle missing values</li>
+                        <li>Convert text numbers to actual numbers</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <h3>JSON Data Import</h3>
+        <p>JSON (JavaScript Object Notation) is increasingly common for API responses and modern data exchanges.</p>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: JSON Import and Flattening</h4>
+            <ol>
+                <li><strong>Sample JSON structure:</strong>
+                    <div class="data-example">
+{<br>
+  "employees": [<br>
+    {<br>
+      "id": 1,<br>
+      "name": "John Smith",<br>
+      "department": {<br>
+        "name": "Sales",<br>
+        "manager": "Sarah Jones"<br>
+      },<br>
+      "salary": 50000<br>
+    }<br>
+  ]<br>
+}
+                    </div>
+                </li>
+                <li><strong>Excel JSON import:</strong>
+                    <ul>
+                        <li>Data tab → Get Data → From File → From JSON</li>
+                        <li>Use Power Query Editor to flatten nested data</li>
+                        <li>Expand records and lists</li>
+                        <li>Transform to table format</li>
+                    </ul>
+                </li>
+                <li><strong>Google Sheets approach:</strong>
+                    <ul>
+                        <li>Use IMPORTJSON add-on or Google Apps Script</li>
+                        <li>Convert JSON to CSV format first</li>
+                        <li>Import flattened data</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="warning-box">
+            <h4>Common Import Problems and Solutions:</h4>
+            <ul>
+                <li><strong>Character encoding issues:</strong> Use UTF-8 encoding for international characters</li>
+                <li><strong>Date format confusion:</strong> Standardize date formats during import</li>
+                <li><strong>Number formatting:</strong> Remove currency symbols and thousands separators</li>
+                <li><strong>Leading zeros lost:</strong> Import as text for ID numbers like ZIP codes</li>
+                <li><strong>Large files:</strong> Split into smaller chunks or use streaming import</li>
+            </ul>
+        </div>
+
+        <div class="practice-exercise">
+            <h3>Practice Exercise: Multi-Format Data Integration</h3>
+            <p><strong>Scenario:</strong> Combine data from multiple file formats into a unified analysis</p>
+            
+            <ol>
+                <li><strong>Create sample files:</strong>
+                    <ul>
+                        <li><strong>employees.csv:</strong> Employee master data</li>
+                        <li><strong>sales.txt:</strong> Tab-delimited sales transactions</li>
+                        <li><strong>targets.json:</strong> Quarterly sales targets by person</li>
+                        <li><strong>regions.xlsx:</strong> Territory assignments</li>
+                    </ul>
+                </li>
+                <li><strong>Import each file with proper settings:</strong>
+                    <ul>
+                        <li>Handle different delimiters and formats</li>
+                        <li>Ensure consistent data types</li>
+                        <li>Resolve encoding and formatting issues</li>
+                    </ul>
+                </li>
+                <li><strong>Create unified dataset:</strong>
+                    <ul>
+                        <li>Use lookup functions to combine data</li>
+                        <li>Create master analysis worksheet</li>
+                        <li>Validate data consistency across sources</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="topic-section">
+        <h2>Topic 3: Data Cleaning and Transformation</h2>
+        
+        <h3>Essential Data Cleaning Techniques</h3>
+        <p>Raw imported data often requires cleaning and transformation before analysis. This includes removing duplicates, standardizing formats, and handling missing values.</p>
+
+        <div class="cleaning-techniques">
+            <div class="cleaning-card">
+                <h4>Text Cleaning</h4>
+                <ul>
+                    <li><strong>TRIM():</strong> Remove leading/trailing spaces</li>
+                    <li><strong>UPPER/LOWER/PROPER:</strong> Standardize case</li>
+                    <li><strong>SUBSTITUTE:</strong> Replace unwanted characters</li>
+                    <li><strong>Text to Columns:</strong> Split combined data</li>
+                    <li><strong>Find & Replace:</strong> Bulk corrections</li>
+                </ul>
+            </div>
+            
+            <div class="cleaning-card">
+                <h4>Data Validation</h4>
+                <ul>
+                    <li><strong>Remove Duplicates:</strong> Identify and eliminate copies</li>
+                    <li><strong>Data Types:</strong> Ensure proper formatting</li>
+                    <li><strong>Range Validation:</strong> Check for outliers</li>
+                    <li><strong>Consistency Checks:</strong> Cross-field validation</li>
+                    <li><strong>Completeness:</strong> Handle missing values</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Comprehensive Data Cleaning</h4>
+            <ol>
+                <li><strong>Set up messy data example:</strong>
+                    <ul>
+                        <li>A1: "  JOHN SMITH  ", B1: "sales", C1: "50,000.00"</li>
+                        <li>A2: "alice johnson", B2: "I.T.", C2: "$65000"</li>
+                        <li>A3: "Bob Wilson", B3: "marketing ", C3: "45K"</li>
+                        <li>A4: "ALICE JOHNSON", B4: "IT", C4: "65,000"</li>
+                    </ul>
+                </li>
+                <li><strong>Clean text data:</strong>
+                    <ul>
+                        <li>D1: =PROPER(TRIM(A1)) (clean names)</li>
+                        <li>E1: =UPPER(TRIM(B1)) (standardize departments)</li>
+                        <li>Fix department inconsistencies: "I.T." → "IT"</li>
+                    </ul>
+                </li>
+                <li><strong>Clean numeric data:</strong>
+                    <ul>
+                        <li>Remove currency symbols: SUBSTITUTE(C1,"$","")</li>
+                        <li>Handle abbreviations: IF(RIGHT(C1,1)="K",LEFT(C1,LEN(C1)-1)*1000,VALUE(C1))</li>
+                        <li>Convert to consistent numbers</li>
+                    </ul>
+                </li>
+                <li><strong>Identify and handle duplicates:</strong>
+                    <ul>
+                        <li>Use Data → Remove Duplicates</li>
+                        <li>Or create helper column: COUNTIF($D$1:D1,D1)&COUNTIF($E$1:E1,E1)</li>
+                        <li>Flag potential duplicates for manual review</li>
+                    </ul>
+                </li>
+                <li><strong>Validate final dataset:</strong>
+                    <ul>
+                        <li>Check for remaining inconsistencies</li>
+                        <li>Verify data types are correct</li>
+                        <li>Ensure no critical data was lost</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Advanced Data Transformation</h4>
+            <ol>
+                <li><strong>Date standardization:</strong>
+                    <ul>
+                        <li>Handle multiple date formats in one column</li>
+                        <li>Formula: =DATEVALUE(SUBSTITUTE(SUBSTITUTE(A1,"/","-"),".","-"))</li>
+                        <li>Use IFERROR to handle parsing failures</li>
+                    </ul>
+                </li>
+                <li><strong>Category standardization:</strong>
+                    <ul>
+                        <li>Create lookup table for department mappings</li>
+                        <li>Sales, sal, SALES → Sales</li>
+                        <li>IT, I.T., Information Technology → IT</li>
+                        <li>Use VLOOKUP or nested IF statements</li>
+                    </ul>
+                </li>
+                <li><strong>Data enrichment:</strong>
+                    <ul>
+                        <li>Add calculated fields (tenure, age categories)</li>
+                        <li>Create derived metrics (performance ratios)</li>
+                        <li>Add external data (cost of living by location)</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Power Query for Excel (Advanced)</h4>
+            <ol>
+                <li><strong>Access Power Query:</strong>
+                    <ul>
+                        <li>Data tab → Get Data → From Other Sources → Blank Query</li>
+                        <li>Or from existing data: Data → From Table/Range</li>
+                    </ul>
+                </li>
+                <li><strong>Apply transformations:</strong>
+                    <ul>
+                        <li>Remove columns not needed</li>
+                        <li>Change data types automatically</li>
+                        <li>Split columns by delimiter</li>
+                        <li>Group and aggregate data</li>
+                        <li>Merge with other queries</li>
+                    </ul>
+                </li>
+                <li><strong>Create reusable process:</strong>
+                    <ul>
+                        <li>Save query steps for future use</li>
+                        <li>Refresh automatically when source data changes</li>
+                        <li>Share query with team members</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="info-box">
+            <h4>Data Cleaning Best Practices:</h4>
+            <ul>
+                <li><strong>Keep original data:</strong> Always preserve raw imported data in separate sheet</li>
+                <li><strong>Document changes:</strong> Track what transformations were applied</li>
+                <li><strong>Validate results:</strong> Check totals and key metrics before/after cleaning</li>
+                <li><strong>Automate when possible:</strong> Create reusable cleaning procedures</li>
+                <li><strong>Test with sample:</strong> Try cleaning on small dataset first</li>
+            </ul>
+        </div>
+
+        <div class="practice-exercise">
+            <h3>Practice Exercise: Customer Data Standardization</h3>
+            <p><strong>Scenario:</strong> Clean and standardize customer data from multiple CRM exports</p>
+            
+            <ol>
+                <li><strong>Create messy customer dataset:</strong>
+                    <ul>
+                        <li>Inconsistent name formats (UPPER, lower, Mixed)</li>
+                        <li>Various phone number formats</li>
+                        <li>Multiple address formats</li>
+                        <li>Duplicate records with slight differences</li>
+                        <li>Missing data in various fields</li>
+                    </ul>
+                </li>
+                <li><strong>Apply systematic cleaning:</strong>
+                    <ul>
+                        <li>Standardize name formats to Proper Case</li>
+                        <li>Clean and format phone numbers consistently</li>
+                        <li>Standardize state abbreviations</li>
+                        <li>Create unified address format</li>
+                        <li>Identify and merge duplicate records</li>
+                    </ul>
+                </li>
+                <li><strong>Validate and enrich:</strong>
+                    <ul>
+                        <li>Check for remaining data quality issues</li>
+                        <li>Add derived fields (account age, customer segments)</li>
+                        <li>Create summary statistics for validation</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="topic-section">
+        <h2>Topic 4: External Data Connections</h2>
+        
+        <h3>Connecting to Live Data Sources</h3>
+        <p>Modern spreadsheet applications can connect directly to databases, web services, and cloud platforms for real-time data access.</p>
+
+        <div class="data-formats">
+            <div class="data-format">
+                <h4>Database Connections</h4>
+                <p><strong>Supported formats:</strong> SQL Server, MySQL, Oracle, Access</p>
+                <ul>
+                    <li>Direct SQL query execution</li>
+                    <li>Table and view imports</li>
+                    <li>Automatic refresh capabilities</li>
+                    <li>Parameter-based queries</li>
+                </ul>
+            </div>
+            
+            <div class="data-format">
+                <h4>Web Data Sources</h4>
+                <p><strong>Supported formats:</strong> REST APIs, web pages, cloud services</p>
+                <ul>
+                    <li>API authentication (OAuth, API keys)</li>
+                    <li>JSON/XML response parsing</li>
+                    <li>Rate limiting and error handling</li>
+                    <li>Scheduled data refreshes</li>
+                </ul>
+            </div>
+            
+            <div class="data-format">
+                <h4>Cloud Platforms</h4>
+                <p><strong>Supported platforms:</strong> Google Drive, OneDrive, SharePoint</p>
+                <ul>
+                    <li>Real-time collaboration</li>
+                    <li>Automatic synchronization</li>
+                    <li>Version control and backup</li>
+                    <li>Cross-platform accessibility</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Web Data Import</h4>
+            <ol>
+                <li><strong>Import from web page table:</strong>
+                    <ul>
+                        <li><strong>Excel:</strong> Data → Get Data → From Web</li>
+                        <li>Enter URL of page with data table</li>
+                        <li>Select specific table from preview</li>
+                        <li>Transform data if needed</li>
+                    </ul>
+                </li>
+                <li><strong>Set up automatic refresh:</strong>
+                    <ul>
+                        <li>Right-click data range → Refresh</li>
+                        <li>Connection Properties → Refresh every X minutes</li>
+                        <li>Choose refresh options (background, on open)</li>
+                    </ul>
+                </li>
+                <li><strong>Handle dynamic content:</strong>
+                    <ul>
+                        <li>Some websites require JavaScript rendering</li>
+                        <li>Use Power Query for complex parsing</li>
+                        <li>Consider API access for reliable data</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Google Sheets Integration</h4>
+            <ol>
+                <li><strong>Import Google Sheets data:</strong>
+                    <ul>
+                        <li>Use IMPORTRANGE function</li>
+                        <li>=IMPORTRANGE("spreadsheet_url","Sheet1!A1:C10")</li>
+                        <li>Grant permission when prompted</li>
+                    </ul>
+                </li>
+                <li><strong>Import web data:</strong>
+                    <ul>
+                        <li>IMPORTHTML for web page tables</li>
+                        <li>=IMPORTHTML("url","table",1)</li>
+                        <li>IMPORTXML for structured data</li>
+                        <li>IMPORTDATA for CSV URLs</li>
+                    </ul>
+                </li>
+                <li><strong>API integration with Google Apps Script:</strong>
+                    <ul>
+                        <li>Extensions → Apps Script</li>
+                        <li>Create custom functions for API calls</li>
+                        <li>Handle authentication and rate limiting</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Database Connection (Excel)</h4>
+            <ol>
+                <li><strong>Set up database connection:</strong>
+                    <ul>
+                        <li>Data → Get Data → From Database → From SQL Server</li>
+                        <li>Enter server name and database</li>
+                        <li>Choose authentication method</li>
+                    </ul>
+                </li>
+                <li><strong>Select data:</strong>
+                    <ul>
+                        <li>Browse tables and views</li>
+                        <li>Preview data before import</li>
+                        <li>Write custom SQL query if needed</li>
+                    </ul>
+                </li>
+                <li><strong>Configure connection:</strong>
+                    <ul>
+                        <li>Set refresh schedule</li>
+                        <li>Enable background refresh</li>
+                        <li>Handle connection failures gracefully</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="warning-box">
+            <h4>External Connection Considerations:</h4>
+            <ul>
+                <li><strong>Security:</strong> Store credentials securely, use least-privilege access</li>
+                <li><strong>Performance:</strong> Large datasets may slow down spreadsheet</li>
+                <li><strong>Reliability:</strong> Handle network failures and timeouts</li>
+                <li><strong>Compliance:</strong> Ensure data usage complies with regulations</li>
+                <li><strong>Documentation:</strong> Document data sources and refresh schedules</li>
+            </ul>
+        </div>
+
+        <div class="practice-exercise">
+            <h3>Practice Exercise: Live Dashboard Creation</h3>
+            <p><strong>Scenario:</strong> Create a dashboard that updates automatically from external sources</p>
+            
+            <ol>
+                <li><strong>Set up multiple external connections:</strong>
+                    <ul>
+                        <li>Web-based stock prices or economic data</li>
+                        <li>Google Sheets with shared project data</li>
+                        <li>CSV file from cloud storage</li>
+                        <li>Database connection (if available)</li>
+                    </ul>
+                </li>
+                <li><strong>Create automated refresh schedule:</strong>
+                    <ul>
+                        <li>Different refresh rates for different sources</li>
+                        <li>Error handling for failed connections</li>
+                        <li>User notification of last update time</li>
+                    </ul>
+                </li>
+                <li><strong>Build dynamic dashboard:</strong>
+                    <ul>
+                        <li>KPIs that update with fresh data</li>
+                        <li>Charts that reflect current information</li>
+                        <li>Alerts for significant changes</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="practice-exercise">
+        <h3>Comprehensive Practice Exercise: Enterprise Data Integration Project</h3>
+        
+        <p><strong>Project Overview:</strong> Create a comprehensive data integration solution that demonstrates all Week 11 concepts including multiple import formats, data cleaning, and external connections.</p>
+
+        <div class="step-by-step">
+            <h4>Step 1: Multi-Source Data Collection</h4>
+            <ol>
+                <li><strong>Create diverse data sources:</strong>
+                    <ul>
+                        <li><strong>HR System Export (CSV):</strong> Employee master data with formatting issues</li>
+                        <li><strong>Sales CRM Export (Excel):</strong> Opportunity and transaction data</li>
+                        <li><strong>Financial System (Tab-delimited):</strong> Budget and actual spending</li>
+                        <li><strong>Marketing Platform (JSON):</strong> Campaign performance data</li>
+                        <li><strong>External API:</strong> Industry benchmark or economic data</li>
+                    </ul>
+                </li>
+                <li><strong>Include realistic data quality issues:</strong>
+                    <ul>
+                        <li>Inconsistent naming conventions</li>
+                        <li>Multiple date formats</li>
+                        <li>Duplicate records with slight variations</li>
+                        <li>Missing values in critical fields</li>
+                        <li>Different currency formats</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step 2: Import and Initial Processing</h4>
+            <ol>
+                <li><strong>Import each source with appropriate methods:</strong>
+                    <ul>
+                        <li>CSV: Use Text Import Wizard with custom delimiters</li>
+                        <li>Excel: Import specific sheets and ranges</li>
+                        <li>Tab-delimited: Handle fixed-width columns if needed</li>
+                        <li>JSON: Flatten nested structures</li>
+                        <li>API: Set up live connection with refresh schedule</li>
+                    </ul>
+                </li>
+                <li><strong>Document import settings:</strong>
+                    <ul>
+                        <li>Record delimiter and encoding settings</li>
+                        <li>Note any manual adjustments made</li>
+                        <li>Create import checklist for future use</li>
+                    </ul>
+                </li>
+                <li><strong>Validate initial imports:</strong>
+                    <ul>
+                        <li>Check record counts match source systems</li>
+                        <li>Verify key totals and balances</li>
+                        <li>Identify obvious data quality issues</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step 3: Comprehensive Data Cleaning</h4>
+            <ol>
+                <li><strong>Standardize text data:</strong>
+                    <ul>
+                        <li>Employee names: PROPER case, trim spaces</li>
+                        <li>Department names: Standardize variations</li>
+                        <li>Product codes: Consistent format and length</li>
+                        <li>Customer names: Handle company suffixes (Inc, LLC, etc.)</li>
+                    </ul>
+                </li>
+                <li><strong>Clean numeric and date data:</strong>
+                    <ul>
+                        <li>Remove currency symbols and formatting</li>
+                        <li>Standardize date formats across all sources</li>
+                        <li>Handle percentage fields consistently</li>
+                        <li>Convert text numbers to proper numeric format</li>
+                    </ul>
+                </li>
+                <li><strong>Implement duplicate detection:</strong>
+                    <ul>
+                        <li>Create composite keys for record matching</li>
+                        <li>Use fuzzy matching for similar names</li>
+                        <li>Flag potential duplicates for manual review</li>
+                        <li>Create merge strategy for confirmed duplicates</li>
+                    </ul>
+                </li>
+                <li><strong>Handle missing data:</strong>
+                    <ul>
+                        <li>Identify critical vs. optional fields</li>
+                        <li>Use lookup tables to fill missing data where possible</li>
+                        <li>Flag records with critical missing information</li>
+                        <li>Create default values for non-critical fields</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step 4: Data Integration and Relationships</h4>
+            <ol>
+                <li><strong>Create master data tables:</strong>
+                    <ul>
+                        <li>Employee master with unique identifiers</li>
+                        <li>Customer master with standardized information</li>
+                        <li>Product catalog with consistent codes</li>
+                        <li>Organization hierarchy (departments, regions)</li>
+                    </ul>
+                </li>
+                <li><strong>Establish data relationships:</strong>
+                    <ul>
+                        <li>Link sales data to employee and customer masters</li>
+                        <li>Connect financial data to organizational hierarchy</li>
+                        <li>Join marketing data with customer information</li>
+                        <li>Validate all relationships with lookup functions</li>
+                    </ul>
+                </li>
+                <li><strong>Create integrated analytics views:</strong>
+                    <ul>
+                        <li>Revenue by employee and customer</li>
+                        <li>Budget vs. actual by department</li>
+                        <li>Marketing ROI by campaign and customer segment</li>
+                        <li>Performance metrics with industry benchmarks</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step 5: Export and Automation</h4>
+            <ol>
+                <li><strong>Create multiple export formats:</strong>
+                    <ul>
+                        <li>Executive summary (PDF-ready formatting)</li>
+                        <li>Detailed analysis (CSV for further processing)</li>
+                        <li>Dashboard data (JSON for web display)</li>
+                        <li>Archive format (Excel with multiple sheets)</li>
+                    </ul>
+                </li>
+                <li><strong>Implement refresh automation:</strong>
+                    <ul>
+                        <li>Set up automatic data refresh schedules</li>
+                        <li>Create data validation alerts</li>
+                        <li>Build error handling for failed imports</li>
+                        <li>Document refresh procedures</li>
+                    </ul>
+                </li>
+                <li><strong>Create user documentation:</strong>
+                    <ul>
+                        <li>Data source documentation</li>
+                        <li>Import procedure instructions</li>
+                        <li>Data quality validation checklist</li>
+                        <li>Troubleshooting guide</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="checklist">
+            <h4>Verification Checklist</h4>
+            <p>After completing this exercise, you should have demonstrated:</p>
+            <ul>
+                <li><strong>Multi-Format Import:</strong> CSV, Excel, tab-delimited, JSON, and API data</li>
+                <li><strong>Custom Import Settings:</strong> Proper delimiters, encodings, and data types</li>
+                <li><strong>Data Cleaning:</strong> Text standardization, duplicate removal, missing data handling</li>
+                <li><strong>Data Transformation:</strong> Format standardization and derived field creation</li>
+                <li><strong>External Connections:</strong> Live data links with refresh automation</li>
+                <li><strong>Data Integration:</strong> Relationships between multiple data sources</li>
+                <li><strong>Export Capabilities:</strong> Multiple output formats for different uses</li>
+                <li><strong>Quality Assurance:</strong> Validation procedures and error handling</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <h4>Real-World Applications:</h4>
+            <p>This integration project demonstrates skills applicable to:</p>
+            <ul>
+                <li><strong>Business Intelligence:</strong> Automated reporting and dashboard creation</li>
+                <li><strong>Data Migration:</strong> System transitions and data consolidation</li>
+                <li><strong>Compliance Reporting:</strong> Regulatory reporting with multiple data sources</li>
+                <li><strong>Operational Analytics:</strong> Real-time business monitoring</li>
+                <li><strong>Research Projects:</strong> Academic and market research data integration</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="topic-section">
+        <h2>Key Differences Between Excel and Google Sheets</h2>
+        
+        <table class="differences-table">
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>Microsoft Excel</th>
+                    <th>Google Sheets</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Import Capabilities</strong></td>
+                    <td>Extensive import options, Power Query for complex scenarios</td>
+                    <td>Good basic import, IMPORT functions for web data</td>
+                </tr>
+                <tr>
+                    <td><strong>External Connections</strong></td>
+                    <td>Database connections, ODBC/OLE DB, web services</td>
+                    <td>Limited database connections, strong web integration</td>
+                </tr>
+                <tr>
+                    <td><strong>Data Cleaning Tools</strong></td>
+                    <td>Power Query for advanced transformations</td>
+                    <td>Basic cleaning functions, Apps Script for advanced needs</td>
+                </tr>
+                <tr>
+                    <td><strong>File Format Support</strong></td>
+                    <td>Extensive format support including proprietary formats</td>
+                    <td>Common formats, strong CSV and web format support</td>
+                </tr>
+                <tr>
+                    <td><strong>Automation</strong></td>
+                    <td>VBA macros, scheduled refresh, data connections</td>
+                    <td>Google Apps Script, automatic cloud synchronization</td>
+                </tr>
+                <tr>
+                    <td><strong>Performance</strong></td>
+                    <td>Better with very large datasets and complex transformations</td>
+                    <td>Good for most business needs, excellent collaboration</td>
+                </tr>
+                <tr>
+                    <td><strong>Cloud Integration</strong></td>
+                    <td>OneDrive and SharePoint integration</td>
+                    <td>Native Google Drive integration, real-time collaboration</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="youtube-section">
+        <h3>Additional Resources</h3>
+        
+        <h4>Official Documentation:</h4>
+        <ul>
+            <li><strong>Excel:</strong> <a href="https://support.microsoft.com/en-us/office/import-data-from-a-csv-html-or-text-file-b62efe49-4d5b-4429-b788-e1211b5e90f6" target="_blank">Import data from external sources</a></li>
+            <li><strong>Google Sheets:</strong> <a href="https://support.google.com/docs/answer/40608?hl=en" target="_blank">Import data sets & spreadsheets</a></li>
+        </ul>
+
+        <h4>YouTube Video Tutorials:</h4>
+        
+        <div class="youtube-links">
+            <a href="https://www.youtube.com/c/ExcelIsFun" target="_blank" class="youtube-link">
+                <strong>ExcelIsFun - Data Import/Export</strong>
+                Comprehensive tutorials on importing and cleaning external data
+            </a>
+            
+            <a href="https://www.youtube.com/c/ExcelCampus" target="_blank" class="youtube-link">
+                <strong>Excel Campus - Power Query</strong>
+                Advanced data transformation and automation techniques
+            </a>
+            
+            <a href="https://www.youtube.com/c/LeilaGharani" target="_blank" class="youtube-link">
+                <strong>Leila Gharani - Data Connections</strong>
+                Professional data integration and business intelligence
+            </a>
+            
+            <a href="https://www.youtube.com/c/TeachersTech" target="_blank" class="youtube-link">
+                <strong>Teacher's Tech - Google Sheets Import</strong>
+                Google Sheets specific import functions and web data integration
+            </a>
+        </div>
+    </div>
+
+    <div class="next-section">
+        <h3>What's Next?</h3>
+        <p>In Week 12, we'll complete the course with automation and a final project:</p>
+        <ul>
+            <li><strong>Macros and Automation:</strong> Recording and editing macros for repetitive tasks</li>
+            <li><strong>Advanced Functions:</strong> Custom functions and advanced formula techniques</li>
+            <li><strong>Collaboration Tools:</strong> Sharing, commenting, and version control</li>
+            <li><strong>Final Project:</strong> Comprehensive business analysis combining all course concepts</li>
+            <li><strong>Next Steps:</strong> Advanced topics and continuing education paths</li>
+        </ul>
+        <p><strong>Homework for this week:</strong> Complete the Enterprise Data Integration Project and practice with your organization's actual data sources.</p>
+    </div>
+
+    <div class="navigation">
+        <a href="week_10_lesson.html" class="nav-button">← Previous: Charts & Visualization</a>
+        <a href="week_12_lesson.html" class="nav-button">Next: Automation & Final Project →</a>
+    </div>
+</div>
+
+</body>
+</html>

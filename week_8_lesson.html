@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 8: Lookup & Reference Functions - Complete Lesson</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #e74c3c 0%, #f39c12 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.5em;
+        }
+        
+        .header p {
+            margin: 0;
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .learning-objectives {
+            background-color: #fdf2e9;
+            border-left: 4px solid #e74c3c;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+        
+        .learning-objectives h2 {
+            color: #a93226;
+            margin-top: 0;
+        }
+        
+        .topic-section {
+            margin: 40px 0;
+            padding: 25px;
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .topic-section h2 {
+            color: #495057;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .topic-section h3 {
+            color: #6c757d;
+            margin-top: 25px;
+        }
+        
+        .screenshot-container {
+            background-color: #f8f9fa;
+            border: 2px dashed #6c757d;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .screenshot-container h4 {
+            color: #495057;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        
+        .screenshot-link {
+            display: block;
+            color: #007bff;
+            text-decoration: none;
+            padding: 10px;
+            background-color: #e3f2fd;
+            border-radius: 5px;
+            margin: 10px 0;
+            border-left: 4px solid #2196f3;
+        }
+        
+        .screenshot-link:hover {
+            background-color: #bbdefb;
+            text-decoration: none;
+        }
+        
+        .step-by-step {
+            background-color: #fdf2e9;
+            border-left: 4px solid #e74c3c;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .step-by-step h4 {
+            color: #a93226;
+            margin-top: 0;
+        }
+        
+        .step-by-step ol {
+            margin: 15px 0;
+        }
+        
+        .step-by-step li {
+            margin: 8px 0;
+        }
+        
+        .function-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .function-table th {
+            background-color: #e74c3c;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .function-table td {
+            border: 1px solid #dee2e6;
+            padding: 12px;
+        }
+        
+        .function-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .formula-example {
+            background-color: #fdf2e9;
+            border: 1px solid #e74c3c;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 1.1em;
+        }
+        
+        .lookup-principle {
+            background-color: #e8f6ff;
+            border: 2px solid #2196f3;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .info-box {
+            background-color: #d1ecf1;
+            border: 1px solid #bee5eb;
+            color: #0c5460;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .practice-exercise {
+            background-color: #e8f4f8;
+            border: 2px solid #17a2b8;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+        
+        .practice-exercise h3 {
+            color: #0c5460;
+            margin-top: 0;
+        }
+        
+        .differences-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 14px;
+        }
+        
+        .differences-table th {
+            background-color: #343a40;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        .differences-table td {
+            border: 1px solid #dee2e6;
+            padding: 10px;
+            vertical-align: top;
+        }
+        
+        .differences-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .youtube-section {
+            background-color: #fff5f5;
+            border: 2px solid #dc3545;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+        
+        .youtube-section h3 {
+            color: #721c24;
+            margin-top: 0;
+        }
+        
+        .youtube-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .youtube-link {
+            display: block;
+            color: #dc3545;
+            text-decoration: none;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .youtube-link:hover {
+            background-color: #e9ecef;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-decoration: none;
+        }
+        
+        .youtube-link strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .next-section {
+            background: linear-gradient(135deg, #6f42c1 0%, #d63384 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .next-section h3 {
+            margin-top: 0;
+            color: white;
+        }
+        
+        .checklist {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .checklist ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .checklist li {
+            margin: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .checklist li:before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+        }
+        
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            margin: 40px 0;
+            padding: 20px;
+            background-color: #e9ecef;
+            border-radius: 8px;
+        }
+        
+        .nav-button {
+            padding: 12px 24px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+        
+        .nav-button:hover {
+            background-color: #0056b3;
+            text-decoration: none;
+            color: white;
+        }
+        
+        .lookup-examples {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .lookup-example {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        
+        .lookup-example h4 {
+            color: #495057;
+            margin-top: 0;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 8px;
+        }
+        
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 14px;
+        }
+        
+        .data-table th,
+        .data-table td {
+            border: 1px solid #dee2e6;
+            padding: 8px;
+            text-align: left;
+        }
+        
+        .data-table th {
+            background-color: #e74c3c;
+            color: white;
+        }
+        
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .comparison-card {
+            background-color: #f8f9fa;
+            border: 2px solid #dee2e6;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        .comparison-card h4 {
+            color: #495057;
+            margin-top: 0;
+            text-align: center;
+            background-color: #e74c3c;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div style="margin-bottom: 20px;">
+        <a href="index.html" style="display: inline-flex; align-items: center; color: #007bff; text-decoration: none; font-weight: 500;">
+            ← Back to Course Home
+        </a>
+    </div>
+    <div class="header">
+        <h1>Week 8: Lookup & Reference Functions</h1>
+        <p>Master Data Retrieval and Dynamic References</p>
+    </div>
+
+    <div class="learning-objectives">
+        <h2>Learning Objectives:</h2>
+        <p>By the end of this lesson, you will be able to:</p>
+        <ul>
+            <li>Use VLOOKUP and HLOOKUP to retrieve data from tables</li>
+            <li>Master INDEX and MATCH functions for flexible data retrieval</li>
+            <li>Create dynamic lookup formulas that adapt to changing data</li>
+            <li>Handle lookup errors and edge cases gracefully</li>
+            <li>Choose the appropriate lookup function for different scenarios</li>
+        </ul>
+    </div>
+
+    <div class="topic-section">
+        <h2>Topic 1: Understanding Lookup Functions</h2>
+        
+        <h3>What Are Lookup Functions?</h3>
+        <p>Lookup functions allow you to search for specific values in tables and return related information. Think of them as automated ways to find information, similar to looking up a word in a dictionary or finding a contact in a phone book.</p>
+
+        <div class="screenshot-container">
+            <h4>Visual Reference Screenshots:</h4>
+            <a href="https://support.microsoft.com/en-us/office/vlookup-function-0bbc8083-26fe-4963-8ab8-93a18ad188a1" target="_blank" class="screenshot-link">
+                📸 Excel VLOOKUP Function - Comprehensive guide with examples
+            </a>
+            <a href="https://support.google.com/docs/answer/3093318?hl=en" target="_blank" class="screenshot-link">
+                📸 Google Sheets VLOOKUP - Implementation and practical uses
+            </a>
+        </div>
+
+        <div class="lookup-principle">
+            <h4>Core Lookup Concepts:</h4>
+            <ul>
+                <li><strong>Lookup Value:</strong> The value you're searching for</li>
+                <li><strong>Table Array:</strong> The range containing your data</li>
+                <li><strong>Column Index:</strong> Which column to return data from</li>
+                <li><strong>Range Lookup:</strong> Exact match (FALSE) or approximate match (TRUE)</li>
+            </ul>
+        </div>
+
+        <table class="function-table">
+            <thead>
+                <tr>
+                    <th>Function</th>
+                    <th>Purpose</th>
+                    <th>Best For</th>
+                    <th>Limitations</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>VLOOKUP</strong></td>
+                    <td>Vertical lookup in tables</td>
+                    <td>Simple table lookups, left-to-right searches</td>
+                    <td>Can only look right, requires sorted data for approximate</td>
+                </tr>
+                <tr>
+                    <td><strong>HLOOKUP</strong></td>
+                    <td>Horizontal lookup in tables</td>
+                    <td>Data organized in rows rather than columns</td>
+                    <td>Less common, similar limitations to VLOOKUP</td>
+                </tr>
+                <tr>
+                    <td><strong>INDEX/MATCH</strong></td>
+                    <td>Flexible lookup combination</td>
+                    <td>Complex lookups, any direction, multiple criteria</td>
+                    <td>More complex syntax, requires two functions</td>
+                </tr>
+                <tr>
+                    <td><strong>XLOOKUP</strong></td>
+                    <td>Modern lookup function</td>
+                    <td>Replaces VLOOKUP with more features</td>
+                    <td>Only available in newer versions</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>When to Use Each Lookup Function</h3>
+
+        <div class="lookup-examples">
+            <div class="lookup-example">
+                <h4>VLOOKUP Scenarios</h4>
+                <ul>
+                    <li>Employee directory lookups</li>
+                    <li>Product price lists</li>
+                    <li>Student grade lookups</li>
+                    <li>Simple database queries</li>
+                </ul>
+            </div>
+            
+            <div class="lookup-example">
+                <h4>INDEX/MATCH Scenarios</h4>
+                <ul>
+                    <li>Two-way lookup tables</li>
+                    <li>Dynamic column references</li>
+                    <li>Looking left in tables</li>
+                    <li>Multiple criteria searches</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="practice-exercise">
+            <h3>Practice Exercise: Understanding Lookup Scenarios</h3>
+            <p><strong>Scenario:</strong> Analyze different lookup situations</p>
+            
+            <ol>
+                <li><strong>Create sample datasets:</strong>
+                    <ul>
+                        <li><strong>Employee table:</strong> ID, Name, Department, Salary, Manager</li>
+                        <li><strong>Product table:</strong> SKU, Name, Category, Price, Supplier</li>
+                        <li><strong>Sales table:</strong> Date, Product SKU, Quantity, Salesperson</li>
+                    </ul>
+                </li>
+                <li><strong>Identify lookup needs:</strong>
+                    <ul>
+                        <li>Find employee salary by ID</li>
+                        <li>Get product price by SKU</li>
+                        <li>Find manager name by employee ID</li>
+                        <li>Calculate sales value (quantity × price)</li>
+                    </ul>
+                </li>
+                <li><strong>Plan which function to use for each scenario</strong></li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="topic-section">
+        <h2>Topic 2: VLOOKUP Function</h2>
+        
+        <h3>VLOOKUP Syntax and Components</h3>
+        <p>VLOOKUP (Vertical Lookup) searches for a value in the first column of a table and returns a value in the same row from a specified column.</p>
+
+        <div class="formula-example">
+            <strong>VLOOKUP Syntax:</strong><br>
+            =VLOOKUP(lookup_value, table_array, col_index_num, [range_lookup])
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Basic VLOOKUP</h4>
+            <ol>
+                <li><strong>Set up employee data table:</strong>
+                    <ul>
+                        <li>A1: "Employee ID", B1: "Name", C1: "Department", D1: "Salary"</li>
+                        <li>A2: 101, B2: "John Smith", C2: "Sales", D2: 50000</li>
+                        <li>A3: 102, B3: "Alice Johnson", C3: "IT", D3: 65000</li>
+                        <li>A4: 103, B4: "Bob Wilson", C4: "Marketing", D4: 55000</li>
+                    </ul>
+                </li>
+                <li><strong>Create lookup area:</strong>
+                    <ul>
+                        <li>F1: "Lookup ID", G1: "Employee Name"</li>
+                        <li>F2: 102 (the ID we want to look up)</li>
+                    </ul>
+                </li>
+                <li><strong>Write the VLOOKUP formula:</strong>
+                    <ul>
+                        <li>G2: =VLOOKUP(F2,A2:D4,2,FALSE)</li>
+                        <li>F2: lookup value (102)</li>
+                        <li>A2:D4: table array</li>
+                        <li>2: column index (Name is in column 2)</li>
+                        <li>FALSE: exact match</li>
+                    </ul>
+                </li>
+                <li><strong>Result:</strong>
+                    <ul>
+                        <li>G2 should display "Alice Johnson"</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <h3>VLOOKUP with Different Data Types</h3>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Product Price Lookup</h4>
+            <ol>
+                <li><strong>Set up product catalog:</strong>
+                    <ul>
+                        <li>A1: "Product Code", B1: "Product Name", C1: "Price", D1: "Stock"</li>
+                        <li>A2: "LAP001", B2: "Gaming Laptop", C2: 1299.99, D2: 15</li>
+                        <li>A3: "MOU002", B3: "Wireless Mouse", C3: 29.99, D3: 50</li>
+                        <li>A4: "KEY003", B4: "Mechanical Keyboard", C4: 89.99, D4: 25</li>
+                    </ul>
+                </li>
+                <li><strong>Create order lookup:</strong>
+                    <ul>
+                        <li>F1: "Product Code", G1: "Price", H1: "Quantity", I1: "Total"</li>
+                        <li>F2: "MOU002", H2: 3</li>
+                    </ul>
+                </li>
+                <li><strong>Build lookup formulas:</strong>
+                    <ul>
+                        <li>G2: =VLOOKUP(F2,A2:D4,3,FALSE) (gets price)</li>
+                        <li>I2: =G2*H2 (calculates total)</li>
+                    </ul>
+                </li>
+                <li><strong>Results:</strong>
+                    <ul>
+                        <li>G2: 29.99</li>
+                        <li>I2: 89.97 (29.99 × 3)</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <h3>Exact vs. Approximate Match</h3>
+
+        <div class="comparison-grid">
+            <div class="comparison-card">
+                <h4>Exact Match (FALSE)</h4>
+                <ul>
+                    <li><strong>Use when:</strong> Looking for specific IDs, codes, names</li>
+                    <li><strong>Behavior:</strong> Must find exact match or returns #N/A</li>
+                    <li><strong>Data requirement:</strong> No sorting needed</li>
+                    <li><strong>Example:</strong> Employee ID lookup</li>
+                </ul>
+            </div>
+            
+            <div class="comparison-card">
+                <h4>Approximate Match (TRUE)</h4>
+                <ul>
+                    <li><strong>Use when:</strong> Grade ranges, tax brackets, commission tiers</li>
+                    <li><strong>Behavior:</strong> Finds closest match less than or equal to lookup value</li>
+                    <li><strong>Data requirement:</strong> First column must be sorted ascending</li>
+                    <li><strong>Example:</strong> Grade cutoffs, shipping rates</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Approximate Match for Grade Lookup</h4>
+            <ol>
+                <li><strong>Set up grade scale table:</strong>
+                    <ul>
+                        <li>A1: "Min Score", B1: "Letter Grade"</li>
+                        <li>A2: 0, B2: "F"</li>
+                        <li>A3: 60, B3: "D"</li>
+                        <li>A4: 70, B4: "C"</li>
+                        <li>A5: 80, B5: "B"</li>
+                        <li>A6: 90, B6: "A"</li>
+                    </ul>
+                </li>
+                <li><strong>Create student score lookup:</strong>
+                    <ul>
+                        <li>D1: "Student Score", E1: "Letter Grade"</li>
+                        <li>D2: 87</li>
+                    </ul>
+                </li>
+                <li><strong>Write approximate VLOOKUP:</strong>
+                    <ul>
+                        <li>E2: =VLOOKUP(D2,A2:B6,2,TRUE)</li>
+                        <li>This finds the highest score ≤ 87, which is 80, returning "B"</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="warning-box">
+            <h4>Common VLOOKUP Errors:</h4>
+            <ul>
+                <li><strong>#N/A:</strong> Lookup value not found (check spelling, data types)</li>
+                <li><strong>#REF!:</strong> Column index exceeds table width</li>
+                <li><strong>#VALUE!:</strong> Wrong data type in column index</li>
+                <li><strong>Wrong results:</strong> Using TRUE when FALSE needed, or vice versa</li>
+            </ul>
+        </div>
+
+        <div class="practice-exercise">
+            <h3>Practice Exercise: Sales Commission Calculator</h3>
+            <p><strong>Scenario:</strong> Create a comprehensive sales commission system</p>
+            
+            <ol>
+                <li><strong>Set up commission tier table:</strong>
+                    <ul>
+                        <li>Sales thresholds: $0, $10,000, $25,000, $50,000, $100,000</li>
+                        <li>Commission rates: 2%, 3%, 5%, 7%, 10%</li>
+                    </ul>
+                </li>
+                <li><strong>Create salesperson data:</strong>
+                    <ul>
+                        <li>Include: Name, Sales Amount, Commission Rate, Commission Amount</li>
+                        <li>Use VLOOKUP to find commission rate based on sales</li>
+                        <li>Calculate commission amount</li>
+                    </ul>
+                </li>
+                <li><strong>Test with various sales amounts</strong></li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="topic-section">
+        <h2>Topic 3: INDEX and MATCH Functions</h2>
+        
+        <h3>Understanding INDEX and MATCH Separately</h3>
+        <p>INDEX and MATCH are powerful when used together, but understanding each function individually helps you use them more effectively.</p>
+
+        <div class="formula-example">
+            <strong>INDEX Syntax:</strong><br>
+            =INDEX(array, row_num, [column_num])<br><br>
+            <strong>MATCH Syntax:</strong><br>
+            =MATCH(lookup_value, lookup_array, [match_type])
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: INDEX Function Basics</h4>
+            <ol>
+                <li><strong>Set up data array:</strong>
+                    <ul>
+                        <li>A1: "Product", B1: "Jan", C1: "Feb", D1: "Mar"</li>
+                        <li>A2: "Laptops", B2: 100, C2: 120, D2: 110</li>
+                        <li>A3: "Tablets", B3: 80, C3: 90, D3: 85</li>
+                        <li>A4: "Phones", B4: 200, C4: 250, D4: 230</li>
+                    </ul>
+                </li>
+                <li><strong>Practice INDEX formulas:</strong>
+                    <ul>
+                        <li>F1: =INDEX(B2:D4,2,3) (returns 85 - Tablets in Mar)</li>
+                        <li>F2: =INDEX(A2:A4,1) (returns "Laptops" - first product)</li>
+                        <li>F3: =INDEX(B2:D2,1,2) (returns 120 - Laptops in Feb)</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: MATCH Function Basics</h4>
+            <ol>
+                <li><strong>Using the same data, practice MATCH formulas:</strong>
+                    <ul>
+                        <li>G1: =MATCH("Tablets",A2:A4,0) (returns 2 - Tablets is in position 2)</li>
+                        <li>G2: =MATCH("Feb",B1:D1,0) (returns 2 - Feb is in position 2)</li>
+                        <li>G3: =MATCH(100,B2:D2,0) (returns 1 - 100 is in position 1)</li>
+                    </ul>
+                </li>
+                <li><strong>Understand MATCH types:</strong>
+                    <ul>
+                        <li><strong>0:</strong> Exact match (most common)</li>
+                        <li><strong>1:</strong> Largest value ≤ lookup value (data must be sorted ascending)</li>
+                        <li><strong>-1:</strong> Smallest value ≥ lookup value (data must be sorted descending)</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <h3>Combining INDEX and MATCH</h3>
+        <p>The real power comes from combining INDEX and MATCH to create flexible lookup formulas that can search in any direction.</p>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: INDEX/MATCH Combo</h4>
+            <ol>
+                <li><strong>Create flexible lookup:</strong>
+                    <ul>
+                        <li>F1: "Product:", G1: "Tablets"</li>
+                        <li>F2: "Month:", G2: "Mar"</li>
+                        <li>F3: "Sales:", G3: (formula here)</li>
+                    </ul>
+                </li>
+                <li><strong>Build the INDEX/MATCH formula:</strong>
+                    <ul>
+                        <li>G3: =INDEX(B2:D4,MATCH(G1,A2:A4,0),MATCH(G2,B1:D1,0))</li>
+                        <li>MATCH(G1,A2:A4,0): finds row for "Tablets" (returns 2)</li>
+                        <li>MATCH(G2,B1:D1,0): finds column for "Mar" (returns 3)</li>
+                        <li>INDEX(B2:D4,2,3): returns value at row 2, column 3 (85)</li>
+                    </ul>
+                </li>
+                <li><strong>Test dynamic lookups:</strong>
+                    <ul>
+                        <li>Change G1 to "Phones" and G2 to "Jan" - should return 200</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <h3>Advantages of INDEX/MATCH over VLOOKUP</h3>
+
+        <table class="function-table">
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>VLOOKUP</th>
+                    <th>INDEX/MATCH</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Search Direction</strong></td>
+                    <td>Only left to right</td>
+                    <td>Any direction</td>
+                </tr>
+                <tr>
+                    <td><strong>Column Changes</strong></td>
+                    <td>Breaks if columns inserted/deleted</td>
+                    <td>Adapts automatically</td>
+                </tr>
+                <tr>
+                    <td><strong>Performance</strong></td>
+                    <td>Slower with large datasets</td>
+                    <td>Faster, only searches needed columns</td>
+                </tr>
+                <tr>
+                    <td><strong>Flexibility</strong></td>
+                    <td>Limited to table structure</td>
+                    <td>Works with any array arrangement</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Looking Left with INDEX/MATCH</h4>
+            <ol>
+                <li><strong>Set up data where VLOOKUP can't work:</strong>
+                    <ul>
+                        <li>A1: "Department", B1: "Manager", C1: "Employee ID"</li>
+                        <li>A2: "Sales", B2: "Sarah", C2: 101</li>
+                        <li>A3: "IT", B3: "Mike", C3: 102</li>
+                        <li>A4: "HR", B4: "Lisa", C4: 103</li>
+                    </ul>
+                </li>
+                <li><strong>Goal: Find department by employee ID (lookup left):</strong>
+                    <ul>
+                        <li>E1: "Employee ID:", F1: 102</li>
+                        <li>E2: "Department:", F2: (formula here)</li>
+                    </ul>
+                </li>
+                <li><strong>Create INDEX/MATCH formula:</strong>
+                    <ul>
+                        <li>F2: =INDEX(A2:A4,MATCH(F1,C2:C4,0))</li>
+                        <li>This looks up ID 102 in column C and returns corresponding department from column A</li>
+                        <li>Result: "IT"</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="practice-exercise">
+            <h3>Practice Exercise: Inventory Management System</h3>
+            <p><strong>Scenario:</strong> Create a flexible inventory lookup system</p>
+            
+            <ol>
+                <li><strong>Set up inventory data:</strong>
+                    <ul>
+                        <li>Columns: SKU, Product Name, Category, Price, Stock, Supplier, Location</li>
+                        <li>Include 15+ products across different categories</li>
+                    </ul>
+                </li>
+                <li><strong>Create lookup interfaces:</strong>
+                    <ul>
+                        <li><strong>By SKU:</strong> Enter SKU, get all product details</li>
+                        <li><strong>By Product Name:</strong> Enter name, get SKU and price</li>
+                        <li><strong>By Category:</strong> List all products in a category</li>
+                    </ul>
+                </li>
+                <li><strong>Build dynamic dashboards:</strong>
+                    <ul>
+                        <li>Product finder with dropdown selections</li>
+                        <li>Stock level checker</li>
+                        <li>Price comparison tool</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="topic-section">
+        <h2>Topic 4: Advanced Lookup Techniques</h2>
+        
+        <h3>Two-Way Lookups</h3>
+        <p>Sometimes you need to find data based on both row and column criteria, creating a two-dimensional lookup.</p>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Sales Performance Matrix</h4>
+            <ol>
+                <li><strong>Set up sales matrix:</strong>
+                    <ul>
+                        <li>A1: "", B1: "Q1", C1: "Q2", D1: "Q3", E1: "Q4"</li>
+                        <li>A2: "North", B2: 100, C2: 120, D2: 110, E2: 130</li>
+                        <li>A3: "South", B3: 90, C3: 100, D3: 95, E3: 105</li>
+                        <li>A4: "East", B4: 110, C4: 125, D4: 115, E4: 140</li>
+                        <li>A5: "West", B5: 85, C5: 95, D5: 90, E5: 100</li>
+                    </ul>
+                </li>
+                <li><strong>Create lookup interface:</strong>
+                    <ul>
+                        <li>G1: "Region:", H1: "North"</li>
+                        <li>G2: "Quarter:", H2: "Q3"</li>
+                        <li>G3: "Sales:", H3: (formula here)</li>
+                    </ul>
+                </li>
+                <li><strong>Build two-way lookup:</strong>
+                    <ul>
+                        <li>H3: =INDEX(B2:E5,MATCH(H1,A2:A5,0),MATCH(H2,B1:E1,0))</li>
+                        <li>This finds the intersection of "North" region and "Q3" quarter</li>
+                        <li>Result: 110</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <h3>Multiple Criteria Lookups</h3>
+        <p>When you need to match multiple conditions simultaneously, you can combine functions or use array formulas.</p>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Multiple Criteria with Helper Columns</h4>
+            <ol>
+                <li><strong>Set up employee data:</strong>
+                    <ul>
+                        <li>A1: "Name", B1: "Department", C1: "Level", D1: "Salary"</li>
+                        <li>A2: "John", B2: "Sales", C2: "Senior", D2: 70000</li>
+                        <li>A3: "Alice", B3: "IT", C3: "Junior", D3: 50000</li>
+                        <li>A4: "Bob", B4: "Sales", C4: "Junior", D4: 45000</li>
+                        <li>A5: "Carol", B5: "IT", C5: "Senior", D5: 75000</li>
+                    </ul>
+                </li>
+                <li><strong>Create helper column:</strong>
+                    <ul>
+                        <li>E1: "Dept_Level"</li>
+                        <li>E2: =B2&"_"&C2 (results in "Sales_Senior")</li>
+                        <li>Copy formula down</li>
+                    </ul>
+                </li>
+                <li><strong>Create lookup criteria:</strong>
+                    <ul>
+                        <li>G1: "Department:", H1: "IT"</li>
+                        <li>G2: "Level:", H2: "Senior"</li>
+                        <li>G3: "Employee:", H3: (formula here)</li>
+                    </ul>
+                </li>
+                <li><strong>Build multiple criteria lookup:</strong>
+                    <ul>
+                        <li>H3: =INDEX(A2:A5,MATCH(H1&"_"&H2,E2:E5,0))</li>
+                        <li>This finds the employee who is in IT and Senior level</li>
+                        <li>Result: "Carol"</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <h3>Error Handling in Lookups</h3>
+        <p>Robust lookup formulas should handle cases where the lookup value isn't found or data is missing.</p>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Robust Lookup with Error Handling</h4>
+            <ol>
+                <li><strong>Create error-prone lookup scenario:</strong>
+                    <ul>
+                        <li>Product lookup where some codes might not exist</li>
+                        <li>Employee lookup where IDs might be invalid</li>
+                    </ul>
+                </li>
+                <li><strong>Add comprehensive error handling:</strong>
+                    <ul>
+                        <li>=IFERROR(VLOOKUP(F2,A2:D10,2,FALSE),"Product not found")</li>
+                        <li>=IFERROR(INDEX(B2:B10,MATCH(F2,A2:A10,0)),"Invalid ID")</li>
+                    </ul>
+                </li>
+                <li><strong>Create user-friendly messages:</strong>
+                    <ul>
+                        <li>Different messages for different error types</li>
+                        <li>Instructions for users on how to fix issues</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="info-box">
+            <h4>Advanced Lookup Best Practices:</h4>
+            <ul>
+                <li><strong>Always use absolute references</strong> for table arrays ($A$2:$D$10)</li>
+                <li><strong>Include error handling</strong> for user-friendly results</li>
+                <li><strong>Consider data validation</strong> on lookup inputs</li>
+                <li><strong>Use named ranges</strong> for complex table references</li>
+                <li><strong>Document your formulas</strong> with comments explaining the logic</li>
+            </ul>
+        </div>
+
+        <div class="practice-exercise">
+            <h3>Practice Exercise: Customer Order Processing System</h3>
+            <p><strong>Scenario:</strong> Create a comprehensive order processing system with multiple lookups</p>
+            
+            <ol>
+                <li><strong>Set up related tables:</strong>
+                    <ul>
+                        <li><strong>Customers:</strong> ID, Name, City, Discount Level</li>
+                        <li><strong>Products:</strong> SKU, Name, Category, Price, Stock</li>
+                        <li><strong>Discounts:</strong> Level, Percentage</li>
+                        <li><strong>Shipping:</strong> City, Standard Rate, Express Rate</li>
+                    </ul>
+                </li>
+                <li><strong>Create order entry form:</strong>
+                    <ul>
+                        <li>Customer ID input → Auto-fill name, city, discount level</li>
+                        <li>Product SKU input → Auto-fill name, price, check stock</li>
+                        <li>Quantity input → Calculate subtotal</li>
+                        <li>Shipping type → Calculate shipping cost</li>
+                    </ul>
+                </li>
+                <li><strong>Build calculation engine:</strong>
+                    <ul>
+                        <li>Apply customer discount</li>
+                        <li>Add shipping costs</li>
+                        <li>Calculate final total</li>
+                        <li>Handle all error cases gracefully</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="practice-exercise">
+        <h3>Comprehensive Practice Exercise: Employee Performance Dashboard</h3>
+        
+        <p><strong>Project Overview:</strong> Create a complete employee performance dashboard that demonstrates all Week 8 concepts including VLOOKUP, INDEX/MATCH, two-way lookups, and error handling.</p>
+
+        <div class="step-by-step">
+            <h4>Step 1: Set Up Core Data Tables</h4>
+            <ol>
+                <li><strong>Employee Master Table:</strong>
+                    <ul>
+                        <li>Columns: Employee ID, Name, Department, Position, Hire Date, Salary, Manager ID</li>
+                        <li>Include 20+ employees across different departments</li>
+                    </ul>
+                </li>
+                <li><strong>Performance Metrics Table:</strong>
+                    <ul>
+                        <li>Matrix format: Employee ID vs. Quarters (Q1, Q2, Q3, Q4)</li>
+                        <li>Performance scores 1-10 for each quarter</li>
+                    </ul>
+                </li>
+                <li><strong>Department Goals Table:</strong>
+                    <ul>
+                        <li>Columns: Department, Q1 Goal, Q2 Goal, Q3 Goal, Q4 Goal</li>
+                        <li>Target performance scores for each department by quarter</li>
+                    </ul>
+                </li>
+                <li><strong>Salary Bands Table:</strong>
+                    <ul>
+                        <li>Columns: Position, Min Salary, Max Salary, Target Performance</li>
+                        <li>Salary ranges and expected performance by position</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step 2: Individual Employee Lookup</h4>
+            <ol>
+                <li><strong>Create employee search interface:</strong>
+                    <ul>
+                        <li>Input: Employee ID or Name</li>
+                        <li>Output: Complete employee profile</li>
+                    </ul>
+                </li>
+                <li><strong>Build VLOOKUP formulas:</strong>
+                    <ul>
+                        <li>Employee details by ID</li>
+                        <li>Manager name lookup (manager ID → name)</li>
+                        <li>Current salary vs. position band comparison</li>
+                    </ul>
+                </li>
+                <li><strong>Add data validation and error handling:</strong>
+                    <ul>
+                        <li>Dropdown for valid employee IDs</li>
+                        <li>Error messages for invalid inputs</li>
+                        <li>Handle cases where manager ID is blank</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step 3: Performance Analysis Dashboard</h4>
+            <ol>
+                <li><strong>Create two-way lookup system:</strong>
+                    <ul>
+                        <li>Select employee and quarter</li>
+                        <li>Display performance score using INDEX/MATCH</li>
+                        <li>Compare to department goal for that quarter</li>
+                    </ul>
+                </li>
+                <li><strong>Build performance summary:</strong>
+                    <ul>
+                        <li>Average performance across all quarters</li>
+                        <li>Best performing quarter</li>
+                        <li>Quarters above/below department goals</li>
+                        <li>Performance trend (improving/declining)</li>
+                    </ul>
+                </li>
+                <li><strong>Create department analysis:</strong>
+                    <ul>
+                        <li>Average department performance by quarter</li>
+                        <li>Goal achievement percentage</li>
+                        <li>Top and bottom performers in department</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step 4: Advanced Analytics</h4>
+            <ol>
+                <li><strong>Multiple criteria lookups:</strong>
+                    <ul>
+                        <li>Find employees by department AND performance level</li>
+                        <li>Identify high performers eligible for promotion</li>
+                        <li>Locate underperformers needing support</li>
+                    </ul>
+                </li>
+                <li><strong>Salary vs. performance analysis:</strong>
+                    <ul>
+                        <li>Calculate pay-for-performance ratios</li>
+                        <li>Identify overpaid/underpaid employees</li>
+                        <li>Suggest salary adjustments based on performance</li>
+                    </ul>
+                </li>
+                <li><strong>Create dynamic reports:</strong>
+                    <ul>
+                        <li>Quarter-over-quarter comparisons</li>
+                        <li>Department ranking systems</li>
+                        <li>Performance improvement tracking</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step 5: Error Handling and Validation</h4>
+            <ol>
+                <li><strong>Comprehensive error handling:</strong>
+                    <ul>
+                        <li>Invalid employee IDs</li>
+                        <li>Missing performance data</li>
+                        <li>Blank manager fields</li>
+                        <li>Invalid quarter selections</li>
+                    </ul>
+                </li>
+                <li><strong>Data validation rules:</strong>
+                    <ul>
+                        <li>Employee ID dropdowns</li>
+                        <li>Quarter selection lists</li>
+                        <li>Department filters</li>
+                    </ul>
+                </li>
+                <li><strong>User-friendly interfaces:</strong>
+                    <ul>
+                        <li>Clear input instructions</li>
+                        <li>Meaningful error messages</li>
+                        <li>Reset buttons for quick clearing</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="checklist">
+            <h4>Verification Checklist</h4>
+            <p>After completing this exercise, you should have demonstrated:</p>
+            <ul>
+                <li><strong>VLOOKUP:</strong> Basic and advanced exact match lookups</li>
+                <li><strong>VLOOKUP Approximate:</strong> Grade scales or tiered lookups</li>
+                <li><strong>INDEX Function:</strong> Array value retrieval by position</li>
+                <li><strong>MATCH Function:</strong> Position finding in arrays</li>
+                <li><strong>INDEX/MATCH Combo:</strong> Flexible lookup alternative to VLOOKUP</li>
+                <li><strong>Two-Way Lookups:</strong> Matrix-style data retrieval</li>
+                <li><strong>Multiple Criteria:</strong> Helper columns and combined conditions</li>
+                <li><strong>Error Handling:</strong> IFERROR with meaningful messages</li>
+                <li><strong>Data Validation:</strong> Input controls and user guidance</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <h4>Real-World Applications:</h4>
+            <p>This performance dashboard demonstrates skills applicable to:</p>
+            <ul>
+                <li><strong>Business:</strong> Sales reporting, customer analysis, inventory management</li>
+                <li><strong>Finance:</strong> Budget tracking, expense categorization, financial analysis</li>
+                <li><strong>Education:</strong> Student records, grade tracking, course management</li>
+                <li><strong>Healthcare:</strong> Patient records, treatment tracking, resource allocation</li>
+                <li><strong>Operations:</strong> Quality control, supply chain management, performance monitoring</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="topic-section">
+        <h2>Key Differences Between Excel and Google Sheets</h2>
+        
+        <table class="differences-table">
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>Microsoft Excel</th>
+                    <th>Google Sheets</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>VLOOKUP</strong></td>
+                    <td>Standard function, all versions</td>
+                    <td>Same syntax and functionality</td>
+                </tr>
+                <tr>
+                    <td><strong>XLOOKUP</strong></td>
+                    <td>Available in Excel 365 and Excel 2021</td>
+                    <td>Not available (use INDEX/MATCH instead)</td>
+                </tr>
+                <tr>
+                    <td><strong>INDEX/MATCH</strong></td>
+                    <td>Full functionality, optimized performance</td>
+                    <td>Same functionality, may be slower with very large datasets</td>
+                </tr>
+                <tr>
+                    <td><strong>Array Formulas</strong></td>
+                    <td>Ctrl+Shift+Enter for legacy, automatic in newer versions</td>
+                    <td>Automatic array handling, no special entry needed</td>
+                </tr>
+                <tr>
+                    <td><strong>Error Handling</strong></td>
+                    <td>IFERROR, IFNA, and other error functions</td>
+                    <td>IFERROR available, IFNA not available</td>
+                </tr>
+                <tr>
+                    <td><strong>Performance</strong></td>
+                    <td>Better with very large datasets and complex lookups</td>
+                    <td>Good performance for most business applications</td>
+                </tr>
+                <tr>
+                    <td><strong>Fuzzy Matching</strong></td>
+                    <td>Power Query for approximate string matching</td>
+                    <td>No built-in fuzzy matching capabilities</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="youtube-section">
+        <h3>Additional Resources</h3>
+        
+        <h4>Official Documentation:</h4>
+        <ul>
+            <li><strong>Excel:</strong> <a href="https://support.microsoft.com/en-us/office/vlookup-function-0bbc8083-26fe-4963-8ab8-93a18ad188a1" target="_blank">VLOOKUP function</a></li>
+            <li><strong>Google Sheets:</strong> <a href="https://support.google.com/docs/answer/3093318?hl=en" target="_blank">VLOOKUP function</a></li>
+        </ul>
+
+        <h4>YouTube Video Tutorials:</h4>
+        
+        <div class="youtube-links">
+            <a href="https://www.youtube.com/c/ExcelIsFun" target="_blank" class="youtube-link">
+                <strong>ExcelIsFun - Lookup Functions</strong>
+                Comprehensive tutorials on VLOOKUP, INDEX/MATCH, and advanced lookups
+            </a>
+            
+            <a href="https://www.youtube.com/c/ExcelCampus" target="_blank" class="youtube-link">
+                <strong>Excel Campus - Advanced Lookups</strong>
+                Professional techniques for complex lookup scenarios
+            </a>
+            
+            <a href="https://www.youtube.com/c/LeilaGharani" target="_blank" class="youtube-link">
+                <strong>Leila Gharani - Data Analysis</strong>
+                Business-focused lookup and data retrieval techniques
+            </a>
+            
+            <a href="https://www.youtube.com/c/TeachersTech" target="_blank" class="youtube-link">
+                <strong>Teacher's Tech - Google Sheets Lookups</strong>
+                Google Sheets specific lookup function tutorials
+            </a>
+        </div>
+    </div>
+
+    <div class="next-section">
+        <h3>What's Next?</h3>
+        <p>In Week 9, we'll explore data analysis and pivot tables:</p>
+        <ul>
+            <li><strong>Pivot Tables:</strong> Creating dynamic data summaries and analysis</li>
+            <li><strong>Data Aggregation:</strong> Grouping and summarizing large datasets</li>
+            <li><strong>Pivot Charts:</strong> Visual representations of pivot table data</li>
+            <li><strong>Slicers & Filters:</strong> Interactive data exploration tools</li>
+            <li><strong>Business Intelligence:</strong> Creating dashboards and reports</li>
+        </ul>
+        <p><strong>Homework for this week:</strong> Complete the Employee Performance Dashboard and practice lookup functions with your own datasets.</p>
+    </div>
+
+    <div class="navigation">
+        <a href="week_7_lesson.html" class="nav-button">← Previous: Logical Functions</a>
+        <a href="week_9_lesson.html" class="nav-button">Next: Data Analysis & Pivot Tables →</a>
+    </div>
+</div>
+
+</body>
+</html>

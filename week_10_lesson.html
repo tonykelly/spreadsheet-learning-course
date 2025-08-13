@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 10: Charts & Visualizations - Complete Lesson</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.5em;
+        }
+        
+        .header p {
+            margin: 0;
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .learning-objectives {
+            background-color: #e8f8f5;
+            border-left: 4px solid #27ae60;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+        
+        .learning-objectives h2 {
+            color: #1e8449;
+            margin-top: 0;
+        }
+        
+        .topic-section {
+            margin: 40px 0;
+            padding: 25px;
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .topic-section h2 {
+            color: #495057;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .topic-section h3 {
+            color: #6c757d;
+            margin-top: 25px;
+        }
+        
+        .screenshot-container {
+            background-color: #f8f9fa;
+            border: 2px dashed #6c757d;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .screenshot-container h4 {
+            color: #495057;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        
+        .screenshot-link {
+            display: block;
+            color: #007bff;
+            text-decoration: none;
+            padding: 10px;
+            background-color: #e3f2fd;
+            border-radius: 5px;
+            margin: 10px 0;
+            border-left: 4px solid #2196f3;
+        }
+        
+        .screenshot-link:hover {
+            background-color: #bbdefb;
+            text-decoration: none;
+        }
+        
+        .step-by-step {
+            background-color: #e8f8f5;
+            border-left: 4px solid #27ae60;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .step-by-step h4 {
+            color: #1e8449;
+            margin-top: 0;
+        }
+        
+        .step-by-step ol {
+            margin: 15px 0;
+        }
+        
+        .step-by-step li {
+            margin: 8px 0;
+        }
+        
+        .chart-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .chart-table th {
+            background-color: #27ae60;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .chart-table td {
+            border: 1px solid #dee2e6;
+            padding: 12px;
+        }
+        
+        .chart-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .chart-example {
+            background-color: #e8f8f5;
+            border: 1px solid #27ae60;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 1.1em;
+        }
+        
+        .visualization-principle {
+            background-color: #fff3e0;
+            border: 2px solid #ff9800;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .info-box {
+            background-color: #d1ecf1;
+            border: 1px solid #bee5eb;
+            color: #0c5460;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .practice-exercise {
+            background-color: #e8f4f8;
+            border: 2px solid #17a2b8;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+        
+        .practice-exercise h3 {
+            color: #0c5460;
+            margin-top: 0;
+        }
+        
+        .differences-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 14px;
+        }
+        
+        .differences-table th {
+            background-color: #343a40;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        .differences-table td {
+            border: 1px solid #dee2e6;
+            padding: 10px;
+            vertical-align: top;
+        }
+        
+        .differences-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .youtube-section {
+            background-color: #fff5f5;
+            border: 2px solid #dc3545;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+        
+        .youtube-section h3 {
+            color: #721c24;
+            margin-top: 0;
+        }
+        
+        .youtube-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .youtube-link {
+            display: block;
+            color: #dc3545;
+            text-decoration: none;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .youtube-link:hover {
+            background-color: #e9ecef;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-decoration: none;
+        }
+        
+        .youtube-link strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .next-section {
+            background: linear-gradient(135deg, #6f42c1 0%, #d63384 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .next-section h3 {
+            margin-top: 0;
+            color: white;
+        }
+        
+        .checklist {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .checklist ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .checklist li {
+            margin: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .checklist li:before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+        }
+        
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            margin: 40px 0;
+            padding: 20px;
+            background-color: #e9ecef;
+            border-radius: 8px;
+        }
+        
+        .nav-button {
+            padding: 12px 24px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+        
+        .nav-button:hover {
+            background-color: #0056b3;
+            text-decoration: none;
+            color: white;
+        }
+        
+        .chart-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .chart-type {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        
+        .chart-type h4 {
+            color: #495057;
+            margin-top: 0;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 8px;
+        }
+        
+        .design-principles {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .design-card {
+            background-color: #f8f9fa;
+            border: 2px solid #dee2e6;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        .design-card h4 {
+            color: #495057;
+            margin-top: 0;
+            text-align: center;
+            background-color: #27ae60;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        
+        .dashboard-layout {
+            background-color: #f8f9fa;
+            border: 2px dashed #27ae60;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            min-height: 200px;
+        }
+        
+        .dashboard-section {
+            background-color: white;
+            border: 1px solid #dee2e6;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 5px;
+            text-align: center;
+            color: #6c757d;
+        }
+        
+        .color-schemes {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+        
+        .color-scheme {
+            text-align: center;
+            padding: 15px;
+            border-radius: 8px;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .professional { background: linear-gradient(45deg, #2c3e50, #3498db); }
+        .warm { background: linear-gradient(45deg, #e74c3c, #f39c12); }
+        .cool { background: linear-gradient(45deg, #27ae60, #2ecc71); }
+        .neutral { background: linear-gradient(45deg, #95a5a6, #34495e); }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div style="margin-bottom: 20px;">
+        <a href="index.html" style="display: inline-flex; align-items: center; color: #007bff; text-decoration: none; font-weight: 500;">
+            ← Back to Course Home
+        </a>
+    </div>
+    <div class="header">
+        <h1>Week 10: Charts & Visualizations</h1>
+        <p>Creating Effective Data Visualizations and Dashboards</p>
+    </div>
+
+    <div class="learning-objectives">
+        <h2>Learning Objectives:</h2>
+        <p>By the end of this lesson, you will be able to:</p>
+        <ul>
+            <li>Choose appropriate chart types for different data and analysis goals</li>
+            <li>Create professional and effective charts with proper formatting</li>
+            <li>Apply data visualization best practices and design principles</li>
+            <li>Build interactive dashboards with multiple coordinated visualizations</li>
+            <li>Customize charts for different audiences and presentation contexts</li>
+        </ul>
+    </div>
+
+    <div class="topic-section">
+        <h2>Topic 1: Data Visualization Fundamentals</h2>
+        
+        <h3>Why Visualization Matters</h3>
+        <p>Data visualization transforms numbers into insights. Well-designed charts and graphs make patterns, trends, and relationships immediately apparent, enabling faster and better decision-making.</p>
+
+        <div class="screenshot-container">
+            <h4>Visual Reference Screenshots:</h4>
+            <a href="https://support.microsoft.com/en-us/office/available-chart-types-in-office-a6187218-807e-4103-9e0a-27cdb19afb90" target="_blank" class="screenshot-link">
+                📸 Excel Chart Types - Complete guide to available chart types and uses
+            </a>
+            <a href="https://support.google.com/docs/answer/63824?hl=en&co=GENIE.Platform%3DDesktop" target="_blank" class="screenshot-link">
+                📸 Google Sheets Charts - Creating and customizing charts
+            </a>
+        </div>
+
+        <div class="visualization-principle">
+            <h4>Core Visualization Principles:</h4>
+            <ul>
+                <li><strong>Clarity:</strong> The message should be immediately clear</li>
+                <li><strong>Accuracy:</strong> Visual representation must truthfully reflect the data</li>
+                <li><strong>Efficiency:</strong> Show the maximum data with minimum ink</li>
+                <li><strong>Beauty:</strong> Aesthetically pleasing designs engage the audience</li>
+            </ul>
+        </div>
+
+        <div class="chart-types">
+            <div class="chart-type">
+                <h4>Comparison Charts</h4>
+                <p><strong>Use for:</strong> Comparing values across categories</p>
+                <ul>
+                    <li><strong>Column/Bar Charts:</strong> Most common, easy to read</li>
+                    <li><strong>Grouped Charts:</strong> Multiple series comparison</li>
+                    <li><strong>Stacked Charts:</strong> Parts of a whole over categories</li>
+                </ul>
+                <p><strong>Best for:</strong> Sales by region, performance by team</p>
+            </div>
+            
+            <div class="chart-type">
+                <h4>Trend Charts</h4>
+                <p><strong>Use for:</strong> Showing change over time</p>
+                <ul>
+                    <li><strong>Line Charts:</strong> Continuous trends</li>
+                    <li><strong>Area Charts:</strong> Cumulative trends</li>
+                    <li><strong>Combination Charts:</strong> Multiple metrics over time</li>
+                </ul>
+                <p><strong>Best for:</strong> Monthly sales, stock prices, growth rates</p>
+            </div>
+            
+            <div class="chart-type">
+                <h4>Distribution Charts</h4>
+                <p><strong>Use for:</strong> Showing how data is distributed</p>
+                <ul>
+                    <li><strong>Histograms:</strong> Frequency distributions</li>
+                    <li><strong>Box Plots:</strong> Statistical distributions</li>
+                    <li><strong>Scatter Plots:</strong> Relationships between variables</li>
+                </ul>
+                <p><strong>Best for:</strong> Grade distributions, age demographics</p>
+            </div>
+            
+            <div class="chart-type">
+                <h4>Composition Charts</h4>
+                <p><strong>Use for:</strong> Showing parts of a whole</p>
+                <ul>
+                    <li><strong>Pie Charts:</strong> Simple proportions (2-5 categories)</li>
+                    <li><strong>Donut Charts:</strong> Multiple series proportions</li>
+                    <li><strong>Treemaps:</strong> Hierarchical compositions</li>
+                </ul>
+                <p><strong>Best for:</strong> Market share, budget breakdown</p>
+            </div>
+        </div>
+
+        <div class="practice-exercise">
+            <h3>Practice Exercise: Chart Type Selection</h3>
+            <p><strong>Scenario:</strong> Choose appropriate chart types for different business questions</p>
+            
+            <ol>
+                <li><strong>For each question, identify the best chart type:</strong>
+                    <ul>
+                        <li>"How has our revenue grown over the past 3 years?"</li>
+                        <li>"Which product categories contribute most to our profits?"</li>
+                        <li>"How do customer satisfaction scores vary across regions?"</li>
+                        <li>"Is there a relationship between marketing spend and sales?"</li>
+                        <li>"What's the distribution of order sizes?"</li>
+                    </ul>
+                </li>
+                <li><strong>Create sample data and practice charts for each scenario</strong></li>
+                <li><strong>Justify your chart type choices</strong></li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="topic-section">
+        <h2>Topic 2: Creating Basic Charts</h2>
+        
+        <h3>Chart Creation Workflow</h3>
+        <p>Creating effective charts follows a systematic process from data preparation through final formatting.</p>
+
+        <table class="chart-table">
+            <thead>
+                <tr>
+                    <th>Step</th>
+                    <th>Excel Process</th>
+                    <th>Google Sheets Process</th>
+                    <th>Key Considerations</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>1. Prepare Data</strong></td>
+                    <td>Clean and organize data</td>
+                    <td>Same as Excel</td>
+                    <td>Remove blanks, ensure consistent formatting</td>
+                </tr>
+                <tr>
+                    <td><strong>2. Select Data</strong></td>
+                    <td>Highlight data range</td>
+                    <td>Highlight data range</td>
+                    <td>Include headers, avoid blank rows/columns</td>
+                </tr>
+                <tr>
+                    <td><strong>3. Insert Chart</strong></td>
+                    <td>Insert → Charts</td>
+                    <td>Insert → Chart</td>
+                    <td>Choose appropriate chart type</td>
+                </tr>
+                <tr>
+                    <td><strong>4. Configure</strong></td>
+                    <td>Chart Design tools</td>
+                    <td>Chart editor panel</td>
+                    <td>Adjust data range, series, axes</td>
+                </tr>
+                <tr>
+                    <td><strong>5. Format</strong></td>
+                    <td>Format pane options</td>
+                    <td>Customize tab</td>
+                    <td>Colors, fonts, titles, legends</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Creating a Column Chart</h4>
+            <ol>
+                <li><strong>Set up sales data:</strong>
+                    <ul>
+                        <li>A1: "Region", B1: "Q1", C1: "Q2", D1: "Q3", E1: "Q4"</li>
+                        <li>A2: "North", B2: 120, C2: 135, D2: 125, E2: 145</li>
+                        <li>A3: "South", B3: 100, C3: 110, D3: 115, E3: 130</li>
+                        <li>A4: "East", B4: 110, C4: 125, D4: 120, E4: 140</li>
+                        <li>A5: "West", B5: 90, C5: 95, D5: 100, E5: 115</li>
+                    </ul>
+                </li>
+                <li><strong>Select data and create chart:</strong>
+                    <ul>
+                        <li>Select A1:E5</li>
+                        <li><strong>Excel:</strong> Insert tab → Column Chart → Clustered Column</li>
+                        <li><strong>Google Sheets:</strong> Insert → Chart → Column chart</li>
+                    </ul>
+                </li>
+                <li><strong>Add chart title and axis labels:</strong>
+                    <ul>
+                        <li>Chart title: "Quarterly Sales by Region"</li>
+                        <li>X-axis: "Region"</li>
+                        <li>Y-axis: "Sales (in thousands)"</li>
+                    </ul>
+                </li>
+                <li><strong>Format for clarity:</strong>
+                    <ul>
+                        <li>Add data labels if needed</li>
+                        <li>Adjust colors for distinctiveness</li>
+                        <li>Remove chart border if present</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Creating a Line Chart for Trends</h4>
+            <ol>
+                <li><strong>Set up time series data:</strong>
+                    <ul>
+                        <li>A1: "Month", B1: "Revenue", C1: "Profit"</li>
+                        <li>A2:A13: Jan through Dec</li>
+                        <li>B2:B13: Monthly revenue values</li>
+                        <li>C2:C13: Monthly profit values</li>
+                    </ul>
+                </li>
+                <li><strong>Create line chart:</strong>
+                    <ul>
+                        <li>Select A1:C13</li>
+                        <li><strong>Excel:</strong> Insert → Line Chart → Line with Markers</li>
+                        <li><strong>Google Sheets:</strong> Insert → Chart → Line chart</li>
+                    </ul>
+                </li>
+                <li><strong>Customize for trend analysis:</strong>
+                    <ul>
+                        <li>Different line styles/colors for Revenue vs Profit</li>
+                        <li>Add trendlines if appropriate</li>
+                        <li>Format axes to show scales clearly</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Creating a Pie Chart</h4>
+            <ol>
+                <li><strong>Set up composition data:</strong>
+                    <ul>
+                        <li>A1: "Product Category", B1: "Sales Share"</li>
+                        <li>A2: "Electronics", B2: 45</li>
+                        <li>A3: "Clothing", B3: 30</li>
+                        <li>A4: "Books", B4: 15</li>
+                        <li>A5: "Other", B5: 10</li>
+                    </ul>
+                </li>
+                <li><strong>Create pie chart:</strong>
+                    <ul>
+                        <li>Select A1:B5</li>
+                        <li><strong>Excel:</strong> Insert → Pie Chart → 2D Pie</li>
+                        <li><strong>Google Sheets:</strong> Insert → Chart → Pie chart</li>
+                    </ul>
+                </li>
+                <li><strong>Format for clarity:</strong>
+                    <ul>
+                        <li>Show percentages on slices</li>
+                        <li>Use distinct colors</li>
+                        <li>Consider exploding largest slice for emphasis</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="warning-box">
+            <h4>Common Chart Creation Mistakes:</h4>
+            <ul>
+                <li><strong>Wrong chart type:</strong> Using pie charts for too many categories</li>
+                <li><strong>Missing labels:</strong> No title, axis labels, or legend</li>
+                <li><strong>Poor scale:</strong> Y-axis doesn't start at zero for bar/column charts</li>
+                <li><strong>Too much data:</strong> Overcrowded charts that are hard to read</li>
+                <li><strong>Inconsistent formatting:</strong> Mixed fonts, colors, or styles</li>
+            </ul>
+        </div>
+
+        <div class="practice-exercise">
+            <h3>Practice Exercise: Multi-Chart Analysis</h3>
+            <p><strong>Scenario:</strong> Create a comprehensive sales analysis with multiple chart types</p>
+            
+            <ol>
+                <li><strong>Set up comprehensive sales dataset:</strong>
+                    <ul>
+                        <li>Monthly data for 12 months</li>
+                        <li>Multiple product categories</li>
+                        <li>Regional breakdown</li>
+                        <li>Target vs actual performance</li>
+                    </ul>
+                </li>
+                <li><strong>Create different chart types:</strong>
+                    <ul>
+                        <li><strong>Line chart:</strong> Monthly sales trends</li>
+                        <li><strong>Column chart:</strong> Performance by region</li>
+                        <li><strong>Pie chart:</strong> Market share by category</li>
+                        <li><strong>Combination chart:</strong> Sales and targets over time</li>
+                    </ul>
+                </li>
+                <li><strong>Apply consistent formatting across all charts</strong></li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="topic-section">
+        <h2>Topic 3: Advanced Chart Customization</h2>
+        
+        <h3>Professional Chart Formatting</h3>
+        <p>Professional charts require attention to design details that enhance readability and visual appeal while maintaining data integrity.</p>
+
+        <div class="design-principles">
+            <div class="design-card">
+                <h4>Visual Hierarchy</h4>
+                <ul>
+                    <li><strong>Title:</strong> Largest, most prominent text</li>
+                    <li><strong>Axes labels:</strong> Clear but not competing with data</li>
+                    <li><strong>Data:</strong> Most visually prominent element</li>
+                    <li><strong>Legend:</strong> Present but not distracting</li>
+                    <li><strong>Gridlines:</strong> Subtle, aids reading</li>
+                </ul>
+            </div>
+            
+            <div class="design-card">
+                <h4>Color Strategy</h4>
+                <ul>
+                    <li><strong>Meaningful colors:</strong> Red for negative, green for positive</li>
+                    <li><strong>Accessibility:</strong> Colorblind-friendly palettes</li>
+                    <li><strong>Consistency:</strong> Same colors for same data across charts</li>
+                    <li><strong>Contrast:</strong> Sufficient contrast for readability</li>
+                    <li><strong>Brand alignment:</strong> Company colors when appropriate</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="color-schemes">
+            <div class="color-scheme professional">Professional</div>
+            <div class="color-scheme warm">Warm</div>
+            <div class="color-scheme cool">Cool</div>
+            <div class="color-scheme neutral">Neutral</div>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Advanced Column Chart Formatting</h4>
+            <ol>
+                <li><strong>Start with basic column chart from previous exercise</strong></li>
+                <li><strong>Enhance the title:</strong>
+                    <ul>
+                        <li>Make it descriptive: "Q1-Q4 2024 Sales Performance by Region"</li>
+                        <li>Increase font size and make bold</li>
+                        <li>Center align the title</li>
+                    </ul>
+                </li>
+                <li><strong>Format axes:</strong>
+                    <ul>
+                        <li>Y-axis: Add currency formatting ($), clean thousands (120K)</li>
+                        <li>X-axis: Ensure region names are fully visible</li>
+                        <li>Add axis titles: "Sales Region" and "Quarterly Sales ($000s)"</li>
+                    </ul>
+                </li>
+                <li><strong>Customize data series:</strong>
+                    <ul>
+                        <li>Use distinct colors for each quarter</li>
+                        <li>Add data labels showing exact values</li>
+                        <li>Adjust column width for optimal spacing</li>
+                    </ul>
+                </li>
+                <li><strong>Fine-tune appearance:</strong>
+                    <ul>
+                        <li>Remove chart border</li>
+                        <li>Lighten gridlines or remove if not needed</li>
+                        <li>Position legend optimally (usually right or bottom)</li>
+                        <li>Ensure chart fits well in available space</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Interactive Chart Elements</h4>
+            <ol>
+                <li><strong>Add dynamic titles using cell references:</strong>
+                    <ul>
+                        <li>Create title in cell: ="Sales Analysis for "&B1</li>
+                        <li>Link chart title to this cell</li>
+                        <li>Change B1 to update chart title automatically</li>
+                    </ul>
+                </li>
+                <li><strong>Create data validation for interactivity:</strong>
+                    <ul>
+                        <li>Dropdown list for time periods or regions</li>
+                        <li>Use INDIRECT or lookup formulas to change chart data</li>
+                        <li>Chart updates automatically when selection changes</li>
+                    </ul>
+                </li>
+                <li><strong>Add conditional formatting to source data:</strong>
+                    <ul>
+                        <li>Highlight top performers in green</li>
+                        <li>Show below-target performance in red</li>
+                        <li>Chart colors reflect the conditional formatting</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Combination Charts</h4>
+            <ol>
+                <li><strong>Set up data with different scales:</strong>
+                    <ul>
+                        <li>A1: "Month", B1: "Revenue", C1: "Profit Margin %"</li>
+                        <li>Revenue in thousands, profit margin as percentages</li>
+                    </ul>
+                </li>
+                <li><strong>Create combination chart:</strong>
+                    <ul>
+                        <li><strong>Excel:</strong> Insert → Combo chart → Custom Combination</li>
+                        <li>Revenue as columns (primary axis)</li>
+                        <li>Profit margin as line (secondary axis)</li>
+                        <li><strong>Google Sheets:</strong> Use chart editor to add second axis</li>
+                    </ul>
+                </li>
+                <li><strong>Format dual axes:</strong>
+                    <ul>
+                        <li>Primary axis: Revenue scale in thousands</li>
+                        <li>Secondary axis: Percentage scale for profit margin</li>
+                        <li>Clear labeling to avoid confusion</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="info-box">
+            <h4>Advanced Formatting Tips:</h4>
+            <ul>
+                <li><strong>Data labels:</strong> Use sparingly, only when they add value</li>
+                <li><strong>Trendlines:</strong> Add to show patterns, include R² if relevant</li>
+                <li><strong>Error bars:</strong> Show uncertainty or variability when appropriate</li>
+                <li><strong>Annotations:</strong> Highlight important data points or events</li>
+                <li><strong>Consistent styling:</strong> Maintain same fonts and colors across related charts</li>
+            </ul>
+        </div>
+
+        <div class="practice-exercise">
+            <h3>Practice Exercise: Professional Chart Makeover</h3>
+            <p><strong>Scenario:</strong> Transform basic charts into professional, publication-ready visualizations</p>
+            
+            <ol>
+                <li><strong>Start with poorly formatted charts:</strong>
+                    <ul>
+                        <li>Default colors and formatting</li>
+                        <li>Generic titles</li>
+                        <li>Cluttered appearance</li>
+                        <li>Missing or poor labels</li>
+                    </ul>
+                </li>
+                <li><strong>Apply professional formatting:</strong>
+                    <ul>
+                        <li>Meaningful, descriptive titles</li>
+                        <li>Consistent color scheme</li>
+                        <li>Clear, properly formatted axes</li>
+                        <li>Strategic use of data labels</li>
+                        <li>Clean, minimal design</li>
+                    </ul>
+                </li>
+                <li><strong>Add interactive elements:</strong>
+                    <ul>
+                        <li>Dynamic titles</li>
+                        <li>Conditional formatting</li>
+                        <li>Dropdown controls where appropriate</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="topic-section">
+        <h2>Topic 4: Dashboard Design</h2>
+        
+        <h3>Dashboard Principles</h3>
+        <p>Effective dashboards tell a complete story through coordinated visualizations, presenting key information at a glance while allowing for deeper exploration.</p>
+
+        <div class="dashboard-layout">
+            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 10px; height: 150px;">
+                <div class="dashboard-section">
+                    <strong>Main KPI Chart</strong><br>
+                    Primary metric or trend
+                </div>
+                <div class="dashboard-section">
+                    <strong>Summary Stats</strong><br>
+                    Key numbers
+                </div>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; height: 120px;">
+                <div class="dashboard-section">
+                    <strong>Supporting Chart 1</strong><br>
+                    Breakdown or detail
+                </div>
+                <div class="dashboard-section">
+                    <strong>Supporting Chart 2</strong><br>
+                    Comparison view
+                </div>
+                <div class="dashboard-section">
+                    <strong>Supporting Chart 3</strong><br>
+                    Trend or distribution
+                </div>
+            </div>
+        </div>
+
+        <div class="visualization-principle">
+            <h4>Dashboard Design Principles:</h4>
+            <ul>
+                <li><strong>5-Second Rule:</strong> Key insights should be apparent within 5 seconds</li>
+                <li><strong>Visual Hierarchy:</strong> Most important information gets the most visual weight</li>
+                <li><strong>Logical Flow:</strong> Information arranged in a logical reading pattern</li>
+                <li><strong>Consistent Interaction:</strong> Similar controls work the same way throughout</li>
+                <li><strong>White Space:</strong> Don't crowd elements, allow breathing room</li>
+            </ul>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Sales Dashboard Creation</h4>
+            <ol>
+                <li><strong>Plan dashboard layout:</strong>
+                    <ul>
+                        <li><strong>Top section:</strong> Key metrics (total sales, growth %, target achievement)</li>
+                        <li><strong>Middle left:</strong> Monthly sales trend (line chart)</li>
+                        <li><strong>Middle right:</strong> Sales by region (column chart)</li>
+                        <li><strong>Bottom left:</strong> Product category breakdown (pie chart)</li>
+                        <li><strong>Bottom right:</strong> Top performers table</li>
+                    </ul>
+                </li>
+                <li><strong>Create summary metrics section:</strong>
+                    <ul>
+                        <li>Large, bold numbers for key KPIs</li>
+                        <li>Include growth indicators (arrows, colors)</li>
+                        <li>Add context (vs. last month, vs. target)</li>
+                    </ul>
+                </li>
+                <li><strong>Build coordinated charts:</strong>
+                    <ul>
+                        <li>Consistent color scheme across all charts</li>
+                        <li>Similar sizing and alignment</li>
+                        <li>Clear, concise titles</li>
+                    </ul>
+                </li>
+                <li><strong>Add interactivity:</strong>
+                    <ul>
+                        <li>Time period selector (dropdown)</li>
+                        <li>Region filter that updates all charts</li>
+                        <li>Product category filter</li>
+                    </ul>
+                </li>
+                <li><strong>Polish the presentation:</strong>
+                    <ul>
+                        <li>Dashboard title and date stamp</li>
+                        <li>Consistent fonts and spacing</li>
+                        <li>Remove unnecessary gridlines and borders</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Interactive Controls</h4>
+            <ol>
+                <li><strong>Create dropdown controls:</strong>
+                    <ul>
+                        <li>Use Data Validation to create dropdown lists</li>
+                        <li>Options: "All Regions", "North", "South", "East", "West"</li>
+                        <li>Place in prominent location on dashboard</li>
+                    </ul>
+                </li>
+                <li><strong>Link charts to controls:</strong>
+                    <ul>
+                        <li>Use IF statements to filter data based on dropdown selection</li>
+                        <li>Example: =IF($B$1="All Regions",C2,IF($B$1="North",C2,""))</li>
+                        <li>Charts automatically update when selection changes</li>
+                    </ul>
+                </li>
+                <li><strong>Add visual feedback:</strong>
+                    <ul>
+                        <li>Conditional formatting to highlight selected items</li>
+                        <li>Status indicators showing current selections</li>
+                        <li>Dynamic titles that reflect current filters</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step-by-Step: Multi-Page Dashboard</h4>
+            <ol>
+                <li><strong>Design page structure:</strong>
+                    <ul>
+                        <li><strong>Page 1:</strong> Executive Summary (high-level KPIs)</li>
+                        <li><strong>Page 2:</strong> Sales Analysis (detailed breakdowns)</li>
+                        <li><strong>Page 3:</strong> Performance Analysis (individual metrics)</li>
+                    </ul>
+                </li>
+                <li><strong>Create navigation:</strong>
+                    <ul>
+                        <li>Hyperlinks between sheets</li>
+                        <li>Consistent navigation menu on each page</li>
+                        <li>Clear indication of current page</li>
+                    </ul>
+                </li>
+                <li><strong>Maintain consistency:</strong>
+                    <ul>
+                        <li>Same color scheme and fonts across all pages</li>
+                        <li>Similar layout patterns</li>
+                        <li>Consistent control placement</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="practice-exercise">
+            <h3>Practice Exercise: Executive Dashboard</h3>
+            <p><strong>Scenario:</strong> Create a comprehensive executive dashboard for monthly business review</p>
+            
+            <ol>
+                <li><strong>Define dashboard requirements:</strong>
+                    <ul>
+                        <li>Target audience: C-level executives</li>
+                        <li>Update frequency: Monthly</li>
+                        <li>Key metrics: Revenue, profit, customer satisfaction, market share</li>
+                        <li>Time horizon: 12 months trending, current month focus</li>
+                    </ul>
+                </li>
+                <li><strong>Create comprehensive data model:</strong>
+                    <ul>
+                        <li>Monthly financial data</li>
+                        <li>Customer metrics</li>
+                        <li>Operational KPIs</li>
+                        <li>Target/benchmark data</li>
+                    </ul>
+                </li>
+                <li><strong>Build multi-section dashboard:</strong>
+                    <ul>
+                        <li><strong>Header:</strong> Company logo, dashboard title, current period</li>
+                        <li><strong>KPI section:</strong> 4-6 key metrics with trend indicators</li>
+                        <li><strong>Trend analysis:</strong> 12-month trending charts</li>
+                        <li><strong>Performance vs targets:</strong> Achievement gauges or progress bars</li>
+                        <li><strong>Breakdown analysis:</strong> Supporting detail charts</li>
+                    </ul>
+                </li>
+                <li><strong>Add professional touches:</strong>
+                    <ul>
+                        <li>Executive summary text box</li>
+                        <li>Key insights highlights</li>
+                        <li>Action items or recommendations</li>
+                        <li>Data source and update timestamp</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="practice-exercise">
+        <h3>Comprehensive Practice Exercise: Business Performance Dashboard</h3>
+        
+        <p><strong>Project Overview:</strong> Create a complete business performance dashboard that demonstrates all Week 10 concepts including chart types, advanced formatting, and interactive design.</p>
+
+        <div class="step-by-step">
+            <h4>Step 1: Data Architecture</h4>
+            <ol>
+                <li><strong>Sales Transaction Data:</strong>
+                    <ul>
+                        <li>12 months of daily sales transactions</li>
+                        <li>Multiple products, categories, regions, and salespeople</li>
+                        <li>Include: Date, Product, Category, Region, Salesperson, Units, Revenue, Profit</li>
+                    </ul>
+                </li>
+                <li><strong>Target and Benchmark Data:</strong>
+                    <ul>
+                        <li>Monthly sales targets by region and category</li>
+                        <li>Previous year comparison data</li>
+                        <li>Industry benchmark metrics</li>
+                    </ul>
+                </li>
+                <li><strong>Supporting Data:</strong>
+                    <ul>
+                        <li>Customer satisfaction scores</li>
+                        <li>Marketing spend by channel</li>
+                        <li>Product pricing and cost data</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step 2: Dashboard Architecture</h4>
+            <ol>
+                <li><strong>Executive Overview Page:</strong>
+                    <ul>
+                        <li>Revenue and profit KPIs with YTD performance</li>
+                        <li>Growth trends (MoM and YoY)</li>
+                        <li>Target achievement summary</li>
+                        <li>Market share indicators</li>
+                    </ul>
+                </li>
+                <li><strong>Sales Analysis Page:</strong>
+                    <ul>
+                        <li>Monthly revenue and units trend (combination chart)</li>
+                        <li>Regional performance comparison (column chart)</li>
+                        <li>Product category breakdown (pie chart)</li>
+                        <li>Seasonal analysis (line chart with multiple years)</li>
+                    </ul>
+                </li>
+                <li><strong>Performance Analysis Page:</strong>
+                    <ul>
+                        <li>Individual salesperson performance (scatter plot: quota vs achievement)</li>
+                        <li>Regional efficiency metrics (revenue per salesperson)</li>
+                        <li>Product profitability analysis (bubble chart: volume vs margin vs growth)</li>
+                        <li>Customer satisfaction correlation analysis</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step 3: Chart Creation and Formatting</h4>
+            <ol>
+                <li><strong>Create all chart types:</strong>
+                    <ul>
+                        <li><strong>Line charts:</strong> Trends over time with multiple series</li>
+                        <li><strong>Column charts:</strong> Comparisons with grouped and stacked variations</li>
+                        <li><strong>Combination charts:</strong> Revenue vs targets, multiple metrics</li>
+                        <li><strong>Scatter plots:</strong> Correlation analysis and performance quadrants</li>
+                        <li><strong>Pie charts:</strong> Composition analysis (limited to 4-5 categories)</li>
+                    </ul>
+                </li>
+                <li><strong>Apply professional formatting:</strong>
+                    <ul>
+                        <li>Consistent color palette across all charts</li>
+                        <li>Clear, descriptive titles with dynamic elements</li>
+                        <li>Properly formatted axes with appropriate scales</li>
+                        <li>Strategic use of data labels and trendlines</li>
+                    </ul>
+                </li>
+                <li><strong>Add advanced features:</strong>
+                    <ul>
+                        <li>Conditional formatting in source data reflected in charts</li>
+                        <li>Error bars for uncertainty visualization</li>
+                        <li>Reference lines for targets and benchmarks</li>
+                        <li>Annotations for significant events or outliers</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step 4: Interactive Elements</h4>
+            <ol>
+                <li><strong>Time period controls:</strong>
+                    <ul>
+                        <li>Dropdown for year selection</li>
+                        <li>Quarter/month filtering options</li>
+                        <li>YTD vs full year toggle</li>
+                    </ul>
+                </li>
+                <li><strong>Geographic controls:</strong>
+                    <ul>
+                        <li>Region selector (All, North, South, East, West)</li>
+                        <li>State/city drill-down capabilities</li>
+                        <li>Urban vs rural market toggles</li>
+                    </ul>
+                </li>
+                <li><strong>Product controls:</strong>
+                    <ul>
+                        <li>Category filter with multiple selection</li>
+                        <li>Product line focus options</li>
+                        <li>New vs established product views</li>
+                    </ul>
+                </li>
+                <li><strong>Dynamic calculations:</strong>
+                    <ul>
+                        <li>All charts update automatically with filter changes</li>
+                        <li>KPIs recalculate based on current selections</li>
+                        <li>Comparative metrics adjust to filtered data</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step-by-step">
+            <h4>Step 5: Dashboard Polish and Usability</h4>
+            <ol>
+                <li><strong>Visual hierarchy:</strong>
+                    <ul>
+                        <li>Most important metrics prominently displayed</li>
+                        <li>Logical information flow from summary to detail</li>
+                        <li>Consistent spacing and alignment</li>
+                        <li>Strategic use of white space</li>
+                    </ul>
+                </li>
+                <li><strong>Navigation and usability:</strong>
+                    <ul>
+                        <li>Clear navigation between dashboard pages</li>
+                        <li>Breadcrumb indicators showing current location</li>
+                        <li>Reset buttons to clear all filters</li>
+                        <li>Help text or instructions for complex controls</li>
+                    </ul>
+                </li>
+                <li><strong>Professional presentation:</strong>
+                    <ul>
+                        <li>Company branding elements (colors, logo)</li>
+                        <li>Data source attribution and last update timestamp</li>
+                        <li>Contact information for questions</li>
+                        <li>Print-friendly layouts for reports</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="checklist">
+            <h4>Verification Checklist</h4>
+            <p>After completing this exercise, you should have demonstrated:</p>
+            <ul>
+                <li><strong>Chart Type Selection:</strong> Appropriate charts for different data analysis goals</li>
+                <li><strong>Professional Formatting:</strong> Consistent, clean, and effective visual design</li>
+                <li><strong>Interactive Controls:</strong> Dropdowns, filters, and dynamic updates</li>
+                <li><strong>Dashboard Layout:</strong> Logical information hierarchy and flow</li>
+                <li><strong>Advanced Features:</strong> Combination charts, dual axes, trendlines</li>
+                <li><strong>Visual Storytelling:</strong> Charts work together to tell a cohesive story</li>
+                <li><strong>User Experience:</strong> Intuitive navigation and clear visual cues</li>
+                <li><strong>Business Context:</strong> Metrics and visualizations relevant to business decisions</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <h4>Real-World Applications:</h4>
+            <p>This dashboard demonstrates skills applicable to:</p>
+            <ul>
+                <li><strong>Executive Reporting:</strong> C-level dashboards, board presentations, investor relations</li>
+                <li><strong>Sales Management:</strong> Territory analysis, performance tracking, pipeline management</li>
+                <li><strong>Operations:</strong> KPI monitoring, process optimization, quality control</li>
+                <li><strong>Marketing:</strong> Campaign effectiveness, ROI analysis, customer insights</li>
+                <li><strong>Finance:</strong> Budget tracking, variance analysis, financial forecasting</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="topic-section">
+        <h2>Key Differences Between Excel and Google Sheets</h2>
+        
+        <table class="differences-table">
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>Microsoft Excel</th>
+                    <th>Google Sheets</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Chart Types</strong></td>
+                    <td>Extensive chart library including specialized charts</td>
+                    <td>Good selection but fewer advanced chart types</td>
+                </tr>
+                <tr>
+                    <td><strong>Customization</strong></td>
+                    <td>Extensive formatting and customization options</td>
+                    <td>Good customization but fewer advanced options</td>
+                </tr>
+                <tr>
+                    <td><strong>Interactive Elements</strong></td>
+                    <td>Slicers, form controls, advanced interactivity</td>
+                    <td>Basic filters and controls, limited interactivity</td>
+                </tr>
+                <tr>
+                    <td><strong>Dashboard Creation</strong></td>
+                    <td>Advanced dashboard tools and layouts</td>
+                    <td>Basic dashboard capabilities</td>
+                </tr>
+                <tr>
+                    <td><strong>Chart Performance</strong></td>
+                    <td>Better performance with large datasets</td>
+                    <td>Good for most business applications</td>
+                </tr>
+                <tr>
+                    <td><strong>Export Options</strong></td>
+                    <td>Multiple export formats, high-quality images</td>
+                    <td>Basic export options, adequate quality</td>
+                </tr>
+                <tr>
+                    <td><strong>Collaboration</strong></td>
+                    <td>Improved sharing but primarily desktop-based</td>
+                    <td>Excellent real-time collaboration on charts</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="youtube-section">
+        <h3>Additional Resources</h3>
+        
+        <h4>Official Documentation:</h4>
+        <ul>
+            <li><strong>Excel:</strong> <a href="https://support.microsoft.com/en-us/office/available-chart-types-in-office-a6187218-807e-4103-9e0a-27cdb19afb90" target="_blank">Available chart types in Office</a></li>
+            <li><strong>Google Sheets:</strong> <a href="https://support.google.com/docs/answer/63824?hl=en" target="_blank">Insert & edit charts</a></li>
+        </ul>
+
+        <h4>YouTube Video Tutorials:</h4>
+        
+        <div class="youtube-links">
+            <a href="https://www.youtube.com/c/ExcelIsFun" target="_blank" class="youtube-link">
+                <strong>ExcelIsFun - Chart Creation</strong>
+                Comprehensive tutorials on chart types and advanced formatting
+            </a>
+            
+            <a href="https://www.youtube.com/c/ExcelCampus" target="_blank" class="youtube-link">
+                <strong>Excel Campus - Dashboard Design</strong>
+                Professional dashboard creation and design principles
+            </a>
+            
+            <a href="https://www.youtube.com/c/LeilaGharani" target="_blank" class="youtube-link">
+                <strong>Leila Gharani - Data Visualization</strong>
+                Business-focused visualization techniques and best practices
+            </a>
+            
+            <a href="https://www.youtube.com/c/TeachersTech" target="_blank" class="youtube-link">
+                <strong>Teacher's Tech - Google Sheets Charts</strong>
+                Google Sheets specific chart creation and customization
+            </a>
+        </div>
+    </div>
+
+    <div class="next-section">
+        <h3>What's Next?</h3>
+        <p>In Week 11, we'll explore advanced formulas and functions:</p>
+        <ul>
+            <li><strong>Array Formulas:</strong> Processing multiple values simultaneously</li>
+            <li><strong>Advanced Text Functions:</strong> String manipulation and text analysis</li>
+            <li><strong>Date/Time Mastery:</strong> Complex date calculations and business calendars</li>
+            <li><strong>Financial Functions:</strong> Investment analysis and loan calculations</li>
+            <li><strong>Custom Functions:</strong> Creating your own formulas and automation</li>
+        </ul>
+        <p><strong>Homework for this week:</strong> Complete the Business Performance Dashboard and practice visualization design with your own datasets.</p>
+    </div>
+
+    <div class="navigation">
+        <a href="week_9_lesson.html" class="nav-button">← Previous: Data Analysis</a>
+        <a href="week_11_lesson.html" class="nav-button">Next: Data Import & Export →</a>
+    </div>
+</div>
+
+</body>
+</html>
